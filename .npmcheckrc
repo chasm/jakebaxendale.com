@@ -1,0 +1,2 @@
+depcheck:
+  ignoreMatches: ["@astrojs/check", "@astrojs/mdx", "@astrojs/sitemap"]

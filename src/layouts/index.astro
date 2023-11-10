@@ -1,0 +1,74 @@
+---
+import "./styles/local.css";
+import {
+	Body,
+	CCLicense,
+	Footer,
+	Head,
+	Header,
+	Html,
+	Logotype,
+	Main,
+	SkipLink,
+} from "@sitebender/components";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
+
+export type Props = {
+	title?: string | undefined | null;
+};
+
+const { title } = Astro.props;
+
+const id = Astro.url.pathname.substring(1).replace(/\//g, "-") || "home";
+
+const canonicalSite = "https://jakebaxendale.com";
+const description = SITE_DESCRIPTION;
+
+const content = await Astro.slots.render("default");
+---
+
+<!doctype html>
+<Html>
+	<Head {canonicalSite} {description} title={title}>
+		<meta
+			name="keywords"
+			content="Jake Baxendale,jazz,musician,jazz musician,composer,bandleader,saxophone,altos saxophone,Tao,New Zealand,Aotearoa,Wellington"
+		/>
+		<meta name="author" content="Jake Baxendale" />
+		<meta name="publisher" content="Jake Baxendale" />
+		<meta name="color-scheme" content="light dark" />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: light)"
+			content="#fafafa"
+		/>
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content="#2c2c30"
+		/>
+		<slot name="head" />
+	</Head>
+	<Body {id}>
+		<Header>
+			<Logotype ariaLabel={`To the ${SITE_TITLE} home page`} href="/">
+				{SITE_TITLE}
+			</Logotype>
+			<div><SkipLink /></div>
+		</Header>
+		<Main>
+			<Fragment set:html={content} />
+		</Main>
+		<Footer id="footer">
+			<CCLicense byAttribution nonCommercial shareAlike />
+			<p>
+				<span class="no-break">WCAG 2.2 AAA</span>
+				<span class="no-break"
+					>Beacon carbon footprint 0.024g &rarr; 0.002g</span
+				>
+				<span class="no-break">Beacon grade: A+</span>
+			</p>
+		</Footer>
+	</Body>
+</Html>
+<slot name="tail" />
