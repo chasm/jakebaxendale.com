@@ -11,6 +11,7 @@ import {
 	Main,
 	SkipLink,
 } from "@sitebender/components";
+import themeCss from "@sitebender/components/@stylesheets/theme?raw";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 
 export type Props = {
@@ -47,6 +48,7 @@ const content = await Astro.slots.render("default");
 			media="(prefers-color-scheme: dark)"
 			content="#2c2c30"
 		/>
+		<style set:html={themeCss}></style>
 		<slot name="head" />
 	</Head>
 	<Body {id}>
