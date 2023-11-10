@@ -1,3 +1,7 @@
+.sb-body {
+	color: #fafafa;
+}
+
 .sb-body header.sb-header {
 	background-color: transparent;
 	border: none;
@@ -114,8 +118,7 @@ body.sb-body {
 	footer.sb-footer p {
 		align-items: flex-start;
 		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
+		flex-flow: column wrap;
 		gap: 0.45rem;
 		justify-content: flex-start;
 	}
