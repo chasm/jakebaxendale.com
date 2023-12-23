@@ -1,21 +1,26 @@
 ---
 import "./styles/local.css";
 import {
-	Body,
-	CCLicense,
-	Footer,
-	Head,
-	Header,
-	Html,
-	Logotype,
-	Main,
-	SkipLink,
+  Body,
+  CCLicense,
+  Footer,
+  Head,
+  Header,
+  Html,
+  Logotype,
+  Main,
+  Nav,
+  SkipLink,
+  createPageLookup,
+  createLinks,
+  sortByPath,
 } from "@sitebender/components";
+import baseCss from "@sitebender/components/@stylesheets/base?raw";
 import themeCss from "@sitebender/components/@stylesheets/theme?raw";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../constants";
 
 export type Props = {
-	title?: string | undefined | null;
+  title?: string | undefined | null;
 };
 
 const { title } = Astro.props;
@@ -26,51 +31,87 @@ const canonicalSite = "https://jakebaxendale.com";
 const description = SITE_DESCRIPTION;
 
 const content = await Astro.slots.render("default");
+
+const pages = (
+  (await Astro.glob("../pages/**/index.astro")) as Array<AstroPage>
+)
+  .filter((page) => {
+    const path = page.url?.split("/")?.slice(1) || "";
+
+    return (
+      page.url?.slice(0, 2) !== "/_" &&
+      page.metadata?.robots !== "noindex" &&
+      path[0] !== "test" &&
+      path[1]?.slice(0, 1) !== "_"
+    );
+  })
+  .map((page) => ({ ...page.metadata, path: page.url || "/" }) as PageMeta)
+  .sort(sortByPath);
+
+const pageLookup = createPageLookup(pages);
+
+const paths = [
+  "/projects",
+  "/portfolio",
+  "/prose",
+  "/community",
+  "/learning",
+  "/bio",
+  "/contact",
+  "/cookie-policy",
+  "/privacy-policy",
+  "/terms-of-use",
+  "/feedback",
+];
+
+const links = createLinks(paths, pageLookup);
 ---
 
 <!doctype html>
 <Html>
-	<Head {canonicalSite} {description} title={title}>
-		<meta
-			name="keywords"
-			content="Jake Baxendale,jazz,musician,jazz musician,composer,bandleader,saxophone,altos saxophone,Tao,New Zealand,Aotearoa,Wellington"
-		/>
-		<meta name="author" content="Jake Baxendale" />
-		<meta name="publisher" content="Jake Baxendale" />
-		<meta name="color-scheme" content="light dark" />
-		<meta
-			name="theme-color"
-			media="(prefers-color-scheme: light)"
-			content="#fafafa"
-		/>
-		<meta
-			name="theme-color"
-			media="(prefers-color-scheme: dark)"
-			content="#2c2c30"
-		/>
-		<style set:html={themeCss}></style>
-		<slot name="head" />
-	</Head>
-	<Body {id}>
-		<Header>
-			<Logotype ariaLabel={`To the ${SITE_TITLE} home page`} href="/">
-				{SITE_TITLE}
-			</Logotype>
-			<div><SkipLink /></div>
-		</Header>
-		<Main>
-			<Fragment set:html={content} />
-		</Main>
-		<Footer id="footer">
-			<CCLicense byAttribution nonCommercial shareAlike />
-			<p>
-				<span class="no-break">WCAG 2.2 AAA</span>
-				<span class="no-break"
-					>Beacon carbon footprint 0.024g &rarr; 0.002g</span
-				>
-				<span class="no-break">Beacon grade: A+</span>
-			</p>
-		</Footer>
-	</Body>
+  <Head {canonicalSite} {description} title={title}>
+    <meta
+      name="keywords"
+      content="Jake Baxendale,jazz,musician,jazz musician,composer,bandleader,saxophone,altos saxophone,Tao,New Zealand,Aotearoa,Wellington"
+    />
+    <meta name="author" content="Jake Baxendale" />
+    <meta name="publisher" content="Jake Baxendale" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fafafa"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#2c2c30"
+    />
+    <style set:html={themeCss}></style>
+    <style set:html={baseCss}></style>
+    <slot name="head" />
+  </Head>
+  <Body {id}>
+    <Header>
+      <Logotype ariaLabel={`To the ${SITE_TITLE} home page`} href="/">
+        {SITE_TITLE}
+      </Logotype>
+      <div><SkipLink /></div>
+      <Nav aria-label="Menu" {links} />
+    </Header>
+    <Main>
+      <Fragment set:html={content} />
+    </Main>
+    <Footer id="footer">
+      <CCLicense byAttribution nonCommercial shareAlike />
+      <p>
+        <span class="no-break">WCAG 2.2 AAA</span>
+        <span class="no-break"
+          >Beacon carbon footprint 0.024g &rarr; 0.002g</span
+        >
+        <span class="no-break">Beacon grade: A+</span>
+      </p>
+    </Footer>
+  </Body>
 </Html>
 <slot name="tail" />

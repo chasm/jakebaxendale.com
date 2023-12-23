@@ -1,22 +1,22 @@
 ---
 import type { PageMeta } from "@sitebender/components/src/types";
 import { Article } from "@sitebender/components";
-import Layout from "../layouts/index.astro";
+import Layout from "../../layouts/index.astro";
 
 export const metadata: Partial<PageMeta> = {
   author: "Charles F. Munat, coder@craft-code.dev",
   carbon: {},
   keywords: [],
-  label: "Home",
+  label: "Terms of use",
   next: "/contact",
-  pageTitle: "Home ~ Jake Baxendale",
+  pageTitle: "Terms of use ~ Jake Baxendale",
   prev: "/",
-  title: "Home",
+  title: "Terms of use",
 };
 
 const { title } = metadata;
 ---
 
-<Layout title="Jake Baxendale, alto saxophonist, bandleader, composer">
+<Layout title="Terms of use: Jake Baxendale">
   <Article id="main-content" {title} />
 </Layout>
