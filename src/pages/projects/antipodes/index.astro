@@ -1,0 +1,46 @@
+---
+import Article from "~components/Article/index.astro"
+import Discography from "~components/Discography/index.astro"
+import Layout from "~layouts/index.astro"
+
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Bio",
+//   next: "/contact",
+//   pageTitle: "Bio ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Bio",
+// };
+
+// const { title } = metadata;
+---
+
+<Layout title="Antipodes">
+	<Article title="Antipodes">
+		<p>
+			<a
+				href="https://antipodesband.com/"
+				rel="external"
+				><strong>Antipodes</strong></a
+			>
+			is a collective of New Zealand, Australian and European jazz musicians, featuring
+			the original compositions of pianist Luke Sweeting, saxophonist Jake Baxendale
+			and guitarist Callum Allardice. The group plays original compositions that
+			emphasise melody, emotive soundscapes, and an open improvisational aesthetic.
+		</p>
+		<p>
+			Their album &ldquo;Good Winter&rdquo; was nominated for the APRA/AMCOS
+			&ldquo;Best Jazz Album&rdquo; award in 2018. The album describes a
+			trilateral constellation of sounds, touching on Scandinavian indie pop,
+			tough contemporary New York jazz and languid Antipodean free
+			improvisation.
+		</p>
+		<p>
+			Past collaborators include Ken Allars, Aidan Lowe, James Heazlewood-Dale,
+			Simon Ferenci, Tim Geldens, Maximilian Alduca and Tom Botting.
+		</p>
+	</Article>
+	<Discography filter={["Antipodes"]} />
+</Layout>

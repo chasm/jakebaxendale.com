@@ -1,0 +1,42 @@
+.discography {
+	align-items: stretch;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+	justify-content: flex-start;
+	margin: var(--space-m) 0;
+}
+
+a.disc {
+	box-shadow: 7px 8px 10px #f6a794;
+	border: 1px solid hsl(8deg, 82%, 75%);
+	display: flex;
+	flex-direction: column;
+
+	/* height: min-content; */
+	padding: 1rem;
+	text-decoration: none;
+	width: min(30rem, calc(100vw - calc(var(--space-xl) * 2)));
+}
+
+a.disc:focus,
+a.disc:hover {
+	background-color: #f6a794;
+	box-shadow: 7px 8px 15px #f28d87;
+}
+
+a.disc p {
+	color: var(--body-color);
+	margin: 0 0 var(--space-s);
+	padding: 0;
+}
+
+a.disc img {
+	height: auto;
+	width: 100%;
+}
+
+a.disc h2 {
+	font-size: var(--step-2);
+	margin: var(--space-s) 0 0;
+}

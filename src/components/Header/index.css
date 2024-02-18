@@ -1,0 +1,11 @@
+body > header {
+	align-items: center;
+	background-color: var(--header-background-color, #f08080);
+	color: var(--header-foreground-color, #000);
+	display: flex;
+	font-family: var(--font-body);
+	gap: 1rem;
+	justify-content: space-between;
+	max-height: fit-content;
+	padding: var(--space-xs) var(--space-xl);
+}

@@ -1,0 +1,24 @@
+---
+import "./index.css"
+
+import { GLOBAL_NAV } from "~constants"
+
+export type Props = {
+	links?: Array<{ href: string; label: string }> | undefined
+}
+
+const { links = GLOBAL_NAV } = Astro.props
+---
+
+<nav class="global-nav">
+	<div class="breadcrumb-trail"></div>
+	<ul>
+		{
+			links.map(({ href, label }) => (
+				<li>
+					<a {href}>{label}</a>
+				</li>
+			))
+		}
+	</ul>
+</nav>

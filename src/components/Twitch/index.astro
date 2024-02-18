@@ -1,0 +1,19 @@
+---
+export type Props = {
+	height: number | string
+	video: number | string
+	width: number | string
+}
+
+const { height, video, width } = Astro.props
+---
+
+<p>
+	<iframe
+		allowfullscreen
+		{height}
+		src={`https://player.twitch.tv/?video=${video}&parent=jakebaxendale.com`}
+		{width}
+	>
+	</iframe>
+</p>

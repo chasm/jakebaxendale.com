@@ -1,0 +1,64 @@
+---
+import Article from "~components/Article/index.astro"
+import Discography from "~components/Discography/index.astro"
+import Layout from "~layouts/index.astro"
+
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Bio",
+//   next: "/contact",
+//   pageTitle: "Bio ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Bio",
+// };
+
+// const { title } = metadata;
+---
+
+<Layout title="Sanctuary">
+	<Article title="Sanctuary">
+		<p>
+			<a
+				href="https://jasminelovellsmith.bandcamp.com/album/sanctuary"
+				rel="external"
+				>Sanctuary</a
+			> is a collaboration between Jake Baxendale and Jasmine Lovell-Smith. The eleven-piece
+			ensemble was created as part of a live performance residency named the Arthur
+			Street Loft Orchestra, at the now defunct Wellington venue The Third Eye. Running
+			weekly every Monday night for three years, the series featured works by local
+			and national jazz composers for large ensemble. The musicians featured on the
+			eponymous album are a multi-generational cast of favourite collaborators from
+			the Wellington jazz scene.
+		</p>
+		<p>
+			The group was inspired by the medium sized groups of Charles Mingus and
+			Gil Evans: with the inclusion of flute and bass clarinet along with
+			traditional winds, brass and rhythm, the ensemble has a rich, chamber-like
+			texture, yet maintains the fluidity and agility that are typical of small
+			group jazz, allowing space for the improvising voices of each musician.
+		</p>
+		<p>
+			Sanctuary sees both composers expanding the scope of their work into
+			longer forms and more varied ensemble textures, exploring a broad
+			instrumental palette and a diverse array of strategies for ensemble
+			interaction, ranging from tightly composed to fluid and free.
+		</p>
+		<p>
+			Sanctuary: &ldquo;The Big Question&rdquo; live at BATS Theatre, October
+			2022:
+		</p>
+		<p>
+			<iframe
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+				height="683"
+				src="https://www.youtube.com/embed/aUFrAQwdnVA"
+				title="The Big Question - Live at BATS"
+				width="1214"
+			></iframe>
+		</p>
+	</Article>
+	<Discography filter={["Jasmine Lovell-Smith"]} />
+</Layout>

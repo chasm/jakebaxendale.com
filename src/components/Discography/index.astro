@@ -1,0 +1,39 @@
+---
+import "./index.css"
+
+import { discography } from "./discography"
+
+export type Props = {
+	filter?: Array<string> | undefined
+}
+
+const { filter } = Astro.props
+
+const items = filter
+	? discography.filter((item) => filter.includes(item.artist))
+	: discography
+---
+
+<div class="discography">
+	{
+		items.map(({ artist, href, src, title, year }) => (
+			<a
+				class="disc"
+				{href}
+				rel="external"
+			>
+				<h2>
+					{title} ({year})
+				</h2>
+				<p>{artist}</p>
+				{src ? (
+					<img
+						alt=""
+						{src}
+						width="320"
+					/>
+				) : null}
+			</a>
+		))
+	}
+</div>

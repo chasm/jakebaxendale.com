@@ -1,0 +1,18 @@
+---
+export type Props = {
+	dir?: "rtl" | "ltr"
+	lang?: string
+}
+
+const { dir = "ltr", lang = "en-NZ" } = Astro.props
+---
+
+<!doctype html>
+<html
+	{dir}
+	{lang}
+>
+	<slot />
+
+
+</html>

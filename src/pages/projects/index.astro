@@ -1,22 +1,62 @@
 ---
-import type { PageMeta } from "@sitebender/components/src/types";
-import { Article } from "@sitebender/components";
-import Layout from "../../layouts/index.astro";
+import Article from "~components/Article/index.astro"
+import Layout from "~layouts/index.astro"
 
-export const metadata: Partial<PageMeta> = {
-  author: "Charles F. Munat, coder@craft-code.dev",
-  carbon: {},
-  keywords: [],
-  label: "Projects",
-  next: "/contact",
-  pageTitle: "Projects ~ Jake Baxendale",
-  prev: "/",
-  title: "Projects",
-};
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Projects",
+//   next: "/contact",
+//   pageTitle: "Projects ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Projects",
+// };
 
-const { title } = metadata;
+// const { title } = metadata;
 ---
 
-<Layout title="Projects: Jake Baxendale">
-  <Article id="main-content" {title} />
+<Layout title="Projects">
+	<Article title="Projects">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur
+			vel dui ac lacinia. Cras iaculis eget libero condimentum molestie. Aliquam
+			sollicitudin accumsan pellentesque. Curabitur quis nunc quis leo vehicula
+			facilisis sit amet vel elit. Mauris egestas mi sit amet dui congue
+			interdum. Quisque faucibus odio vitae justo rutrum convallis. Aliquam
+			massa mauris, hendrerit eget pharetra nec, condimentum nec urna. Cras eget
+			tellus accumsan, ornare massa sed, congue dolor. In hac habitasse platea
+			dictumst. In viverra risus quis tincidunt maximus. In hac habitasse platea
+			dictumst. Duis sit amet rhoncus nisl.
+		</p>
+		<ul>
+			<li>
+				<a href="/projects/waypeople">Waypeople</a>
+			</li>
+			<li>
+				<a href="/projects/gardening-music">Gardening Music</a>
+			</li>
+			<li>
+				<a href="/projects/sanctuary">Sanctuary</a>
+			</li>
+			<li>
+				<a href="/projects/striking-moments">Striking Moments</a>
+			</li>
+			<li>
+				<a href="/projects/jb3">JB3</a>
+			</li>
+			<li>
+				<a href="/projects/the-jac">The Jac</a>
+			</li>
+			<li>
+				<a href="/projects/antipodes">Antipodes</a>
+			</li>
+			<li>
+				<a href="/projects/bazurka">Bazurka</a>
+			</li>
+			<li>
+				<a href="/projects/richter-city-rebels">Richter City Rebels</a>
+			</li>
+		</ul>
+	</Article>
 </Layout>

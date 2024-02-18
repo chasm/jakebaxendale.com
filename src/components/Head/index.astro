@@ -1,0 +1,90 @@
+---
+import {
+	SITE_AUTHOR,
+	SITE_CANONICAL_URL,
+	SITE_DESCRIPTION,
+	SITE_KEYWORDS,
+	SITE_PUBLISHER,
+	SITE_TITLE,
+} from "~constants"
+
+export type Props = {
+	author?: string | undefined
+	charset?: string | undefined
+	description?: string | undefined
+	keywords?: Array<string> | undefined
+	publisher?: string | undefined
+	robots?: string | undefined
+	title?: string | undefined
+	viewport?: string | undefined
+}
+
+const { pathname } = Astro.url
+
+const {
+	author,
+	charset = "utf-8",
+	description,
+	keywords = [],
+	publisher,
+	robots,
+	title,
+	viewport = "width=device-width, initial-scale=1",
+} = Astro.props
+
+const pageAuthor = author ?? SITE_AUTHOR
+const pageCanonicalUrl = `${SITE_CANONICAL_URL}${pathname}`.replace(/\/$/, "")
+const pageDescription = description ?? SITE_DESCRIPTION
+const pageKeywords = keywords.concat(SITE_KEYWORDS).join(",")
+const pagePublisher = publisher ?? SITE_PUBLISHER
+const pageRobots = robots ?? "all"
+const pageTitle = title ? `${title} :: ${SITE_TITLE}` : SITE_TITLE
+---
+
+<head>
+	<title>{pageTitle}</title>
+	<meta charset={charset} />
+	<meta
+		name="viewport"
+		content={viewport}
+	/>
+	<link
+		rel="canonical"
+		href={pageCanonicalUrl}
+	/>
+	<meta
+		name="keywords"
+		content={pageKeywords}
+	/>
+	<meta
+		name="robots"
+		content={pageRobots}
+	/>
+	<meta
+		name="description"
+		content={pageDescription}
+	/>
+	<meta
+		name="author"
+		content={pageAuthor}
+	/>
+	<meta
+		name="publisher"
+		content={pagePublisher}
+	/>
+	<meta
+		name="color-scheme"
+		content="light dark"
+	/>
+	<meta
+		name="theme-color"
+		media="(prefers-color-scheme: light)"
+		content="#fef0f3"
+	/>
+	<meta
+		name="theme-color"
+		media="(prefers-color-scheme: dark)"
+		content="#710986"
+	/>
+	<slot />
+</head>

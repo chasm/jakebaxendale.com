@@ -1,0 +1,72 @@
+---
+import Article from "~components/Article/index.astro"
+import Discography from "~components/Discography/index.astro"
+import Layout from "~layouts/index.astro"
+import Twitch from "~components/Twitch/index.astro"
+
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Bio",
+//   next: "/contact",
+//   pageTitle: "Bio ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Bio",
+// };
+
+// const { title } = metadata;
+---
+
+<Layout title="Striking Moments">
+	<Article title="Striking Moments">
+		<p>
+			&ldquo;...that&rsquo;s my way of preparation - to not be prepared. And
+			that takes a lot of preparation!&rdquo; - Lee Konitz
+		</p>
+		<p>
+			What does it mean to prepare to be unprepared? Lee Konitz&rsquo;s deft
+			paradox represents a challenge to the improviser: how can one practice and
+			prepare for improvising, while simultaneously aspiring to spontaneity,
+			newness and the unexpected in its performance? My Master of Music studies
+			at Auckland University in 2020-21 undertook to answer this question.
+		</p>
+		<p>
+			Coming from my position as a jazz improviser in Aotearoa, my research
+			built on ideas from other New Zealand and Australian artist researchers
+			who have identified the need to develop personal, reflexive, and
+			deliberate practice techniques to answer this question. I offered that
+			&ldquo;language&rdquo; and &ldquo;vocabulary&rdquo;, common and useful
+			metaphors within musical improvisation, can be practiced, learned and
+			applied in ways that don&rsquo;t inhibit spontaneity in performance, but
+			enhance it.
+		</p>
+		<p>
+			I proposed that &ldquo;striking moments&rdquo;—especially engaging musical
+			statements discovered during improvisation itself—can act as the genesis
+			of new musical material to adopt into and adapt for an improvising
+			vocabulary.
+		</p>
+		<p>
+			You can <a
+				href="https://researchspace.auckland.ac.nz/bitstream/handle/2292/59479/Baxendale-2021-thesis.pdf"
+				rel="external"
+				>read the thesis.</a
+			>
+		</p>
+		<p>
+			Since acquiring my <abbr title="Master of Music">MMus</abbr>, I have run a
+			collaborative workshop series and performed several concerts using the
+			Striking Moments moniker and concepts.
+		</p>
+		<p>
+			Striking Moments at Pyramid Club, Wellington Jazz Festival, October 2022:
+		</p>
+		<Twitch
+			height={378}
+			video={1633879743}
+			width={620}
+		/>
+	</Article>
+	<Discography filter={["Striking Moments"]} />
+</Layout>

@@ -1,22 +1,45 @@
 ---
-import type { PageMeta } from "@sitebender/components/src/types";
-import { Article } from "@sitebender/components";
-import Layout from "../../layouts/index.astro";
+import Article from "~components/Article/index.astro"
+import Layout from "~layouts/index.astro"
 
-export const metadata: Partial<PageMeta> = {
-  author: "Charles F. Munat, coder@craft-code.dev",
-  carbon: {},
-  keywords: [],
-  label: "Cookie policy",
-  next: "/contact",
-  pageTitle: "Cookie policy ~ Jake Baxendale",
-  prev: "/",
-  title: "Cookie policy",
-};
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Cookie policy",
+//   next: "/contact",
+//   pageTitle: "Cookie policy ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Cookie policy",
+// };
 
-const { title } = metadata;
+// const { title } = metadata;
 ---
 
-<Layout title="Cookie policy: Jake Baxendale">
-  <Article id="main-content" {title} />
+<Layout title="Our cookie policy">
+	<Article title="Our cookie policy">
+		<p>
+			JakeBaxendale.com site does not currently measure analytics. We do the
+			best we can to make our content useful and to engage with our audience. We
+			do a lot of testing. Otherwise, we trust that people will let us know what
+			we can do better.
+		</p>
+		<p>
+			If you have any questions, please feel free to <a href="/contact"
+				>contact us.</a
+			>
+		</p>
+		<p>
+			Hey, cookies aren&rsquo;t all that healthy anyway! We much prefer a good
+			almond biscotti with our morning coffee. Or a lovely date scone. Or a
+			classic sesame seed bagel toasted golden brown with a thick layer of cream
+			cheese.
+		</p>
+		<p>Or, ooo, how about some lox?</p>
+		<p>
+			Or, if we&rsquo;re going all the way, a proper tiramisu then. Gâteau
+			Chocolate. New York Cheesecake. Sigh &hellip; Now we&rsquo;re hungry.
+		</p>
+		<p>Cookies. Meh.</p>
+	</Article>
 </Layout>

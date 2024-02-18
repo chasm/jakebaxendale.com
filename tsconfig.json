@@ -1,6 +1,35 @@
 {
-  "extends": "astro/tsconfigs/strictest",
-  "compilerOptions": {
-    "strictNullChecks": true
-  }
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"allowImportingTsExtensions": true,
+		"allowJs": false,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"exactOptionalPropertyTypes": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"module": "ESNext",
+		"moduleResolution": "Node",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"paths": {
+			"~components/*": ["src/components/*"],
+			"~constants": ["src/constants"],
+			"~layouts/*": ["src/layouts/*"],
+			"~metadata/*": ["src/metadata/*"],
+			"~types": ["src/types"],
+			"~utilities/*": ["src/utilities/*"]
+		},
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext"
+	}
 }

@@ -1,0 +1,34 @@
+---
+import { SUPPLEMENTAL_NAV } from "~constants"
+
+export type Props = {
+	links?: Array<{ href: string; label: string }>
+}
+
+const { links = SUPPLEMENTAL_NAV } = Astro.props
+const { pathname } = Astro.url
+---
+
+<nav class="supplemental-nav">
+	<h2 class="sr-only">Links to legal documents</h2>
+	<ul>
+		{
+			links.map(({ href, label }) =>
+				href === pathname ? (
+					<li>
+						<span
+							class="this-page"
+							title="This page."
+						>
+							{label}
+						</span>
+					</li>
+				) : (
+					<li>
+						<a {href}>{label}</a>
+					</li>
+				),
+			)
+		}
+	</ul>
+</nav>

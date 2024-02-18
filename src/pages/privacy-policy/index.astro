@@ -1,22 +1,140 @@
 ---
-import type { PageMeta } from "@sitebender/components/src/types";
-import { Article } from "@sitebender/components";
-import Layout from "../../layouts/index.astro";
+import Article from "~components/Article/index.astro"
+import Layout from "~layouts/index.astro"
 
-export const metadata: Partial<PageMeta> = {
-  author: "Charles F. Munat, coder@craft-code.dev",
-  carbon: {},
-  keywords: [],
-  label: "Privacy policy",
-  next: "/contact",
-  pageTitle: "Privacy policy ~ Jake Baxendale",
-  prev: "/",
-  title: "Privacy policy",
-};
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Privacy policy",
+//   next: "/contact",
+//   pageTitle: "Privacy policy ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Privacy policy",
+// };
 
-const { title } = metadata;
+// const { title } = metadata;
 ---
 
-<Layout title="Privacy policy: Jake Baxendale">
-  <Article id="main-content" {title} />
+<Layout title="Our privacy policy">
+	<Article title="Our privacy policy">
+		<p>
+			We collect personal information from you <strong>only</strong> when you use
+			our forms. This may include your:
+		</p>
+		<ul>
+			<li>Name</li>
+			<li>Email Address</li>
+			<li>Any other info you include</li>
+		</ul>
+		<p>We collect your personal information to:</p>
+		<ul>
+			<li>Respond to queries</li>
+			<li>Provide updates to subscribers</li>
+		</ul>
+		<p>
+			<strong
+				>We do not collect or use your personal information for any purpose
+				other than those given above.</strong
+			>
+		</p>
+		<p>
+			Providing this information to us is optional. We do not share your
+			information with other parties. Ever. If you do not enter contact details,
+			then you will not receive communications from us. It is up to you.
+		</p>
+		<p>
+			If you do provide personal information, then we keep it safe. We do so by
+			storing it securely online. These data are accessible by the
+			JakeBaxendale.com server and our web developers.
+		</p>
+		<p>
+			That said, we presume that the employees of the online data services can
+			access the data as well. Currently, we use two services.
+		</p>
+		<p>
+			One is <a
+				href="https://www.mailerlite.com/"
+				rel="external"
+				>Mailerlite,</a
+			> which maintains lists of subscribers (name and email address). The other
+			is
+			<a
+				href="https://postmarkapp.com/"
+				rel="external"
+				>Postmark,</a
+			> which is used to send form submissions to us via email, but does not retain
+			the content.
+		</p>
+		<p>
+			You have the right to ask for a copy of any personal information we have
+			of yours. We will make any corrections you desire or delete your
+			information at your request. If you&rsquo;d like to ask for a copy of your
+			information, or to have it corrected, please <a href="/contact"
+				>contact us.</a
+			>
+		</p>
+		<h2>Secure server</h2>
+		<p>
+			We serve the JakeBaxendale.com site using <a
+				href="https://en.wikipedia.org/wiki/Transport_Layer_Security"
+				rel="external"
+				>Transport Layer Security</a
+			> (TLS). This encrypts communications between your browser and our server,
+			ensuring your privacy.
+		</p>
+		<p>
+			Use of <abbr title="Transport Layer Security">TLS</abbr> is the current industry
+			best practice and helps to ensure both your privacy and your security.
+		</p>
+		<p>
+			We also have a <a
+				href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
+				rel="external"
+				>Content Security Policy</a
+			> (CSP). We run a suite of automated tests to ensure that our site follows
+			the latest best practices for security. Although there are no guarantees, we
+			do our best to make JakeBaxendale.com as safe and secure as possible.
+		</p>
+		<h2>Privacy by Design</h2>
+		<p>
+			We do our best to follow the seven <a
+				href="https://www.onetrust.com/blog/principles-of-privacy-by-design/"
+				rel="external"
+				>Privacy by Design</a
+			> principles:
+		</p>
+		<ol>
+			<li>Proactive not reactive; preventive not remedial</li>
+			<li>Privacy as the default setting</li>
+			<li>Privacy embedded into design</li>
+			<li>Full functionality—positive-sum, not zero-sum</li>
+			<li>End-to-end security—full lifecycle protection</li>
+			<li>Visibility and transparency—keep it open</li>
+			<li>Respect for user privacy—keep it user-centric</li>
+		</ol>
+		<h2>Our thoughts</h2>
+		<p>We don&rsquo;t get why so many people want to spy on others.</p>
+		<p>
+			We do get why big, sociopathic organizations want you to think that your
+			data belongs to <em>them,</em> not you. Then they monetize that data for their
+			own benefit. And, no matter what they say, to your detriment. It&rsquo;s because
+			they suck.
+		</p>
+		<p>You heard it here first.</p>
+		<p>
+			JakeBaxendale.com is a <strong>craft</strong> operation, not a giant, soulless
+			corporation. We are so small that there is almost no &ldquo;we&rdquo;.
+		</p>
+		<p>
+			Our only interest is conversing with you. We don&rsquo;t and won&rsquo;t
+			sell anything to anyone. Heck we operate this site at a loss. Which makes
+			it a win for everyone. Except <em>them.</em>
+		</p>
+		<p>Hope that helps.</p>
+		<p>
+			Questions? Want to delete your data? Need help? Please use the form below
+			to contact us with the specifics.
+		</p>
+	</Article>
 </Layout>

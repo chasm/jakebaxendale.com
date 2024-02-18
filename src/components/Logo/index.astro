@@ -1,0 +1,22 @@
+---
+import "./index.css"
+
+const { pathname } = Astro.url
+
+const isHome = pathname.length < 2
+---
+
+{
+	isHome ? (
+		<div class="bax-logo">Jake Baxendale</div>
+	) : (
+		<div class="bax-logo">
+			<a
+				href="/"
+				title="To the home page."
+			>
+				Jake Baxendale
+			</a>
+		</div>
+	)
+}

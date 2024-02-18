@@ -1,22 +1,435 @@
 ---
-import type { PageMeta } from "@sitebender/components/src/types";
-import { Article } from "@sitebender/components";
-import Layout from "../../layouts/index.astro";
+import Article from "~components/Article/index.astro"
+import Layout from "~layouts/index.astro"
 
-export const metadata: Partial<PageMeta> = {
-  author: "Charles F. Munat, coder@craft-code.dev",
-  carbon: {},
-  keywords: [],
-  label: "Bio",
-  next: "/contact",
-  pageTitle: "Bio ~ Jake Baxendale",
-  prev: "/",
-  title: "Bio",
-};
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Bio",
+//   next: "/contact",
+//   pageTitle: "Bio ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Bio",
+// };
 
-const { title } = metadata;
+// const { title } = metadata;
 ---
 
 <Layout title="Bio: Jake Baxendale">
-  <Article id="main-content" {title} />
+	<Article title="Jake Baxendale">
+		<p>
+			Jake Baxendale is an alto saxophonist and composer based in <a
+				href="https://en.wikipedia.org/wiki/Te_Whanganui-a-Tara"
+				rel="external"
+				>Te Whanganui-A-Tara,</a
+			>
+			<a
+				href="https://en.wikipedia.org/wiki/Aotearoa"
+				rel="external"
+				>Aotearoa</a
+			> (Wellington, New Zealand). Raised in remote <a
+				href="https://en.wikipedia.org/wiki/Golden_Bay_/_Mohua"
+				rel="external"
+				>Mohua</a
+			> (Golden Bay), he demonstrates in his life and music a freedom of expression,
+			a love of nature, and a community-oriented mindset that is heavily influenced
+			by his upbringing.
+		</p>
+		<p>
+			He studied at the
+			<a
+				href="https://www.wgtn.ac.nz/nzsm"
+				rel="external"
+				><abbr title="New Zealand School of Music">NZSM</abbr> Te Kōkī</a
+			> from 2007-2011, during which time he also began collaborating with the performance
+			art company <a
+				href="https://natlib.govt.nz/records/30110569"
+				rel="external"
+				>Binge Culture Collective.</a
+			> Later, he cut his teeth playing a weekly residency with <a
+				href="https://en.wikipedia.org/wiki/John_Rae_(musician)"
+				rel="external"
+				>John Rae&rsquo;s</a
+			> eclectic large group <a
+				href="https://rattlejazz.bandcamp.com/album/the-troubles"
+				rel="external"
+				>The Troubles.</a
+			>
+		</p>
+		<p>
+			<img
+				alt=""
+				src="/images/jake/front-bw.png"
+				style="margin-block: 2rem; width: 96%; height: auto; box-shadow: 3px 3px 10px #F08080"
+				;
+			/>
+		</p>
+		<p>
+			In 2012, he recorded his debut album <a
+				href="https://thejac1.bandcamp.com/album/nerve"
+				rel="external"
+				>Nerve</a
+			> with Wellington 8-piece <a href="/projects/the-jac">The Jac,</a> featuring
+			compositions by himself and guitarist
+			<a
+				href="https://www.discogs.com/artist/6296768-Callum-Allardice"
+				rel="external"
+				>Callum Allardice.</a
+			>
+		</p>
+		<p>
+			In 2013, the pair moved to Berlin to experience life and music in another
+			city. It was in Berlin that Jake met <a
+				href="https://www.lukesweeting.com/"
+				rel="external"
+				>Luke Sweeting,</a
+			> a jazz pianist from Sydney. Together they formed the group <a
+				href="/projects/antipodes">Antipodes</a
+			>, aiming to develop a trans-Pacific sound incorporating their shared
+			European experience.
+		</p>
+		<p>
+			Since returning to Aotearoa in 2014, Jake has released six albums between
+			<a href="/projects/the-jac">The Jac</a> and
+			<a href="/projects/antipodes">Antipodes:</a>
+		</p>
+		<ul>
+			<li>
+				<a
+					href="https://thejac1.bandcamp.com/album/nerve"
+					rel="external"
+					>Nerve</a
+				> (2014),
+				<a
+					href="https://thejac1.bandcamp.com/album/the-green-hour"
+					rel="external"
+					>The Green Hour</a
+				> (2015), and <a
+					href="https://rattlejazz.bandcamp.com/album/good-winter"
+					rel="external"
+					>Good Winter</a
+				> (2018) on the Rattle label
+			</li>
+			<li>
+				<a
+					href="https://jakebaxendale.bandcamp.com/album/antipodes-live"
+					rel="external"
+					>Antipodes—Live</a
+				> (2015) and <a
+					href="https://thejac1.bandcamp.com/album/a-gathering"
+					rel="external"
+					>A Gathering</a
+				>
+				(2020), released independently
+			</li>
+			<li>
+				<a
+					href="https://thejac1.bandcamp.com/album/walking-spirits-2"
+					rel="external"
+					>Walking Spirits</a
+				> (2021) on the Thelonious Records label
+			</li>
+		</ul>
+		<p style="float: right; margin: 2rem 0 1rem 2rem; width: 50%">
+			<img
+				alt=""
+				src="/images/album-art/nerve.jpeg"
+				style="width: 100%; height: auto"
+			/>
+		</p>
+		<p>
+			<i>Nerve</i> was nominated for the NZ Music Best Jazz Album Award in 2015,
+			<i>Good Winter</i> for the same award in 2019, and <i>A Gathering</i> was the
+			winner in 2021.
+		</p>
+		<p>
+			In 2016, Jake secured the <a
+				href="https://creativenz.govt.nz/funding-and-support/results/bursaries-fellowships-scholarships-and-residencies/edwin-carr-foundation-scholarship"
+				rel="external"
+				>Edwin Carr scholarship</a
+			> towards composition lessons in New York City with
+			<a
+				href="https://darcyjamesargue.com/"
+				rel="external"
+				>Darcy James Argue,</a
+			>
+			<a
+				href="https://miguelzenon.com/"
+				rel="external"
+				>Miguel Zenon,</a
+			>
+			<a
+				href="https://davedouglas.com/"
+				rel="external"
+				>Dave Douglas,</a
+			> and
+			<a
+				href="https://www.jonirabagon.com/"
+				rel="external"
+				>Jon Irabagon,</a
+			> and saxophone lessons with
+			<a
+				href="https://davidbinney.com/"
+				rel="external"
+				>David Binney,</a
+			>
+			<a
+				href="https://www.lorenstillman.com/"
+				rel="external"
+				>Loren Stillman,</a
+			> and
+			<a
+				href="https://michaelattias.com/"
+				rel="external"
+				>Michael Attias.</a
+			> This led to a commission from <a
+				href="https://creativenz.govt.nz/"
+				rel="external"
+				>Creative New Zealand</a
+			> to write for a collaboration between <a href="/projects/the-jac"
+				>The Jac</a
+			> and South Korean traditional/fusion group <a
+				href="https://sori.nyc/blackstring"
+				rel="external"
+				>Black String</a
+			>.
+		</p>
+		<p>
+			The project debuted at the 2017 <a
+				href="https://www.jazzfestival.nz/"
+				rel="external"
+				>Wellington Jazz Festival</a
+			>, and later toured South Korea, including performances at the
+			<a
+				href="https://en.wikipedia.org/wiki/Jarasum_International_Jazz_Festival"
+				rel="external"
+				>Jarasum International Jazz Festival</a
+			> and
+			<a
+				href="https://www.seoulgugak.com/eng/0102.php?ckattempt=1"
+				rel="external"
+				>Bukchon Traditional Music Festival.</a
+			> His composition <a
+				href="https://www.sounz.org.nz/resources/21094"
+				rel="external"
+				>Beyond the Palace,</a
+			> written for this project, was nominated for an
+			<a
+				href="https://en.wikipedia.org/wiki/APRA_Awards_(New_Zealand)"
+				rel="external"
+				>APRA Best Jazz Composition award</a
+			> in 2018. He was the winner for the same award in 2020 for his composition
+			<a
+				href="https://www.youtube.com/watch?v=Uh1_pynrZC8&list=OLAK5uy_n1DdFB6CAfWFikQOTHc8LAso2tmUHocyI&index=3"
+				rel="external"
+				>Tūī,</a
+			>
+			which featured on The Jac&rsquo;s <a
+				href="https://thejac1.bandcamp.com/album/a-gathering"
+				rel="external"
+				>A Gathering</a
+			>.
+		</p>
+		<p>
+			In 2017 Jake founded <a
+				href="https://www.jazzaotearoa.co.nz/"
+				rel="external"
+				>Jazz Aotearoa,</a
+			> a professional association representing jazz creators, presenters, educators
+			and audiences in Aotearoa. This was a flop—but it helped to facilitate conversations
+			around the motu about the needs and aspirations for jazz and improvised music
+			in Aotearoa.
+		</p>
+		<p style="float: left; margin: 2rem 2rem 1rem 0; width: 50%">
+			<img
+				alt=""
+				src="/images/album-art/sanctuary.jpeg"
+				style="width: 100%; height: auto"
+			/>
+		</p>
+		<p>
+			More successful was the <a
+				href="https://www.jasminelovellsmith.com/arthur-street-loft-orchestra"
+				rel="external"
+				>Arthur Street Loft Orchestra</a
+			> (ASLO), which started hosting weekly concerts of original music for large
+			ensembles at the now defunct <a
+				href="https://places.nz/places/wellington-city/te-aro/the-third-eye-tuatara-temple-of-taste-11359"
+				rel="external"
+				>Third Eye: Temple of Taste</a
+			> in 2018.
+		</p>
+		<p>
+			The series ran for three years, hosting many local and international
+			composers and launching a number of still-active big bands and jazz
+			orchestras. You can hear some of the fruits of this endeavour in
+			<a
+				href="https://cavecircles.bandcamp.com/album/tuone-found-in-translation"
+				rel="external"
+				>Cave Circles Tuone—Found in Translation,</a
+			> Callum Allardice&rsquo;s
+			<a
+				href="https://callumallardice.bandcamp.com/album/cinematic-light-orchestra"
+				rel="external"
+				>Cinematic Light Orchestra,</a
+			> and Jaker&rsquo;s own collaboration with
+			<a
+				href="https://www.jasminelovellsmith.com/"
+				rel="external"
+				>Jasmine Lovell-Smith,</a
+			>
+			<a href="/projects/sanctuary">Sanctuary.</a> Released in 2021, <i
+				>Sanctuary</i
+			> saw the pair nominated for the <a
+				href="https://aotearoamusicawards.nz/recognising-the-talented-winners-of-the-2022-best-jazz-artist-and-composition-awards/"
+				rel="external"
+				>Aotearoa Music Awards &ldquo;Best Jazz Artist&rdquo;</a
+			> and was featured in
+			<a
+				href="https://daily.bandcamp.com/best-jazz/the-best-jazz-on-bandcamp-june-2021"
+				rel="external"
+				>Bandcamp&rsquo;s &ldquo;Best Jazz on Bandcamp&rdquo;</a
+			> in June of that year.
+		</p>
+		<p>
+			Since <abbr title="Arthur Street Loft Orchestra">ASLO</abbr> wound up, Jake
+			has been focused on smaller groups and more improvised approaches to playing
+			and composition; in 2020 he participated in <a
+				href="https://danz.org.nz/Java+Dance+Theatre+Launches+THE+METAMORPHOSIS+TRAIL"
+				rel="external"
+				>Metamorphosis,</a
+			> a collective of improvising musicians and dancers directed by
+			<a
+				href="https://www.javadance.nz/performers-collaborators/sacha-copland"
+				rel="external"
+				>Java Dance Company&rsquo;s Sacha Copland.</a
+			> In 2021, he completed a Masters in Music at the
+			<a
+				href="https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/master-of-music-mmus.html"
+				rel="external"
+			>
+				University of Auckland,</a
+			> under the supervision of <a
+				href="https://www.rogermanins.com/"
+				rel="external"
+				>Roger Manins,</a
+			> which explored techniques for generating fresh and personal improvisations.
+			This resulted in <a href="/projects/striking-moments">Striking Moments,</a
+			> an ongoing series of workshops and improvised music gigs.
+		</p>
+		<p>
+			<img
+				alt=""
+				src="/images/jake/back.jpeg"
+				style="margin-block: 2rem; width: 96%; height: auto; box-shadow: 3px 3px 10px #F08080"
+				;
+			/>
+		</p>
+		<p>
+			Jake has contributed compositions and performances to many other albums,
+			including the self released
+			<a
+				href="https://www.youtube.com/watch?v=9NQaZzMhWD0"
+				rel="external"
+				>JB3—Live at the Rogue and Vagabond</a
+			> and
+			<a
+				href="https://www.richtercityrebels.com/"
+				rel="external"
+				>Richter City Rebels&rsquo;</a
+			>
+			<a
+				href="https://richtercityrebels.bandcamp.com/album/we-do-it-like-that"
+				rel="external"
+				>We Do It Like That</a
+			> and
+			<a
+				href="https://richtercityrebels.bandcamp.com/album/hard-work-hard-money"
+				rel="external"
+				>Hard Work Hard Money.</a
+			>
+			And <a
+				href="https://bazurka.bandcamp.com/album/novi-grad-all-stars"
+				rel="external"
+				>Bazurka&rsquo;s Novi Grad All Stars.</a
+			> Jake reunited with
+			<a
+				href="https://www.bingeculture.co.nz/"
+				rel="external"
+				>Binge Culture</a
+			>
+			in 2019 to arrange and record the soundtrack to
+			<a
+				href="https://www.bingeculture.co.nz/projects/yorick"
+				rel="external"
+				>Yorick!</a
+			> and was commissioned by the <a
+				href="https://www.loemis.nz/"
+				rel="external"
+				>Lōemis festival</a
+			> in 2022 alongside
+			<a
+				href="https://sounz.org.nz/contributors/248"
+				rel="external"
+				>Michael Costeloe</a
+			> to write a show of ritualistic dance music for a new brass-heavy ensemble,
+			<a
+				href="https://www.undertheradar.co.nz/gig/84414/Fantasia!-By-Medium-Orchestra.utr"
+				rel="external"
+				>The Medium Orchestra.</a
+			>
+		</p>
+		<p>
+			Jake tours Aotearoa and Australia regularly with both <strong
+				>The Jac</strong
+			> and
+			<strong>Antipodes,</strong> and has performed nationally with the
+			<a
+				href="https://www.nzso.co.nz/"
+				rel="external"
+				>New Zealand Symphony Orchestra,</a
+			>
+			<a
+				href="https://www.stroma.co.nz/"
+				rel="external"
+				>Stroma,</a
+			>
+			<a
+				href="https://rattlejazz.bandcamp.com/album/the-troubles"
+				rel="external"
+				>The Troubles,</a
+			>
+			<a
+				href="https://www.richtercityrebels.com/"
+				rel="external"
+				>Richter City Rebels,</a
+			>
+			<a
+				href="https://rodgerfoxbigband.com/"
+				rel="external"
+				>The Rodger Fox Big Band,</a
+			>
+			<a
+				href="https://www.facebook.com/WellingtonMingusEnsemble/"
+				rel="external"
+				>The Wellington Mingus Ensemble,</a
+			>
+			<a
+				href="https://bazurka.bandcamp.com/"
+				rel="external"
+				>Bazurka,</a
+			> and his own trio
+			<a
+				href="https://partybands.co.nz/talent/jb3theband"
+				rel="external"
+				>JB3,</a
+			> among many others. He currently runs the jazz band at the
+			<a
+				href="https://ratastudios.co.nz/music/"
+				rel="external"
+				>Rata school of music.</a
+			>
+		</p>
+	</Article>
 </Layout>

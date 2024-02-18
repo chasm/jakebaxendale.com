@@ -1,0 +1,43 @@
+---
+import Article from "~components/Article/index.astro"
+import Discography from "~components/Discography/index.astro"
+import Layout from "~layouts/index.astro"
+
+// export const metadata: Partial<PageMeta> = {
+//   author: "Charles F. Munat, coder@craft-code.dev",
+//   carbon: {},
+//   keywords: [],
+//   label: "Bio",
+//   next: "/contact",
+//   pageTitle: "Bio ~ Jake Baxendale",
+//   prev: "/",
+//   title: "Bio",
+// };
+
+// const { title } = metadata;
+---
+
+<Layout title="Richter City Rebels">
+	<Article title="Richter City Rebels">
+		<p>
+			<a
+				href="https://www.richtercityrebels.com/"
+				rel="external"
+				><strong>Richter City Rebels&rsquo;</strong></a
+			>
+			music is heavy and soulful. It grooves deeply with pounding bass and searing
+			brass. Catchy vocals and chants draw the crowd into the party and the rolling,
+			infectious sound is punctuated by the fierce crack of drums and percussion.
+		</p>
+		<p>
+			2023 brings the release of the Rebels&rsquo; third studio album with
+			recent live collaborators going on record, including: Troy Kingi, Aurelian
+			Barnes (Cha Wa), Matt Pender (OdESSA), and Chris CK.
+		</p>
+		<p>
+			Equally at home on stage and parading, you can&rsquo;t help but dance and
+			feel good!
+		</p>
+	</Article>
+	<Discography filter={["Richter City Rebels"]} />
+</Layout>

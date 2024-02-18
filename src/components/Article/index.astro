@@ -1,0 +1,14 @@
+---
+import "./index.css"
+
+export type Props = {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<article>
+	<h1>{title}</h1>
+	<slot />
+</article>
