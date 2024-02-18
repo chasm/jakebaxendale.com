@@ -4,7 +4,7 @@ export const GLOBAL_NAV = [
 	{ href: "/bio", label: "Bio" },
 	{ href: "/community", label: "Community" },
 	{ href: "/discography", label: "Discography" },
-	{ href: "/learning", label: "Lessons" },
+	{ href: "/lessons", label: "Lessons" },
 	{ href: "/portfolio", label: "Portfolio" },
 	{ href: "/projects", label: "Projects" },
 	{ href: "/prose", label: "Prose" },
