@@ -1,5 +1,6 @@
 ---
 import Article from "~components/Article/index.astro"
+import Picture from "~components/Picture/index.astro"
 import Layout from "~layouts/index.astro"
 
 // export const metadata: Partial<PageMeta> = {
@@ -58,12 +59,18 @@ import Layout from "~layouts/index.astro"
 			>
 		</p>
 		<p>
-			<img
-				alt=""
-				src="/images/jake/front-bw.png"
-				style="margin-block: 2rem; width: 96%; height: auto; box-shadow: 3px 3px 10px #F08080"
-				;
-			/>
+			<a href="/images/optimized/jake-front-bw.webp">
+				<Picture
+					alt=""
+					class="full-width"
+					filename="jake-front-bw"
+					height={471}
+					loading="eager"
+					src="/images/optimized/768/jake-front-bw.jpg"
+					types={["image/avif", "image/webp", "image/jpeg"]}
+					width={768}
+				/>
+			</a>
 		</p>
 		<p>
 			In 2012, he recorded his debut album <a
@@ -131,12 +138,22 @@ import Layout from "~layouts/index.astro"
 				> (2021) on the Thelonious Records label
 			</li>
 		</ul>
-		<p style="float: right; margin: 2rem 0 1rem 2rem; width: 50%">
-			<img
-				alt=""
-				src="/images/album-art/nerve.jpeg"
-				style="width: 100%; height: auto"
-			/>
+		<p>
+			<a
+				href="https://thejac1.bandcamp.com/album/nerve"
+				rel="external"
+			>
+				<Picture
+					alt=""
+					class="float-right"
+					filename="nerve"
+					height={768}
+					loading="lazy"
+					src="/images/optimized/768/nerve.jpg"
+					types={["image/avif", "image/webp", "image/jpeg"]}
+					width={768}
+				/>
+			</a>
 		</p>
 		<p>
 			<i>Nerve</i> was nominated for the NZ Music Best Jazz Album Award in 2015,
@@ -241,12 +258,22 @@ import Layout from "~layouts/index.astro"
 			around the motu about the needs and aspirations for jazz and improvised music
 			in Aotearoa.
 		</p>
-		<p style="float: left; margin: 2rem 2rem 1rem 0; width: 50%">
-			<img
-				alt=""
-				src="/images/album-art/sanctuary.jpeg"
-				style="width: 100%; height: auto"
-			/>
+		<p>
+			<a
+				href="https://jasminelovellsmith.bandcamp.com/album/sanctuary"
+				rel="external"
+			>
+				<Picture
+					alt=""
+					class="float-left"
+					filename="sanctuary"
+					height={768}
+					loading="lazy"
+					src="/images/optimized/768/sanctuary.jpg"
+					types={["image/avif", "image/webp", "image/jpeg"]}
+					width={768}
+				/>
+			</a>
 		</p>
 		<p>
 			More successful was the <a
@@ -319,12 +346,18 @@ import Layout from "~layouts/index.astro"
 			> an ongoing series of workshops and improvised music gigs.
 		</p>
 		<p>
-			<img
-				alt=""
-				src="/images/jake/back.jpeg"
-				style="margin-block: 2rem; width: 96%; height: auto; box-shadow: 3px 3px 10px #F08080"
-				;
-			/>
+			<a href="/images/optimized/jake-back.webp">
+				<Picture
+					alt=""
+					class="full-width"
+					filename="jake-back"
+					height={470}
+					loading="lazy"
+					src="/images/optimized/768/jake-back.jpg"
+					types={["image/avif", "image/webp", "image/jpeg"]}
+					width={768}
+				/>
+			</a>
 		</p>
 		<p>
 			Jake has contributed compositions and performances to many other albums,

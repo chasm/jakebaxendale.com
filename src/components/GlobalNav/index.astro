@@ -8,17 +8,30 @@ export type Props = {
 }
 
 const { links = GLOBAL_NAV } = Astro.props
+const { pathname } = Astro.url
 ---
 
 <nav class="global-nav">
+	<h2 class="sr-only">Site navigation</h2>
 	<div class="breadcrumb-trail"></div>
 	<ul>
 		{
-			links.map(({ href, label }) => (
-				<li>
-					<a {href}>{label}</a>
-				</li>
-			))
+			links.map(({ href, label }) =>
+				href === pathname ? (
+					<li>
+						<span
+							class="this-page"
+							title="This page."
+						>
+							{label}
+						</span>
+					</li>
+				) : (
+					<li>
+						<a {href}>{label}</a>
+					</li>
+				),
+			)
 		}
 	</ul>
 </nav>

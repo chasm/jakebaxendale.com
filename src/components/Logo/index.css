@@ -1,6 +1,7 @@
 .bax-logo,
 .bax-logo a {
-	color: var(--header-foreground-color, #000);
+	background-color: var(--header-background-color);
+	color: var(--header-foreground-color);
 	font-family: var(--font-body);
 	font-size: var(--step-2);
 	font-weight: 600;
@@ -14,5 +15,5 @@
 
 .bax-logo a:focus,
 .bax-logo a:hover {
-	outline: 2px solid var(--body-background-color);
+	outline: 2px solid var(--logo-outline-color);
 }

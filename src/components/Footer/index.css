@@ -1,6 +1,6 @@
 footer {
-	background-color: hsl(12deg, 86%, 77%);
-	color: var(--body-color);
+	background-color: var(--footer-background-color);
+	color: var(--footer-foreground-color);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	font-family: var(--font-body);
@@ -17,47 +17,6 @@ footer > .copyright {
 	margin: 0;
 	padding: 0;
 	white-space: nowrap;
-}
-
-nav > ul {
-	align-items: center;
-	display: flex;
-	gap: 0;
-	justify-content: flex-end;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav a,
-nav li {
-	color: var(--body-color);
-	letter-spacing: 0.5px;
-	text-transform: lowercase;
-	white-space: nowrap;
-}
-
-nav a {
-	outline: 2px solid transparent;
-	outline-offset: 0.3rem;
-	text-decoration: none;
-}
-
-nav a:focus,
-nav a:hover {
-	outline: 2px solid var(--body-color);
-}
-
-nav li > span {
-	background-color: var(--body-color);
-	color: var(--heading-color);
-	padding: 0.25rem 0.5rem;
-}
-
-nav li:not(:first-child)::before {
-	content: "\2219";
-	display: inline-block;
-	padding: 0 0.2rem 0 0.5rem;
 }
 
 @media screen and (width <= 60rem) {
