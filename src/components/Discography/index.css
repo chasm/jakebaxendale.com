@@ -8,25 +8,23 @@
 }
 
 a.disc {
-	box-shadow: 7px 8px 10px #f6a794;
-	border: 1px solid hsl(8deg, 82%, 75%);
+	box-shadow: var(--card-box-shadow);
+	border: var(--card-border);
 	display: flex;
 	flex-direction: column;
-
-	/* height: min-content; */
 	padding: 1rem;
 	text-decoration: none;
-	width: min(30rem, calc(100vw - calc(var(--space-xl) * 2)));
+	width: min(30rem, 94vw);
 }
 
 a.disc:focus,
 a.disc:hover {
-	background-color: #f6a794;
-	box-shadow: 7px 8px 15px #f28d87;
+	background-color: var(--card-background-color-hover);
+	box-shadow: var(--card-box-shadow-hover);
 }
 
 a.disc p {
-	color: var(--body-color);
+	color: var(--card-foreground-color);
 	margin: 0 0 var(--space-s);
 	padding: 0;
 }
@@ -37,6 +35,7 @@ a.disc img {
 }
 
 a.disc h2 {
+	color: var(--card-foreground-color);
 	font-size: var(--step-2);
 	margin: var(--space-s) 0 0;
 }

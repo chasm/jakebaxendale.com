@@ -2,13 +2,13 @@
 import "./index.css"
 
 export type Props = {
-	title: string
+	title?: string | undefined
 }
 
 const { title } = Astro.props
 ---
 
 <article>
-	<h1>{title}</h1>
+	{title ? <h1>{title}</h1> : null}
 	<slot />
 </article>

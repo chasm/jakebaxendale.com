@@ -1,7 +1,7 @@
 nav > ul {
 	align-items: center;
 	display: flex;
-	gap: 0;
+	gap: 1.5rem;
 	justify-content: flex-end;
 	list-style-type: none;
 	margin: 0;
@@ -17,6 +17,8 @@ nav li {
 }
 
 nav a {
+	display: block;
+	min-height: 24px;
 	outline: 2px solid transparent;
 	outline-offset: 0.3rem;
 	text-decoration: none;
@@ -30,12 +32,6 @@ nav a:hover {
 nav li > span {
 	outline: 2px solid var(--footer-outline-color);
 	padding: 0.25rem 0.5rem;
-}
-
-nav li:not(:first-child)::before {
-	content: "\2219";
-	display: inline-block;
-	padding: 0 0.2rem 0 0.5rem;
 }
 
 @media screen and (width <= 60rem) {

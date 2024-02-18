@@ -1,25 +1,25 @@
 ---
+import type { PageMeta } from "~types"
+import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
 import Discography from "~components/Discography/index.astro"
 import Layout from "~layouts/index.astro"
 import Twitch from "~components/Twitch/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Bio",
-//   next: "/contact",
-//   pageTitle: "Bio ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Bio",
-// };
+export const metadata: Partial<PageMeta> = {
+	blurb: collapseWhitespace(`
+		Striking Moments—especially engaging musical statements discovered
+		during improvisation itself—can act as the genesis of new musical
+		material to adopt into and adapt for an improvising vocabulary.
+	`),
+	title: "Striking Moments",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Striking Moments">
-	<Article title="Striking Moments">
+<Layout title={title}>
+	<Article title={title}>
 		<p>
 			&ldquo;...that&rsquo;s my way of preparation - to not be prepared. And
 			that takes a lot of preparation!&rdquo; - Lee Konitz

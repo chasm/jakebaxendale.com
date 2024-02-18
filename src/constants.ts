@@ -11,6 +11,90 @@ export const GLOBAL_NAV = [
 	{ href: "/contact", label: "Contact" },
 ]
 
+export const PROJECTS = [
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/waypeople",
+		label: "Waypeople",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/gardening-music",
+		label: "Gardening Music",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/sanctuary",
+		label: "Sanctuary",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/striking-moments",
+		label: "Striking Moments",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/jb3",
+		label: "JB3",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/the-jac",
+		label: "The Jac",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/antipodes",
+		label: "Antipodes",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/bazurka",
+		label: "Bazurka",
+	},
+	{
+		blurb: collapseWhitespace(`
+			Antipodes is a collective of New Zealand, Australian and European jazz musicians,
+			featuring the original compositions of pianist Luke Sweeting, saxophonist
+			Jake Baxendale and guitarist Callum Allardice.
+		`),
+		href: "/projects/richter-city-rebels",
+		label: "Richter City Rebels",
+	},
+]
+
 export const SITE_AUTHOR = "Jake Baxendale"
 export const SITE_CANONICAL_URL = "https://jakebaxendale.com"
 export const SITE_DESCRIPTION = collapseWhitespace(`

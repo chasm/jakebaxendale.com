@@ -44,6 +44,15 @@
 	--step-3: clamp(1.9531rem, 1.7841rem + 0.9014vi, 2.6855rem);
 	--step-4: clamp(2.4414rem, 2.2301rem + 1.1268vi, 3.3569rem);
 	--step-5: clamp(3.0518rem, 2.7877rem + 1.4085vi, 4.1962rem);
+
+	/* Borders */
+
+	/* Cards */
+	--card-background-color-hover: var(--color-lighter);
+	--card-border: 1px solid var(--color-light);
+	--card-box-shadow: 7px 8px 10px var(--color-lighter);
+	--card-box-shadow-hover: 7px 8px 15px var(--color-dark);
+	--card-foreground-color: var(--color-darkest);
 }
 
 body {
@@ -110,6 +119,10 @@ h1 {
 
 h2 {
 	font-size: var(--step-3);
+}
+
+dt {
+	font-size: var(--step-1);
 }
 
 picture.full-width img {

@@ -1,24 +1,24 @@
 ---
+import type { PageMeta } from "~types"
+import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
 import Discography from "~components/Discography/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Bio",
-//   next: "/contact",
-//   pageTitle: "Bio ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Bio",
-// };
+export const metadata: Partial<PageMeta> = {
+	blurb: collapseWhitespace(`
+		Bazurka are a seven piece Balkan fusion ensemble forged in the fires
+		of the cultural melting pot that is Newtown, and tempered by passion,
+		heartache, and a dash of madness.
+	`),
+	title: "Bazurka",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Bazurka">
-	<Article title="Bazurka">
+<Layout title={title}>
+	<Article title={title}>
 		<p>
 			<a
 				href=""

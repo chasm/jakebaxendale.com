@@ -1,24 +1,25 @@
 ---
+import type { PageMeta } from "~types"
+import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
 import Discography from "~components/Discography/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Bio",
-//   next: "/contact",
-//   pageTitle: "Bio ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Bio",
-// };
+export const metadata: Partial<PageMeta> = {
+	blurb: collapseWhitespace(`
+		Sanctuary is a collaboration between Jake Baxendale and Jasmine Lovell-Smith.
+		The eleven-piece ensemble was created as part of a live performance residency
+		named the Arthur Street Loft Orchestra, at the now defunct Wellington venue,
+		The Third Eye.
+	`),
+	title: "Sanctuary",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Sanctuary">
-	<Article title="Sanctuary">
+<Layout title={title}>
+	<Article title={title}>
 		<p>
 			<a
 				href="https://jasminelovellsmith.bandcamp.com/album/sanctuary"
@@ -26,11 +27,11 @@ import Layout from "~layouts/index.astro"
 				>Sanctuary</a
 			> is a collaboration between Jake Baxendale and Jasmine Lovell-Smith. The eleven-piece
 			ensemble was created as part of a live performance residency named the Arthur
-			Street Loft Orchestra, at the now defunct Wellington venue The Third Eye. Running
-			weekly every Monday night for three years, the series featured works by local
-			and national jazz composers for large ensemble. The musicians featured on the
-			eponymous album are a multi-generational cast of favourite collaborators from
-			the Wellington jazz scene.
+			Street Loft Orchestra, at the now defunct Wellington venue, The Third Eye.
+			Running weekly every Monday night for three years, the series featured works
+			by local and national jazz composers for large ensemble. The musicians featured
+			on the eponymous album are a multi-generational cast of favourite collaborators
+			from the Wellington jazz scene.
 		</p>
 		<p>
 			The group was inspired by the medium sized groups of Charles Mingus and

@@ -1,24 +1,25 @@
 ---
+import type { PageMeta } from "~types"
+import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
 import Discography from "~components/Discography/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Bio",
-//   next: "/contact",
-//   pageTitle: "Bio ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Bio",
-// };
+export const metadata: Partial<PageMeta> = {
+	blurb: collapseWhitespace(`
+		Richter City Rebels music is heavy and soulful. It grooves deeply with
+		pounding bass and searing brass. Catchy vocals and chants draw the crowd
+		into the party and the rolling, infectious sound is punctuated by the
+		fierce crack of drums and percussion.
+	`),
+	title: "Richter City Rebels",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Richter City Rebels">
-	<Article title="Richter City Rebels">
+<Layout title={title}>
+	<Article title={title}>
 		<p>
 			<a
 				href="https://www.richtercityrebels.com/"
