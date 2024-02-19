@@ -5,7 +5,7 @@ footer {
 	grid-template-columns: 1fr 1fr;
 	font-family: var(--font-body);
 	max-height: fit-content;
-	padding: var(--space-xs) var(--space-xl);
+	padding: var(--space-xs) 4vw;
 }
 
 footer > * {
@@ -23,7 +23,7 @@ footer > .copyright {
 	footer {
 		grid-template-columns: 1fr;
 		grid-template-rows: min-content 1fr;
-		padding: var(--space-m) var(--space-xl);
+		padding: var(--space-m) 4vw;
 		row-gap: var(--space-l);
 	}
 

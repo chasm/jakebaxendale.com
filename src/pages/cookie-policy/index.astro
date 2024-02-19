@@ -1,23 +1,19 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Cookie policy",
-//   next: "/contact",
-//   pageTitle: "Cookie policy ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Cookie policy",
-// };
+export const metadata: Partial<PageMeta> = {
+	label: "Cookie policy",
+	title: "Our cookie policy",
+}
 
-// const { title } = metadata;
+const { label, title } = metadata
 ---
 
-<Layout title="Our cookie policy">
-	<Article title="Our cookie policy">
+<Layout title={label}>
+	<Article {title}>
 		<p>
 			JakeBaxendale.com site does not currently measure analytics. We do the
 			best we can to make our content useful and to engage with our audience. We

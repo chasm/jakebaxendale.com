@@ -1,24 +1,20 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Picture from "~components/Picture/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Bio",
-//   next: "/contact",
-//   pageTitle: "Bio ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Bio",
-// };
+export const metadata: Partial<PageMeta> = {
+	label: "Bio",
+	title: "Jake Baxendale",
+}
 
-// const { title } = metadata;
+const { label, title } = metadata
 ---
 
-<Layout title="Bio: Jake Baxendale">
-	<Article title="Jake Baxendale">
+<Layout title={label}>
+	<Article {title}>
 		<p>
 			Jake Baxendale is an alto saxophonist and composer based in <a
 				href="https://en.wikipedia.org/wiki/Te_Whanganui-a-Tara"
@@ -305,7 +301,7 @@ import Layout from "~layouts/index.astro"
 				href="https://callumallardice.bandcamp.com/album/cinematic-light-orchestra"
 				rel="external"
 				>Cinematic Light Orchestra,</a
-			> and Jaker&rsquo;s own collaboration with
+			> and Jake&rsquo;s own collaboration with
 			<a
 				href="https://www.jasminelovellsmith.com/"
 				rel="external"

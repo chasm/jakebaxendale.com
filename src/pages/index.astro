@@ -1,20 +1,25 @@
 ---
+import type { PageMeta } from "~types"
+
+import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Home",
-//   next: "/contact",
-//   pageTitle: "Home ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Home",
-// };
+export const metadata: Partial<PageMeta> = {
+	label: "Home",
+	title: "Everything Jake",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
 <Layout>
-	<h1>Everything&rsquo;s Jake</h1>
+	<Article {title}>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur
+			vel dui ac lacinia. Cras iaculis eget libero condimentum molestie. Aliquam
+			sollicitudin accumsan pellentesque. Curabitur quis nunc quis leo vehicula
+			facilisis sit amet vel elit. Mauris egestas mi sit amet dui congue
+			interdum.
+		</p>
+	</Article>
 </Layout>

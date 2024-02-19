@@ -1,0 +1,82 @@
+---
+import "./index.css"
+---
+
+<section>
+	<h2 class="sr-only">Talk to me!</h2>
+	<form
+		name="contactForm"
+		action="/api/contact"
+		id="contact-form"
+		method="post"
+	>
+		<div>
+			<label for="message">Your message*</label>
+			<textarea
+				cols="48"
+				required
+				rows="8"
+				name="message"
+			></textarea>
+		</div>
+		<div>
+			<label for="email">Your email address*</label>
+			<input
+				size="32"
+				id="email"
+				inputmode="email"
+				name="email"
+				required
+				type="email"
+			/>
+		</div>
+		<div>
+			<label for="name">Your name (optional)</label>
+			<input
+				size="32"
+				id="name"
+				inputmode="text"
+				name="name"
+				type="text"
+			/>
+		</div>
+		<div>
+			<input
+				name="_charset_"
+				type="hidden"
+			/>
+			<button type="submit"> Send your message </button>
+		</div>
+		<fieldset
+			aria-hidden="true"
+			class="sb-funnypot"
+		>
+			<legend>Please ignore these two fields</legend>
+			<div>
+				<label for="password">Leave this field as is:<</label>
+				<input
+					tabindex="-1"
+					inputmode="text"
+					autocomplete="off"
+					id="password"
+					name="password"
+					spellcheck="false"
+					type="password"
+					value="qwizmo999"
+				/>
+			</div>
+			<div>
+				<label for="confirmation">Put nothing in this field as well:</label>
+				<input
+					tabindex="-1"
+					inputmode="text"
+					autocomplete="off"
+					id="confirmation"
+					name="confirmation"
+					spellcheck="false"
+					type="password"
+				/>
+			</div>
+		</fieldset>
+	</form>
+</section>

@@ -1,30 +1,23 @@
 ---
-import Article from "~components/Article/index.astro"
-import Layout from "~layouts/index.astro"
-
 import type { AstroInstance } from "astro"
 import type { PageMeta } from "~types"
+
+import Article from "~components/Article/index.astro"
+import Layout from "~layouts/index.astro"
 
 const pages = (await Astro.glob("../projects/**/*.astro")) as Array<
 	AstroInstance & { metadata: PageMeta }
 >
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Projects",
-//   next: "/contact",
-//   pageTitle: "Projects ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Projects",
-// };
+export const metadata: Partial<PageMeta> = {
+	title: "Projects",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Projects">
-	<Article title="Projects">
+<Layout {title}>
+	<Article {title}>
 		<p>TODO: Brief intro here?</p>
 		<dl>
 			{

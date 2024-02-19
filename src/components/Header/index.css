@@ -7,5 +7,5 @@ body > header {
 	gap: 1rem;
 	justify-content: space-between;
 	max-height: fit-content;
-	padding: var(--space-xs) var(--space-xl);
+	padding: var(--space-xs) 4vw;
 }

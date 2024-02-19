@@ -14,7 +14,7 @@ a.disc {
 	flex-direction: column;
 	padding: 1rem;
 	text-decoration: none;
-	width: min(30rem, 94vw);
+	width: min(24rem, 94vw);
 }
 
 a.disc:focus,

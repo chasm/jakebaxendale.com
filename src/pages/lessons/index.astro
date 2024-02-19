@@ -1,23 +1,18 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Feedback",
-//   next: "/contact",
-//   pageTitle: "Feedback ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Feedback",
-// };
+export const metadata: Partial<PageMeta> = {
+	title: "Lessons",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Lessons">
-	<Article title="Lessons">
+<Layout {title}>
+	<Article {title}>
 		<p>
 			I am currently the <strong>musical director</strong> of the Rata School of
 			Music jazz band. This is a community program that offers the opportunity for

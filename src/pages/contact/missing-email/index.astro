@@ -5,14 +5,13 @@ import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
-	label: "Feedback",
-	title: "Give us feedback",
+	title: "Email missing",
 }
 
-const { label, title } = metadata
+const { title } = metadata
 ---
 
-<Layout title={label}>
+<Layout {title}>
 	<Article {title}>
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur

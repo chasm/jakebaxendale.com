@@ -1,45 +1,55 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Prose",
-//   next: "/contact",
-//   pageTitle: "Prose ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Prose",
-// };
+export const metadata: Partial<PageMeta> = {
+	title: "Prose",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Prose">
-	<Article title="Prose">
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur
-			vel dui ac lacinia. Cras iaculis eget libero condimentum molestie. Aliquam
-			sollicitudin accumsan pellentesque. Curabitur quis nunc quis leo vehicula
-			facilisis sit amet vel elit. Mauris egestas mi sit amet dui congue
-			interdum. Quisque faucibus odio vitae justo rutrum convallis. Aliquam
-			massa mauris, hendrerit eget pharetra nec, condimentum nec urna. Cras eget
-			tellus accumsan, ornare massa sed, congue dolor. In hac habitasse platea
-			dictumst. In viverra risus quis tincidunt maximus. In hac habitasse platea
-			dictumst. Duis sit amet rhoncus nisl.
-		</p>
-		<p>
-			Curabitur interdum ultrices nibh, eu vestibulum odio lacinia sed. Morbi
-			vulputate facilisis posuere. Etiam elementum arcu et nibh vestibulum
-			sodales. Ut eleifend sit amet justo sed scelerisque. Pellentesque ac
-			efficitur lacus. Maecenas vulputate bibendum pulvinar. Mauris vulputate at
-			turpis accumsan convallis. Nulla aliquam tincidunt tellus vel commodo. Ut
-			lacinia mi purus, ut tristique augue laoreet sed. Donec egestas ultricies
-			ipsum sit amet vulputate. Nullam diam ligula, euismod vitae dictum vitae,
-			ultrices ac massa. Cras odio augue, maximus ac feugiat non, lobortis
-			ultrices sem. Nunc ut dui non ligula auctor convallis. Proin tortor nisl,
-			vestibulum nec ante id, eleifend sollicitudin nulla.
-		</p>
+<Layout {title}>
+	<Article {title}>
+		<ul>
+			<li>
+				A <strong>two part feature for SOUNZ Centre</strong> for New Zealand music
+				on the jazz and improvised music scene in Aoteaora during the height of the
+				COVID pandemic: <em>Jazz in the Cracks.</em>
+				<ul>
+					<li>
+						<a
+							href="https://news.sounz.org.nz/jazz-in-the-cracks-part-1/"
+							rel="external"
+							>Part 1</a
+						>
+					</li>
+					<li>
+						<a
+							href="https://news.sounz.org.nz/jazz-in-the-cracks-part-2/"
+							rel="external"
+							>Part 2</a
+						>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<p>
+					A very old online <a
+						href="https://www.facebook.com/notes/625726621439458/"
+						rel="external"
+						>rant about Spotify</a
+					> (requires a Facebook account to view—a rant for another day).
+				</p>
+				<p>
+					Much of this is still relevant, and I got more right than I got
+					wrong—but there&rsquo;s some big clangers: Spotify did move to user
+					paid, and even more unexpectedly, appears unable to turn a profit
+					after completely dominating the market for years:
+				</p>
+			</li>
+		</ul>
 	</Article>
 </Layout>

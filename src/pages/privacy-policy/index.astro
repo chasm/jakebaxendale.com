@@ -1,23 +1,19 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Privacy policy",
-//   next: "/contact",
-//   pageTitle: "Privacy policy ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Privacy policy",
-// };
+export const metadata: Partial<PageMeta> = {
+	label: "Privacy policy",
+	title: "Our privacy policy",
+}
 
-// const { title } = metadata;
+const { label, title } = metadata
 ---
 
-<Layout title="Our privacy policy">
-	<Article title="Our privacy policy">
+<Layout title={label}>
+	<Article {title}>
 		<p>
 			We collect personal information from you <strong>only</strong> when you use
 			our forms. This may include your:

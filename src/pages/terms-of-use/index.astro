@@ -1,23 +1,19 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@jakebaxendale.com",
-//   carbon: {},
-//   keywords: [],
-//   label: "Terms of use",
-//   next: "/contact",
-//   pageTitle: "Terms of use ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Terms of use",
-// };
+export const metadata: Partial<PageMeta> = {
+	label: "Terms of use",
+	title: "Our terms of use",
+}
 
-// const { title } = metadata;
+const { label, title } = metadata
 ---
 
-<Layout title="Our terms of use">
-	<Article title="Our terms of use">
+<Layout title={label}>
+	<Article {title}>
 		<p>By viewing and using this site, you agree to these terms of use.</p>
 		<p>
 			Note: you can <strong

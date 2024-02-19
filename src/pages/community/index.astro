@@ -1,45 +1,56 @@
 ---
+import type { PageMeta } from "~types"
+
 import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
-// export const metadata: Partial<PageMeta> = {
-//   author: "Charles F. Munat, coder@craft-code.dev",
-//   carbon: {},
-//   keywords: [],
-//   label: "Community",
-//   next: "/contact",
-//   pageTitle: "Community ~ Jake Baxendale",
-//   prev: "/",
-//   title: "Community",
-// };
+export const metadata: Partial<PageMeta> = {
+	title: "Community",
+}
 
-// const { title } = metadata;
+const { title } = metadata
 ---
 
-<Layout title="Community">
-	<Article title="Community">
+<Layout {title}>
+	<Article {title}>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur
-			vel dui ac lacinia. Cras iaculis eget libero condimentum molestie. Aliquam
-			sollicitudin accumsan pellentesque. Curabitur quis nunc quis leo vehicula
-			facilisis sit amet vel elit. Mauris egestas mi sit amet dui congue
-			interdum. Quisque faucibus odio vitae justo rutrum convallis. Aliquam
-			massa mauris, hendrerit eget pharetra nec, condimentum nec urna. Cras eget
-			tellus accumsan, ornare massa sed, congue dolor. In hac habitasse platea
-			dictumst. In viverra risus quis tincidunt maximus. In hac habitasse platea
-			dictumst. Duis sit amet rhoncus nisl.
+			It takes a village to raise a musician, here are some of the people,
+			places and organisations therein:
 		</p>
 		<p>
-			Curabitur interdum ultrices nibh, eu vestibulum odio lacinia sed. Morbi
-			vulputate facilisis posuere. Etiam elementum arcu et nibh vestibulum
-			sodales. Ut eleifend sit amet justo sed scelerisque. Pellentesque ac
-			efficitur lacus. Maecenas vulputate bibendum pulvinar. Mauris vulputate at
-			turpis accumsan convallis. Nulla aliquam tincidunt tellus vel commodo. Ut
-			lacinia mi purus, ut tristique augue laoreet sed. Donec egestas ultricies
-			ipsum sit amet vulputate. Nullam diam ligula, euismod vitae dictum vitae,
-			ultrices ac massa. Cras odio augue, maximus ac feugiat non, lobortis
-			ultrices sem. Nunc ut dui non ligula auctor convallis. Proin tortor nisl,
-			vestibulum nec ante id, eleifend sollicitudin nulla.
+			<a
+				href="https://www.rogueandvagabond.co.nz/beats/"
+				rel="external"
+				>The Rogue and Vagabond</a
+			>
+		</p>
+		<p>
+			<a
+				href="https://www.theloniousrecords.co.nz/"
+				rel="external"
+				>Thelonious Records</a
+			>
+		</p>
+		<p>
+			<a
+				href="https://www.creativejazzclub.co.nz/"
+				rel="external"
+				>Creative Jazz Club Aotearoa</a
+			>
+		</p>
+		<p>
+			<a
+				href="https://wellingtonjazzcooperative.co.nz/"
+				rel="external"
+				>Wellington Jazz Cooperative</a
+			>
+		</p>
+		<p>
+			<a
+				href="https://www.03sessions.com/"
+				rel="external"
+				>03 Sessions</a
+			>
 		</p>
 	</Article>
 </Layout>
