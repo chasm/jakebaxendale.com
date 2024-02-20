@@ -9,8 +9,18 @@ import { cards } from "~pages/discography/index.astro"
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
 		JB3 is a funky organ-drums-sax trio with an extensive repertoire, from
-		jazz, boogaloo, latin, funk, soul and R&B.
+		jazz, boogaloo, latin, funk, soul and R&B. Whilst drawing on the funk
+		and soul jazz stylings of &rsquo;50s and &rsquo;60s era Blue Note recordings,
+		JB3 bring their own flavour with their original tunes and interpretations
+		of classic jams.
 	`),
+	image: {
+		filename: "jb3-live",
+		height: 593,
+		src: "/images/album-art/jb3-live.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+		width: 768,
+	},
 	title: "JB3",
 }
 

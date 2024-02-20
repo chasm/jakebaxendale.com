@@ -17,18 +17,20 @@ const items = filter ? cards.filter(filter) : cards
 ---
 
 {
-	title ? (
-		<>
-			<section>
-				<h1>{title}</h1>
-			</section>
+	items.length ? (
+		title ? (
+			<>
+				<section>
+					<h1>{title}</h1>
+				</section>
+				<div class="cards">
+					<CardGrid {items} />
+				</div>
+			</>
+		) : (
 			<div class="cards">
 				<CardGrid {items} />
 			</div>
-		</>
-	) : (
-		<div class="cards">
-			<CardGrid {items} />
-		</div>
-	)
+		)
+	) : null
 }

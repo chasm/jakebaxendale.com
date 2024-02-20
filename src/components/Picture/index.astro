@@ -1,16 +1,5 @@
 ---
-type ImageType = "image/avif" | "image/webp" | "image/png" | "image/jpeg"
-
-type Props = {
-	alt?: string | undefined
-	class?: string | undefined
-	filename: string
-	height: number
-	loading?: "eager" | "lazy" | undefined
-	src: string
-	types: Array<ImageType>
-	width: number
-}
+import type { Image as Props } from "~types"
 
 const {
 	alt = "",

@@ -2,8 +2,9 @@
 import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
-// import Cards from "~components/Cards/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
@@ -88,4 +89,10 @@ const { title } = metadata
 			</figcaption>
 		</figure>
 	</Article>
+	<Cards
+		{cards}
+		filter={(card) =>
+			card.subtitle ? ["Gardening Music"].includes(card.subtitle) : false}
+		title="Discography"
+	/>
 </Layout>

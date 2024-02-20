@@ -6,36 +6,3 @@
 	justify-content: flex-start;
 	margin: var(--space-m) 0;
 }
-
-a.card {
-	box-shadow: var(--card-box-shadow);
-	border: var(--card-border);
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-	text-decoration: none;
-	width: min(24rem, 94vw);
-}
-
-a.card:focus,
-a.card:hover {
-	background-color: var(--card-background-color-hover);
-	box-shadow: var(--card-box-shadow-hover);
-}
-
-a.card p {
-	color: var(--card-foreground-color);
-	margin: 0 0 var(--space-s);
-	padding: 0;
-}
-
-a.card img {
-	height: auto;
-	width: 100%;
-}
-
-a.card h2 {
-	color: var(--card-foreground-color);
-	font-size: var(--step-2);
-	margin: var(--space-s) 0 0;
-}

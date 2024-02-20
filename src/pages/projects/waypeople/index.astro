@@ -2,8 +2,9 @@
 import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
-// import Cards from "~components/Cards/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
@@ -12,6 +13,13 @@ export const metadata: Partial<PageMeta> = {
 		playing with the sounds of the American songbook and juxtaposing them with
 		this ancient wisdom
 	`),
+	image: {
+		filename: "waypeople-wjf",
+		height: 768,
+		src: "/images/album-art/waypeople-wjf.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+		width: 768,
+	},
 	title: "Waypeople",
 }
 
@@ -63,4 +71,10 @@ const { title } = metadata
 			> for the full performance description and staging requirements.
 		</p>
 	</Article>
+	<Cards
+		{cards}
+		filter={(card) =>
+			card.subtitle ? ["Waypeople"].includes(card.subtitle) : false}
+		title="Discography"
+	/>
 </Layout>
