@@ -5,12 +5,16 @@ export type Props = {
 }
 
 const { caption, video } = Astro.props
+
+const site = process.env.SITE_DOMAIN || "jakebaxendale.com"
+
+console.log("site", site)
 ---
 
 <figure>
 	<iframe
 		allowfullscreen
-		src={`https://player.twitch.tv/?video=${video}&parent=jakebaxendale-com.vercel.app`}
+		src={`https://player.twitch.tv/?video=${video}&parent=${site}`}
 	>
 	</iframe>
 	{caption ? <figcaption set:html={caption} /> : null}

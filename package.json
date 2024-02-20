@@ -1,6 +1,6 @@
 {
 	"name": "jakebaxendale.com",
-	"version": "0.0.22",
+	"version": "0.0.23",
 	"private": true,
 	"homepage": "https://jakebaxendale.com/",
 	"license": "MIT",
@@ -15,7 +15,7 @@
 		"bump:minor": "pnpm version minor --force",
 		"check:exports": "pnpx find-unused-exports",
 		"check:packages": "pnpx npm-check -u",
-		"dep": "pnpm fmt && pnpm lint && pnpm lint:fix && pnpm check:packages && pnpm build && rm -rf .cache .history dist",
+		"dep": "pnpm fmt && pnpm lint && pnpm lint:fix && pnpm check:packages && infisical run -- pnpm build && rm -rf .cache .history dist",
 		"dep:prod": "pnpm dep:dev && vercel deploy",
 		"dev": "astro dev",
 		"fmt": "pnpm prettier . --write",
