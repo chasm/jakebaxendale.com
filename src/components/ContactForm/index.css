@@ -19,23 +19,23 @@ form#contact-form label {
 
 form#contact-form input,
 form#contact-form textarea {
-	background-color: var(--color-lighter);
-	border: 2px solid var(--color-lighter);
+	background-color: var(--form-field-background-color);
+	border: var(--form-field-border);
 	padding: 0.5rem;
 }
 
 form#contact-form input:focus,
 form#contact-form textarea:focus {
-	background-color: var(--color-whitish);
+	background-color: var(--form-field-background-color-focus);
 	padding: 0.5rem;
-	outline: 2px solid var(--color-light);
+	outline: var(--form-field-outline);
 	outline-offset: 5px;
 }
 
 form#contact-form button {
-	background-color: var(--color-lighter);
-	border: 2px solid var(--color-light);
-	color: var(--color-darkest);
+	background-color: var(--form-button-background-color);
+	border: var(--form-button-border);
+	color: var(--form-button-foreground-color);
 	font-weight: 600;
 	max-width: fit-content;
 	letter-spacing: 1px;
@@ -45,8 +45,9 @@ form#contact-form button {
 
 form#contact-form button:focus,
 form#contact-form button:hover {
-	background-color: var(--color-whitish);
-	border: 2px solid var(--color-light);
-	outline: 2px solid var(--color-light);
+	background-color: var(--form-button-background-color-hover);
+	border: var(--form-button-border-hover);
+	color: var(--form-button-foreground-color-hover);
+	outline: var(--form-button-outline-hover);
 	outline-offset: 5px;
 }
