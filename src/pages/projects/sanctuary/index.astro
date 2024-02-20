@@ -2,8 +2,9 @@
 import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
-import Discography from "~components/Discography/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
@@ -46,20 +47,23 @@ const { title } = metadata
 			instrumental palette and a diverse array of strategies for ensemble
 			interaction, ranging from tightly composed to fluid and free.
 		</p>
-		<p>
-			Sanctuary: &ldquo;The Big Question&rdquo; live at BATS Theatre, October
-			2022:
-		</p>
-		<p>
+		<figure>
 			<iframe
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
-				height="683"
 				src="https://www.youtube.com/embed/aUFrAQwdnVA"
 				title="The Big Question - Live at BATS"
-				width="1214"
 			></iframe>
-		</p>
+			<figcaption>
+				Sanctuary: &ldquo;The Big Question&rdquo; live at BATS Theatre, October
+				2022.
+			</figcaption>
+		</figure>
 	</Article>
-	<Discography filter={["Jasmine Lovell-Smith"]} />
+	<Cards
+		{cards}
+		filter={(card) =>
+			card.subtitle ? ["Jasmine Lovell-Smith"].includes(card.subtitle) : false}
+		title="Discography"
+	/>
 </Layout>

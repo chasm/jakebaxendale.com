@@ -1,37 +1,24 @@
 ---
 import "./index.css"
 
+import type { AstroInstance } from "astro"
+import type { Link, PageMeta } from "~types"
+
 import { GLOBAL_NAV } from "~constants"
 
+import Trail from "./Trail/index.astro"
+import TopNav from "./TopNav/index.astro"
+
 export type Props = {
-	links?: Array<{ href: string; label: string }> | undefined
+	links?: Array<Link> | undefined
+	pages: Array<AstroInstance & { metadata: PageMeta }>
 }
 
-const { links = GLOBAL_NAV } = Astro.props
-const { pathname } = Astro.url
+const { links = GLOBAL_NAV, pages = [] } = Astro.props
 ---
 
 <nav class="global-nav">
-	<h2 class="sr-only">Site navigation</h2>
-	<div class="breadcrumb-trail"></div>
-	<ul>
-		{
-			links.map(({ href, label }) =>
-				href === pathname ? (
-					<li>
-						<span
-							class="this-page"
-							title="This page."
-						>
-							{label}
-						</span>
-					</li>
-				) : (
-					<li>
-						<a {href}>{label}</a>
-					</li>
-				),
-			)
-		}
-	</ul>
+	<h2 class="sr-only">Navigation</h2>
+	<Trail {pages} />
+	<TopNav {links} />
 </nav>

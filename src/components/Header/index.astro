@@ -1,9 +1,21 @@
 ---
 import "./index.css"
 
+import SkipLink from "~components/SkipLink/index.astro"
+import Toggle from "~components/Toggle/index.astro"
+
 import Logo from "~components/Logo/index.astro"
 ---
 
 <header>
 	<Logo />
+	<SkipLink
+		href="#main"
+		label="Skip to content"
+	/>
+	<SkipLink
+		href="#footer"
+		label="Skip to footer"
+	/>
+	<Toggle />
 </header>

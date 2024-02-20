@@ -2,6 +2,9 @@
 import "./styles/global.css"
 import "./styles/local.css"
 
+import type { AstroInstance } from "astro"
+import type { PageMeta } from "~types"
+
 import Footer from "~components/Footer/index.astro"
 import GlobalNav from "~components/GlobalNav/index.astro"
 import Head from "~components/Head/index.astro"
@@ -17,6 +20,10 @@ export type Props = {
 }
 
 const { author, description, keywords, publisher, title } = Astro.props
+
+const pages = (await Astro.glob("../pages/**/*.astro")) as Array<
+	AstroInstance & { metadata: PageMeta }
+>
 
 const content = await Astro.slots.render("default")
 ---
@@ -34,8 +41,8 @@ const content = await Astro.slots.render("default")
 
 	<body>
 		<Header />
-		<GlobalNav />
-		<main>
+		<GlobalNav {pages} />
+		<main id="main">
 			<Fragment set:html={content} />
 		</main>
 		<Footer />

@@ -1,0 +1,71 @@
+.menu-toggle {
+	border: 2px solid transparent;
+	border-radius: 3px;
+	box-sizing: border-box;
+	align-items: center;
+	background-color: var(--menu-toggle-background-color);
+	color: var(--menu-toggle-foreground-color);
+	display: none;
+	flex-direction: column;
+	gap: 0.25rem;
+	height: 3rem;
+	justify-content: space-between;
+	padding: 0.25rem;
+	width: 3.25rem;
+	margin-top: 0.2rem;
+	max-width: 3.25rem;
+	position: fixed;
+	z-index: 10000000000;
+	top: 0.7rem;
+	right: 2vw;
+	transition: all 0.5s ease-in-out;
+}
+
+.menu-toggle:focus,
+.menu-toggle:hover {
+	background-color: var(--menu-toggle-background-color-hover);
+	color: var(--menu-toggle-foreground-color-hover);
+	outline-offset: 5px;
+	outline: 2px solid var(--menu-toggle-outline-color-focus);
+}
+
+.menu-toggle span {
+	background-color: var(--menu-toggle-foreground-color);
+	border-radius: 2px;
+	height: 0.5rem;
+	width: 100%;
+	transition: all 0.5s ease-in-out;
+}
+
+.menu-toggle:focus span,
+.menu-toggle:hover span {
+	background-color: var(--menu-toggle-foreground-color-hover);
+}
+
+input#menu-toggle {
+	top: -1000px;
+	position: absolute;
+}
+
+input#menu-toggle:checked + label span {
+	opacity: 1;
+	transform: translate(0, 0.925rem) rotate(45deg);
+	transition: all 0.5s ease-in-out;
+}
+
+input#menu-toggle:checked + label span + span {
+	opacity: 0;
+	transition: all 0.5s ease-in-out;
+}
+
+input#menu-toggle:checked + label span + span + span {
+	opacity: 1;
+	transform: translate(0, -0.925rem) rotate(-45deg);
+	transition: all 0.5s ease-in-out;
+}
+
+@media screen and (width <= 1200px) {
+	.menu-toggle {
+		display: flex;
+	}
+}

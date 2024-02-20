@@ -2,12 +2,127 @@
 import type { PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
-import Discography from "~components/Discography/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	title: "Discography",
 }
+
+export const cards = [
+	{
+		href: "https://bazurka.bandcamp.com/album/novi-grad-all-stars",
+		src: "/images/album-art/novi-grad-all-stars.jpeg",
+		subtitle: "Bazurka",
+		title: "Novi Grad All Stars",
+		year: 2023,
+	},
+	{
+		href: "https://richtercityrebels.bandcamp.com/album/big-fresh",
+		src: "/images/album-art/big-fresh.jpeg",
+		subtitle: "Richter City Rebels",
+		title: "Big Fresh",
+		year: 2023,
+	},
+	{
+		href: "https://louisawilliamson.bandcamp.com/album/what-dreams-may-come",
+		src: "/images/album-art/what-dreams-may-come.jpeg",
+		subtitle: "Louisa Williamson",
+		title: "What Dreams May Come",
+		year: 2022,
+	},
+	{
+		href: "https://jasminelovellsmith.bandcamp.com/album/sanctuary",
+		src: "/images/album-art/sanctuary.jpeg",
+		subtitle: "Jasmine Lovell-Smith",
+		title: "Sanctuary",
+		year: 2021,
+	},
+	{
+		href: "https://thejac1.bandcamp.com/album/walking-spirits-2",
+		src: "/images/album-art/walking-spirits.jpeg",
+		subtitle: "The Jac",
+		title: "Walking Spirits",
+		year: 2021,
+	},
+	{
+		href: "https://tombotting.bandcamp.com/album/rogue",
+		src: "/images/album-art/rogue.jpeg",
+		subtitle: "Tom Botting",
+		title: "Rogue",
+		year: 2021,
+	},
+	{
+		href: "https://thejac1.bandcamp.com/album/a-gathering",
+		src: "/images/album-art/a-gathering.jpeg",
+		subtitle: "The Jac",
+		title: "A Gathering",
+		year: 2020,
+	},
+	{
+		href: "https://cosmic-compositions.bandcamp.com/album/clear-path-ensemble",
+		src: "/images/album-art/clear-path-ensemble.jpeg",
+		subtitle: "Clear Path Ensemble",
+		title: "Clear Path Ensemble",
+		year: 2020,
+	},
+	{
+		href: "https://rattlejazz.bandcamp.com/album/good-winter",
+		src: "/images/album-art/good-winter.jpeg",
+		subtitle: "Antipodes",
+		title: "Good Winter",
+		year: 2018,
+	},
+	{
+		href: "https://www.thickrecords.co.nz/kapow",
+		src: "/images/album-art/kapow.jpeg",
+		subtitle: "The Troubles",
+		title: "Kapow!",
+		year: 2018,
+	},
+	{
+		href: "https://richtercityrebels.bandcamp.com/album/hard-work-hard-money",
+		src: "/images/album-art/hard-work-hard-money.jpeg",
+		subtitle: "Richter City Rebels",
+		title: "Hard Work Hard Money",
+		year: 2017,
+	},
+	{
+		href: "https://jakebaxendale.bandcamp.com/album/jb3-live-at-the-rogue-and-vagabond",
+		src: "/images/album-art/jb3-live.jpeg",
+		subtitle: "JB3",
+		title: "Live at the Rogue and Vagabond",
+		year: 2016,
+	},
+	{
+		href: "https://richtercityrebels.bandcamp.com/album/live-at-tora",
+		src: "/images/album-art/live-at-tora.jpeg",
+		subtitle: "Richter City Rebels",
+		title: "Live at Tora",
+		year: 2016,
+	},
+	{
+		href: "https://jakebaxendale.bandcamp.com/album/antipodes-live",
+		src: "/images/album-art/antipodes-live.jpeg",
+		subtitle: "Antipodes",
+		title: "Antipodes - Live",
+		year: 2015,
+	},
+	{
+		href: "https://thejac1.bandcamp.com/album/the-green-hour",
+		src: "/images/album-art/the-green-hour.jpeg",
+		subtitle: "The Jac",
+		title: "The Green Hour",
+		year: 2015,
+	},
+	{
+		href: "https://thejac1.bandcamp.com/album/nerve",
+		src: "/images/album-art/nerve.jpeg",
+		subtitle: "The Jac",
+		title: "Nerve",
+		year: 2014,
+	},
+]
 
 const { title } = metadata
 ---
@@ -16,5 +131,5 @@ const { title } = metadata
 	<Article {title}>
 		<p></p>
 	</Article>
-	<Discography />
+	<Cards {cards} />
 </Layout>

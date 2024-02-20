@@ -2,10 +2,11 @@ body > header {
 	align-items: center;
 	background-color: var(--header-background-color);
 	color: var(--header-foreground-color);
-	display: flex;
+	display: grid;
 	font-family: var(--font-body);
 	gap: 1rem;
-	justify-content: space-between;
+	grid-template-columns: 1fr 1fr 1fr min-content;
+	grid-template-rows: 1fr;
 	max-height: fit-content;
 	padding: var(--space-xs) 4vw;
 }

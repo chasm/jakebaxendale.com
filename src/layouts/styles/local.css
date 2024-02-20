@@ -1,27 +1,38 @@
 :root {
 	/* Colors */
-	--color-whitish: hsl(17deg, 87%, 95%);
-	--color-lightest: hsl(17deg, 87%, 79%);
-	--color-lighter: hsl(12deg, 84%, 77%);
-	--color-light: hsl(8deg, 82%, 75%);
-	--color-dark: hsl(3deg, 80%, 74%);
-	--color-darker: hsl(0deg, 79%, 72%);
-	--color-darkest: hsl(17deg, 87%, 10%);
-	--body-background-color: var(--color-lightest);
-	--body-foreground-color: var(--color-darkest);
-	--blockquote-background-color: var(--color-lighter);
-	--blockquote-foreground-color: var(--color-darkest);
-	--footer-background-color: var(--color-lighter);
-	--footer-foreground-color: var(--color-darkest);
-	--footer-outline-color: var(--color-darkest);
-	--global-nav-background-color: var(--color-lighter);
-	--global-nav-foreground-color: var(--color-darkest);
-	--global-nav-outline-color: var(--color-darkest);
-	--header-background-color: var(--color-darker);
-	--header-foreground-color: var(--color-darkest);
-	--link-foreground-color: var(--color-darkest);
-	--link-outline-color: var(--color-darkest);
-	--logo-outline-color: var(--color-darkest);
+	--color-whitish: 17deg, 87%, 95%;
+	--color-lightest: 17deg, 87%, 79%;
+	--color-lighter: 12deg, 84%, 77%;
+	--color-light: 8deg, 82%, 75%;
+	--color-dark: 3deg, 80%, 74%;
+	--color-darker: 0deg, 79%, 72%;
+	--color-darkest: 17deg, 87%, 10%;
+	--color-green: 180deg, 80%, 30%;
+	--body-background-color: hsl(var(--color-lightest));
+	--body-foreground-color: hsl(var(--color-darkest));
+	--blockquote-background-color: hsl(var(--color-lighter));
+	--blockquote-foreground-color: hsl(var(--color-darkest));
+	--footer-background-color: hsl(var(--color-lighter));
+	--footer-foreground-color: hsl(var(--color-darkest));
+	--footer-outline-color: hsl(var(--color-darkest));
+	--global-nav-background-color: hsl(var(--color-lighter));
+	--global-nav-foreground-color: hsl(var(--color-darkest));
+	--global-nav-outline-color: hsl(var(--color-darkest));
+	--header-background-color: hsl(var(--color-darker));
+	--header-foreground-color: hsl(var(--color-darkest));
+	--link-foreground-color: hsl(var(--color-darkest));
+	--link-outline-color: hsl(var(--color-darkest));
+	--logo-outline-color: hsl(var(--color-darkest));
+	--menu-toggle-background-color: hsl(var(--color-darker));
+	--menu-toggle-background-color-hover: hsl(var(--color-darkest));
+	--menu-toggle-foreground-color: hsl(var(--color-darkest));
+	--menu-toggle-foreground-color-hover: hsl(var(--color-darker));
+	--menu-toggle-outline-color-focus: hsl(var(--color-darkest));
+	--skip-link-background-color: transparent;
+	--skip-link-foreground-color: hsl(var(--color-darkest));
+	--skip-link-foreground-color-focus: hsl(var(--color-darkest));
+	--skip-link-outline-color-focus: hsl(var(--color-darkest));
+	--top-nav-background-color: hsl(var(--color-lightest));
 
 	/* Fonts */
 	--font-body: optima, candara, "Noto Sans", source-sans-pro, sans-serif;
@@ -44,6 +55,8 @@
 	--step-3: clamp(1.9531rem, 1.7841rem + 0.9014vi, 2.6855rem);
 	--step-4: clamp(2.4414rem, 2.2301rem + 1.1268vi, 3.3569rem);
 	--step-5: clamp(3.0518rem, 2.7877rem + 1.4085vi, 4.1962rem);
+	--page-gutter: 4vw;
+	--page-width: 92vw;
 
 	/* Borders */
 
@@ -102,6 +115,12 @@ figure {
 
 figcaption {
 	text-align: center;
+	width: 100%;
+}
+
+figure > iframe {
+	aspect-ratio: 1.777;
+	height: 100%;
 	width: 100%;
 }
 

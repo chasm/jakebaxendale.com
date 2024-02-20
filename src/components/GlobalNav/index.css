@@ -5,42 +5,5 @@ nav.global-nav {
 	display: flex;
 	gap: 1rem;
 	justify-content: space-between;
-	padding: var(--space-xs) var(--space-m);
-}
-
-nav.global-nav > ul {
-	align-items: center;
-	display: flex;
-	gap: 1.5rem;
-	justify-content: flex-end;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav.global-nav a,
-nav.global-nav li {
-	color: var(--global-nav-foreground-color);
-	flex: 1;
-	letter-spacing: 0.5px;
-	text-transform: lowercase;
-	white-space: nowrap;
-}
-
-nav.global-nav a {
-	display: block;
-	min-height: 24px;
-	outline: 2px solid transparent;
-	outline-offset: 0.3rem;
-	text-decoration: none;
-}
-
-nav.global-nav a:focus,
-nav.global-nav a:hover {
-	outline: 2px solid var(--global-nav-outline-color);
-}
-
-nav.global-nav li > span {
-	outline: 2px solid var(--global-nav-outline-color);
-	padding: 0.25rem 0.5rem;
+	padding: var(--space-xs) var(--page-gutter);
 }

@@ -1,0 +1,28 @@
+.skip-link {
+	background-color: var(--skip-link-background-color, transparent);
+	color: var(--skip-link-foreground-color);
+	clip-path: circle(0);
+	font-size: var(--step-1, 1.25rem);
+	font-family: var(--font-sans, sans-serif);
+	max-width: 0;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.skip-link:focus {
+	clip-path: unset;
+	color: var(--skip-link-foreground-color-focus);
+	display: inline-block;
+	max-width: fit-content;
+	outline-offset: 5px;
+	outline: 2px solid var(--skip-link-outline-color-focus);
+	text-decoration: none;
+}
+
+@media screen and (width <= 47rem) {
+	.skip-link:focus,
+	.skip-link:hover {
+		clip-path: circle(0);
+		max-width: 0;
+	}
+}

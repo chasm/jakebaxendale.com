@@ -2,8 +2,9 @@
 import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
-import Discography from "~components/Discography/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
@@ -30,17 +31,22 @@ const { title } = metadata
 			you laugh, they&rsquo;ll make you cry, they&rsquo;ll make you dance like your
 			life depended on it!
 		</p>
-		<p>Official music video for the single &ldquo;Jovano Jonake&rdquo;:</p>
-		<p>
+		<figure>
 			<iframe
-				width="1218"
-				height="685"
-				src="https://www.youtube.com/embed/f9dvevkN4YY"
-				title="Bazurka - Jovano Jovanke (Official Music Video)"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen
+				src="https://www.youtube.com/embed/f9dvevkN4YY"
+				title="Bazurka - Jovano Jovanke (Official Music Video)"
 			></iframe>
-		</p>
+			<figcaption>
+				Official music video for the single &ldquo;Jovano Jonake&rdquo;.
+			</figcaption>
+		</figure>
 	</Article>
-	<Discography filter={["Bazurka"]} />
+	<Cards
+		{cards}
+		filter={(card) =>
+			card.subtitle ? ["Bazurka"].includes(card.subtitle) : false}
+		title="Discography"
+	/>
 </Layout>

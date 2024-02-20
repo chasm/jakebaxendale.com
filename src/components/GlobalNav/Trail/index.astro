@@ -1,0 +1,60 @@
+---
+import "./index.css"
+
+import type { AstroInstance } from "astro"
+import type { PageMeta } from "~types"
+
+export type Props = {
+	pages: Array<AstroInstance & { metadata: PageMeta }>
+}
+
+const { pages = [] } = Astro.props
+
+const { pathname } = Astro.url
+const path = pathname.slice(1)
+const segments = path.split("/").filter((p) => p)
+const links = segments.reduce(
+	(acc, segment) => {
+		const href = `${acc.at(-1)?.href}/${segment}`
+		const { label, title } =
+			pages.find((page) => page.url === href)?.metadata || {}
+
+		acc.push({
+			href,
+			label: label || title || "Parent Page",
+		})
+
+		return acc
+	},
+	[
+		{
+			href: "",
+			label: "Home",
+		},
+	],
+)
+---
+
+<section class="trail">
+	<h2 class="sr-only">Breadcrumb trail</h2>
+	<ul>
+		{
+			links.map(({ href, label }, index) =>
+				index < links.length - 1 ? (
+					<li>
+						<a {href}>{label}</a>
+					</li>
+				) : (
+					<li>
+						<span
+							class="this-page"
+							title="This page."
+						>
+							{label}
+						</span>
+					</li>
+				),
+			)
+		}
+	</ul>
+</section>

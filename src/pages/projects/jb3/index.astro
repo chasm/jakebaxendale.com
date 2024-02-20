@@ -2,8 +2,9 @@
 import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
-import Discography from "~components/Discography/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
@@ -32,18 +33,21 @@ const { title } = metadata
 			&rsquo;60s era Blue Note recordings, JB3 bring their own flavour with
 			their original tunes and interpretations of classic jams.
 		</p>
-		<p>JB3 Live at Hashigo Zake, February 2020:</p>
-		<p>
+		<figure>
 			<iframe
-				width="1218"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
 				height="685"
 				src="https://www.youtube.com/embed/eKtOPA2wp3c"
 				title="JB3 - Liquid"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
+				width="1218"
 			></iframe>
-		</p>
+			<figcaption>JB3 Live at Hashigo Zake, February 2020.</figcaption>
+		</figure>
 	</Article>
-	<Discography filter={["JB3"]} />
+	<Cards
+		{cards}
+		filter={(card) => (card.subtitle ? ["JB3"].includes(card.subtitle) : false)}
+		title="Discography"
+	/>
 </Layout>

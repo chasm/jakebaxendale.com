@@ -1,13 +1,13 @@
 {
 	"name": "jakebaxendale.com",
-	"version": "0.0.19",
+	"version": "0.0.20",
 	"private": true,
 	"homepage": "https://jakebaxendale.com/",
 	"license": "MIT",
 	"author": "Charles Munat <charles.munat@gmail.com>",
 	"type": "module",
 	"scripts": {
-		"api": "vercel dev",
+		"api": "vercel dev --listen 3010",
 		"astro": "astro",
 		"build": "astro build",
 		"bump": "pnpm version patch --force",

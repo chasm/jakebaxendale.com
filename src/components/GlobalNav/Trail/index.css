@@ -1,0 +1,22 @@
+.trail ul {
+	align-items: center;
+	display: flex;
+	gap: 0.5rem;
+	justify-content: flex-start;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.trail ul a::after {
+	content: " /";
+}
+
+.trail span.this-page {
+	outline: none;
+	outline-offset: none;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-weight: 600;
+}

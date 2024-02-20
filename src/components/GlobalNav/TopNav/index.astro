@@ -1,18 +1,19 @@
 ---
 import "./index.css"
 
-import { SUPPLEMENTAL_NAV } from "~constants"
+import { Link } from "~types"
 
 export type Props = {
-	links?: Array<{ href: string; label: string }>
+	links: Array<Link>
 }
 
-const { links = SUPPLEMENTAL_NAV } = Astro.props
+const { links = [] } = Astro.props
+
 const { pathname } = Astro.url
 ---
 
-<nav class="supplemental-nav">
-	<h2 class="sr-only">Links to legal pages</h2>
+<section class="top-nav">
+	<h2 class="sr-only">Site content</h2>
 	<ul>
 		{
 			links.map(({ href, label }) =>
@@ -33,4 +34,4 @@ const { pathname } = Astro.url
 			)
 		}
 	</ul>
-</nav>
+</section>

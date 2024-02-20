@@ -1,0 +1,31 @@
+---
+import "./index.css"
+
+const { hideClass = "remove" } = Astro.props
+---
+
+<div>
+	<input
+		aria-label="Menu toggle"
+		id="menu-toggle"
+		name="toggle"
+		tabindex="-1"
+		type="checkbox"
+	/>
+	<label
+		class="menu-toggle"
+		for="menu-toggle"
+		tabindex="0"
+	>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span class={hideClass}>Menu toggle (ignore)<br /><br /></span>
+	</label>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		setTimeout(() => (document.body.style = "--animation-timing: 0.5s"), 2000)
+	})
+</script>

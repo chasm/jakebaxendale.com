@@ -2,8 +2,9 @@
 import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
-import Discography from "~components/Discography/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	blurb: collapseWhitespace(`
@@ -42,5 +43,10 @@ const { title } = metadata
 			Simon Ferenci, Tim Geldens, Maximilian Alduca and Tom Botting.
 		</p>
 	</Article>
-	<Discography filter={["Antipodes"]} />
+	<Cards
+		{cards}
+		filter={(card) =>
+			card.subtitle ? ["Antipodes"].includes(card.subtitle) : false}
+		title="Discography"
+	/>
 </Layout>
