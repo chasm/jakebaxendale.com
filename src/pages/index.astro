@@ -2,6 +2,7 @@
 import type { PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
+import Picture from "~components/Picture/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
@@ -50,6 +51,24 @@ const { title } = metadata
 								>TICKETS for Gardening Music</a
 							> on sale now.</strong
 						>
+					</p>
+					<p>
+						<a
+							aria-label="To Bedlam and Squalor."
+							href="https://www.bedlamandsqualor.co.nz/"
+							rel="external"
+						>
+							<Picture
+								alt="Bedlam and Squalor"
+								class="full-width"
+								filename="bedlam-and-squalor"
+								height={346}
+								loading="eager"
+								src="/images/optimized/768/bedlam-and-squalor.jpeg"
+								types={["image/avif", "image/webp", "image/jpeg"]}
+								width={768}
+							/>
+						</a>
 					</p>
 				</li>
 			</ul>

@@ -35,12 +35,22 @@ const links = segments.reduce(
 )
 ---
 
-<section class="trail">
-	<h2 class="sr-only">Breadcrumb trail</h2>
+<section
+	aria-labelledby="trail-h2"
+	class="trail"
+>
+	<h2
+		class="sr-only"
+		id="trail-h2"
+	>
+		Breadcrumb trail
+	</h2>
 	<ul>
 		{
-			links.map(({ href, label }, index) =>
-				index < links.length - 1 ? (
+			links.map(({ href: h, label }, index) => {
+				const href = h || "/"
+
+				return index < links.length - 1 ? (
 					<li>
 						<a {href}>{label}</a>
 					</li>
@@ -53,8 +63,8 @@ const links = segments.reduce(
 							{label}
 						</span>
 					</li>
-				),
-			)
+				)
+			})
 		}
 	</ul>
 </section>

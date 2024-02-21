@@ -8,6 +8,11 @@ export type PageMeta = {
 
 export type MediaType = "image/avif" | "image/jpeg" | "image/png" | "image/webp"
 
+export type SrcSet = {
+	media?: string | undefined
+	sizes: Array<number>
+}
+
 export type Image = {
 	alt?: string | undefined
 	class?: string | undefined
@@ -15,6 +20,7 @@ export type Image = {
 	height: number
 	loading?: "eager" | "lazy" | undefined
 	src: string
+	srcsets?: Array<SrcSet>
 	types: Array<MediaType>
 	width: number
 }

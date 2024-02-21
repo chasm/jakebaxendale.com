@@ -11,8 +11,16 @@ const { links = SUPPLEMENTAL_NAV } = Astro.props
 const { pathname } = Astro.url
 ---
 
-<nav class="supplemental-nav">
-	<h2 class="sr-only">Links to legal pages</h2>
+<nav
+	aria-labelledby="supplemental-h2"
+	class="supplemental-nav"
+>
+	<h2
+		class="sr-only"
+		id="supplemental-h2"
+	>
+		Links to legal pages
+	</h2>
 	<ul>
 		{
 			links.map(({ href, label }) =>

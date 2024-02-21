@@ -2,6 +2,7 @@
 import type { PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
+import Picture from "~components/Picture/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
@@ -15,9 +16,11 @@ const { title } = metadata
 	<Article {title}>
 		<ul>
 			<li>
-				A <strong>two part feature for SOUNZ Centre</strong> for New Zealand music
-				on the jazz and improvised music scene in Aoteaora during the height of the
-				COVID pandemic: <em>Jazz in the Cracks.</em>
+				<p>
+					A <strong>two part feature for SOUNZ Centre</strong> for New Zealand music
+					on the jazz and improvised music scene in Aoteaora during the height of
+					the COVID pandemic: <em>Jazz in the Cracks.</em>
+				</p>
 				<ul>
 					<li>
 						<a
@@ -34,6 +37,25 @@ const { title } = metadata
 						>
 					</li>
 				</ul>
+				<p>
+					<a
+						aria-label="To the Sounz website."
+						href="https://sounz.org.nz/"
+						rel="external"
+					>
+						<Picture
+							alt=" Sounz: Centre for New Zealand Music"
+							class="white-bgnd"
+							filename="SOUNZ-Logo"
+							height={45}
+							loading="eager"
+							src="/images/optimized/192/SOUNZ-Logo.png"
+							srcsets={[{ sizes: [192, 384, 768] }]}
+							types={["image/avif", "image/webp", "image/png"]}
+							width={192}
+						/>
+					</a>
+				</p>
 			</li>
 			<li>
 				<p>
@@ -48,6 +70,25 @@ const { title } = metadata
 					wrong—but there&rsquo;s some big clangers: Spotify did move to user
 					paid, and even more unexpectedly, appears unable to turn a profit
 					after completely dominating the market for years:
+				</p>
+				<p>
+					<a
+						aria-label="To the Spotify website."
+						href="https://open.spotify.com/"
+						rel="external"
+					>
+						<Picture
+							alt="Spotify"
+							class="white-bgnd"
+							filename="Spotify_Logo_RGB_Green"
+							height={58}
+							loading="eager"
+							src="/images/optimized/192/Spotify_Logo_RGB_Green.png"
+							srcsets={[{ sizes: [192, 384, 768] }]}
+							types={["image/avif", "image/webp", "image/png"]}
+							width={192}
+						/>
+					</a>
 				</p>
 			</li>
 		</ul>

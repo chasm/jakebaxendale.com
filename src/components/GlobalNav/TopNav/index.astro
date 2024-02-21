@@ -12,8 +12,16 @@ const { links = [] } = Astro.props
 const { pathname } = Astro.url
 ---
 
-<section class="top-nav">
-	<h2 class="sr-only">Site content</h2>
+<section
+	aria-labelledby="site-content-h2"
+	class="top-nav"
+>
+	<h2
+		class="sr-only"
+		id="site-content-h2"
+	>
+		Site content
+	</h2>
 	<ul>
 		{
 			links.map(({ href, label }) =>
