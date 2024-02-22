@@ -1,7 +1,7 @@
 ---
 import "./index.css"
 
-import type { Card } from "~types"
+import type { Card, Image } from "~types"
 
 import Picture from "~components/Picture/index.astro"
 
@@ -14,26 +14,49 @@ const { items = [] } = Astro.props
 
 <>
 	{
-		items.map(({ blurb, href, image = {}, subtitle, title, year }) => {
-			return (
-				<a
-					class="card"
-					{href}
-					rel="external"
-				>
-					<h2>
-						{title} {year ? `(${year})` : null}
-					</h2>
-					{subtitle ? <p class="subtitle">{subtitle}</p> : null}
-					{image ? <Picture {...image} /> : null}
-					{blurb ? (
-						<p
-							class="blurb"
-							set:html={blurb}
-						/>
-					) : null}
-				</a>
-			)
-		})
+		items.map(
+			({
+				blurb,
+				epilogue,
+				href,
+				image = {} as Image,
+				prologue,
+				subtitle,
+				title,
+				year,
+			}) => {
+				return (
+					<a
+						class="card"
+						{href}
+						rel="external"
+					>
+						<h2>
+							{title} {year ? `(${year})` : null}
+						</h2>
+						{subtitle ? <p class="subtitle">{subtitle}</p> : null}
+						{prologue ? (
+							<p
+								class="prologue"
+								set:html={prologue}
+							/>
+						) : null}
+						{image ? <Picture {...image} /> : null}
+						{epilogue ? (
+							<p
+								class="epilogue"
+								set:html={epilogue}
+							/>
+						) : null}
+						{blurb ? (
+							<p
+								class="blurb"
+								set:html={blurb}
+							/>
+						) : null}
+					</a>
+				)
+			},
+		)
 	}
 </>

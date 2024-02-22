@@ -27,8 +27,10 @@ export type Image = {
 
 export type Card = {
 	blurb?: string | undefined
+	epilogue?: string | undefined
 	href?: string | undefined
 	image?: Image | undefined
+	prologue?: string | undefined
 	subtitle?: string | undefined
 	title: string
 	year?: number | undefined

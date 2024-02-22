@@ -14,7 +14,7 @@ const { title } = metadata
 
 export const cards: Array<Card> = [
 	{
-		blurb: collapseWhitespace(`
+		epilogue: collapseWhitespace(`
 			<p>
 				The Rogue & Vagabond is a Wellington craft beer bar located in Glover Park
 				just off Cuba Street. The bar features live music in a relaxed, dog-friendly venue.
@@ -35,7 +35,7 @@ export const cards: Array<Card> = [
 		title: "The Rogue & Vagabond",
 	},
 	{
-		blurb: collapseWhitespace(`
+		epilogue: collapseWhitespace(`
 			<p>Thelonious Records is a collective of enthusiastic musicians and other creatives
 				committed to documenting live audio delights from Wellington, New Zealand.
 			</p>`),
@@ -51,12 +51,7 @@ export const cards: Array<Card> = [
 		title: "Thelonious Records",
 	},
 	{
-		blurb: collapseWhitespace(`
-			<p>
-				Creative Jazz Club is an artist-led initiative to support and promote the performance
-				of original and contemporary jazz and improvised music in Aotearoa, New Zealand,
-				operating for over a decade since late 2009.
-			</p>
+		epilogue: collapseWhitespace(`
 			<p>
 				We aim to nurture emerging talent, provide a space for experienced musicians to stretch
 				and grow and support an audience for original high-quality musical performance.
@@ -71,10 +66,16 @@ export const cards: Array<Card> = [
 			types: ["image/avif", "image/webp", "image/png"],
 			width: 384,
 		},
+		prologue: collapseWhitespace(`
+			<p>
+				Creative Jazz Club is an artist-led initiative to support and promote the performance
+				of original and contemporary jazz and improvised music in Aotearoa, New Zealand,
+				operating for over a decade since late 2009.
+			</p>`),
 		title: "Creative Jazz Club",
 	},
 	{
-		blurb: collapseWhitespace(`
+		epilogue: collapseWhitespace(`
 			<p>
 				WJC is an artist-run non-profit effort to promote new original music
 				influenced by the jazz genre, and to provide a platform to present new,
@@ -92,7 +93,7 @@ export const cards: Array<Card> = [
 		title: "Wellington Jazz Co-op",
 	},
 	{
-		blurb: collapseWhitespace(`
+		epilogue: collapseWhitespace(`
 			<p>
 				03 Sessions presents weekly performances by a diverse range of local
 				and touring artists. From Brazilian samba to afrobeat, Persian folk music
