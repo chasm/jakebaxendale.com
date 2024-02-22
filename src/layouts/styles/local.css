@@ -157,29 +157,6 @@ dt {
 	font-size: var(--step-1);
 }
 
-picture.full-width img {
-	height: auto;
-	width: 100%;
-}
-
-p:has(picture.float-left) {
-	float: left;
-	margin: 2rem 2rem 1rem 0;
-	width: 50%;
-}
-
-p:has(picture.float-right) {
-	float: right;
-	margin: 2rem 1rem;
-	width: 50%;
-}
-
-picture.float-left img,
-picture.float-right img {
-	height: auto;
-	width: 100%;
-}
-
 article {
 	font-family: var(--font-body);
 	font-size: var(--step-0);

@@ -1,14 +1,116 @@
 ---
-import type { PageMeta } from "~types"
+import type { Card, PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
+import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import collapseWhitespace from "~utilities/collapseWhitespace"
 
 export const metadata: Partial<PageMeta> = {
 	title: "Community",
 }
 
 const { title } = metadata
+
+export const cards: Array<Card> = [
+	{
+		blurb: collapseWhitespace(`
+			<p>
+				The Rogue & Vagabond is a Wellington craft beer bar located in Glover Park
+				just off Cuba Street. The bar features live music in a relaxed, dog-friendly venue.
+			</p>
+			<p>
+				Live local original music and a monthly rotation of local artists plus a
+				commission-free art space.
+			</p>`),
+		href: "https://www.rogueandvagabond.co.nz/beats/",
+		image: {
+			filename: "rogue-logo",
+			height: 336,
+			src: "/images/album-art/rogue-logo.jpeg",
+			srcsets: [{ sizes: [192, 384] }],
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 384,
+		},
+		title: "The Rogue & Vagabond",
+	},
+	{
+		blurb: collapseWhitespace(`
+			<p>Thelonious Records is a collective of enthusiastic musicians and other creatives
+				committed to documenting live audio delights from Wellington, New Zealand.
+			</p>`),
+		href: "https://www.theloniousrecords.co.nz/",
+		image: {
+			filename: "thelonious-logo",
+			height: 492,
+			src: "/images/album-art/thelonious-logo.jpeg",
+			srcsets: [{ sizes: [192, 384] }],
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 384,
+		},
+		title: "Thelonious Records",
+	},
+	{
+		blurb: collapseWhitespace(`
+			<p>
+				Creative Jazz Club is an artist-led initiative to support and promote the performance
+				of original and contemporary jazz and improvised music in Aotearoa, New Zealand,
+				operating for over a decade since late 2009.
+			</p>
+			<p>
+				We aim to nurture emerging talent, provide a space for experienced musicians to stretch
+				and grow and support an audience for original high-quality musical performance.
+			</p>
+			<p>CJC is managed on a voluntary basis by by a trio of Auckland musicians.</p>`),
+		href: "https://www.creativejazzclub.co.nz/",
+		image: {
+			filename: "cjc-logo-transparent-black",
+			height: 95,
+			src: "/images/album-art/cjc-logo-transparent-black.png",
+			srcsets: [{ sizes: [192, 384] }],
+			types: ["image/avif", "image/webp", "image/png"],
+			width: 384,
+		},
+		title: "Creative Jazz Club",
+	},
+	{
+		blurb: collapseWhitespace(`
+			<p>
+				WJC is an artist-run non-profit effort to promote new original music
+				influenced by the jazz genre, and to provide a platform to present new,
+				interactive, original improvised music without commercial restrictions.
+			</p>`),
+		href: "https://wellingtonjazzcooperative.co.nz/",
+		image: {
+			filename: "wjc-white",
+			height: 374,
+			src: "/images/album-art/wjc-white.jpeg",
+			srcsets: [{ sizes: [192, 384] }],
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 384,
+		},
+		title: "Wellington Jazz Co-op",
+	},
+	{
+		blurb: collapseWhitespace(`
+			<p>
+				03 Sessions presents weekly performances by a diverse range of local
+				and touring artists. From Brazilian samba to afrobeat, Persian folk music
+				to jazz standards performed in Te Reo Māori, 03 Sessions is an important
+				showcase for art and culture in Christchurch.
+			</p>`),
+		href: "https://www.03sessions.com/",
+		image: {
+			filename: "03",
+			height: 384,
+			src: "/images/album-art/03.jpeg",
+			srcsets: [{ sizes: [192, 384] }],
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 384,
+		},
+		title: "03 Sessions",
+	},
+]
 ---
 
 <Layout {title}>
@@ -17,40 +119,6 @@ const { title } = metadata
 			It takes a village to raise a musician. Here are some of the people,
 			places, and organisations therein:
 		</p>
-		<p>
-			<a
-				href="https://www.rogueandvagabond.co.nz/beats/"
-				rel="external"
-				>The Rogue and Vagabond</a
-			>
-		</p>
-		<p>
-			<a
-				href="https://www.theloniousrecords.co.nz/"
-				rel="external"
-				>Thelonious Records</a
-			>
-		</p>
-		<p>
-			<a
-				href="https://www.creativejazzclub.co.nz/"
-				rel="external"
-				>Creative Jazz Club Aotearoa</a
-			>
-		</p>
-		<p>
-			<a
-				href="https://wellingtonjazzcooperative.co.nz/"
-				rel="external"
-				>Wellington Jazz Cooperative</a
-			>
-		</p>
-		<p>
-			<a
-				href="https://www.03sessions.com/"
-				rel="external"
-				>03 Sessions</a
-			>
-		</p>
 	</Article>
+	<Cards {cards} />
 </Layout>

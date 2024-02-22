@@ -25,13 +25,13 @@ const { items = [] } = Astro.props
 						{title} {year ? `(${year})` : null}
 					</h2>
 					{subtitle ? <p class="subtitle">{subtitle}</p> : null}
+					{image ? <Picture {...image} /> : null}
 					{blurb ? (
 						<p
 							class="blurb"
 							set:html={blurb}
 						/>
 					) : null}
-					{image ? <Picture {...image} /> : null}
 				</a>
 			)
 		})

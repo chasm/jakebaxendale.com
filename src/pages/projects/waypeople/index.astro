@@ -1,9 +1,12 @@
 ---
 import type { PageMeta } from "~types"
+
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
 import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
+import Picture from "~components/Picture/index.astro"
+
 import { cards } from "~pages/discography/index.astro"
 
 export const metadata: Partial<PageMeta> = {
@@ -36,6 +39,18 @@ const { title } = metadata
 			on by the COVID 19 lockdowns. My partner gave me a rendition in English by
 			a favourite author of mine, Ursula Le Guin, best known for her &ldquo;Earthsea
 			Quartet&rdquo;, a groundbreaking work in the Fantasy genre.
+		</p>
+		<p>
+			<Picture
+				alt=""
+				class="float-right"
+				filename="waypeople-wjf"
+				height={768}
+				loading="lazy"
+				src="/images/album-art/waypeople-wjf.jpeg"
+				types={["image/avif", "image/webp", "image/jpeg"]}
+				width={768}
+			/>
 		</p>
 		<p>
 			This funny, insightful, mystifying and musical book has provided me

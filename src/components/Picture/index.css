@@ -4,3 +4,38 @@
 	padding: 0.5rem;
 	width: fit-content;
 }
+
+picture.full-width img {
+	height: auto;
+	width: 100%;
+}
+
+p:has(picture.float-left) {
+	float: left;
+	margin: 2rem 2rem 1rem 0;
+	width: 50%;
+}
+
+p:has(picture.float-right) {
+	float: right;
+	margin: 2rem 1rem;
+	width: 50%;
+}
+
+p:has(picture.float-left-quarter) {
+	float: left;
+	margin: 2rem 0.5rem 1rem 0;
+	width: 25%;
+}
+
+p:has(picture.float-right-quarter) {
+	float: right;
+	margin: 2rem 1rem;
+	width: 25%;
+}
+
+picture.float-left img,
+picture.float-right img {
+	height: auto;
+	width: 100%;
+}

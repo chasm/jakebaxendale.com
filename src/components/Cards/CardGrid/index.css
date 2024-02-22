@@ -15,8 +15,7 @@ a.card:hover {
 	box-shadow: var(--card-box-shadow-hover);
 }
 
-a.card p.blurb,
-a.card p.subtitle {
+a.card p {
 	color: var(--card-foreground-color);
 	margin: 0;
 	padding: 0;
