@@ -3,6 +3,8 @@ import "./index.css"
 
 import { Link } from "~types"
 
+import stripFinalSlash from "~utilities/stripFinalSlash"
+
 export type Props = {
 	links: Array<Link>
 }
@@ -25,7 +27,7 @@ const { pathname } = Astro.url
 	<ul>
 		{
 			links.map(({ href, label }) =>
-				href === pathname ? (
+				href === stripFinalSlash(pathname) ? (
 					<li>
 						<span
 							class="this-page"

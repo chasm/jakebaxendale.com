@@ -51,8 +51,11 @@
 }
 
 .top-nav ul li > span {
+	display: inline-block;
 	outline: 2px solid var(--global-nav-outline-color);
-	padding: 0.25rem 0.5rem;
+	outline-offset: 3px;
+	margin: 0 -0.5rem;
+	padding: 1.5px 0.5rem;
 }
 
 @media screen and (width <= 1240px) {
