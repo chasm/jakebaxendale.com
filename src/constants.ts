@@ -117,7 +117,7 @@ export const SITE_KEYWORDS = [
 	"Wellington",
 ]
 export const SITE_PUBLISHER = "Jake Baxendale"
-export const SITE_TITLE = "Jake Baxendale"
+export const SITE_TITLE = "Jake Baxendale: musician, teacher, artist"
 
 export const SUPPLEMENTAL_NAV = [
 	{ href: "/cookie-policy", label: "Cookie policy" },
