@@ -45,26 +45,28 @@ const links = segments.reduce(
 	>
 		Breadcrumb trail
 	</h2>
-	<ul>
-		{
-			links.map(({ href: h, label }, index) => {
-				const href = h || "/"
+	{
+		links.length > 1 ? (
+			<ul>
+				{links.map(({ href: h, label }, index) => {
+					const href = h || "/"
 
-				return index < links.length - 1 ? (
-					<li>
-						<a {href}>{label}</a>
-					</li>
-				) : (
-					<li>
-						<span
-							class="this-page"
-							title="This page."
-						>
-							{label}
-						</span>
-					</li>
-				)
-			})
-		}
-	</ul>
+					return index < links.length - 1 ? (
+						<li>
+							<a {href}>{label}</a>
+						</li>
+					) : (
+						<li>
+							<span
+								class="this-page"
+								title="This page."
+							>
+								{label}
+							</span>
+						</li>
+					)
+				})}
+			</ul>
+		) : null
+	}
 </section>

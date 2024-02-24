@@ -8,8 +8,23 @@
 	padding: 0;
 }
 
-.trail ul a::after {
+.trail ul a {
+	display: inline;
+}
+
+.trail ul a:focus,
+.trail ul a:hover {
+	outline: none;
+	text-decoration: underline;
+}
+
+.trail ul li::after {
+	display: inline;
 	content: " /";
+}
+
+.trail ul li:last-child::after {
+	content: none;
 }
 
 .trail span.this-page {
