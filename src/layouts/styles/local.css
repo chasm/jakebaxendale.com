@@ -174,3 +174,10 @@ article a:hover {
 	outline-offset: 2px;
 	text-decoration: none;
 }
+
+.social {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+	justify-content: flex-start;
+}
