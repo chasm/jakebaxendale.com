@@ -12,7 +12,7 @@ const SITE = {
 }
 const JAKE = {
 	name: "Jake Baxendale",
-	email: "charles.munat@gmail.com",
+	email: "jake.baxendale@gmail.com",
 }
 
 function composeBody(body: Body, t = new Date()): string {
