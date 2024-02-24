@@ -100,7 +100,7 @@ export const SITE_AUTHOR = "Jake Baxendale"
 export const SITE_CANONICAL_URL = "https://jakebaxendale.com"
 export const SITE_DESCRIPTION = collapseWhitespace(`
 	Jake Baxendale is a jazz musician, composer, and bandleader.
-	He plays saxophone. Jake&apos;s crib is in Wellington, New Zealand.
+	He plays saxophone. Jake’s crib is in Wellington, New Zealand.
 `)
 export const SITE_KEYWORDS = [
 	"alto saxophone",
