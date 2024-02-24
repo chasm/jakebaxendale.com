@@ -1,5 +1,5 @@
-export default function stripFinalSlash (path: string): string {
-  const p = path ? path : "/"
+export default function stripFinalSlash(path: string): string {
+	const p = path ? path : "/"
 
-  return p.length > 1 ? p.replace(/\/$/, "") : p
+	return p.length > 1 ? p.replace(/\/$/, "") : p
 }

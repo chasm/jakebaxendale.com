@@ -7,37 +7,28 @@ import sendEmail from "../_utilities/sendEmail/index.js"
 import testHoneypot from "../_utilities/testHoneypot/index.js"
 
 export default async function handler(
-	{ body, headers }: VercelRequest,
+	{ body }: VercelRequest,
 	response: VercelResponse,
 ) {
-	const referer = headers?.referer
-		? `${headers.referer}/`
-		: "https://jakebaxendale.com/contact/"
-
-	if (!referer.includes("contact")) {
-		response
-			.setHeader("Location", "https://jakebaxendale.com/contact/failure")
-			.status(303)
-			.end()
-	}
+	const redirect = "https://jakebaxendale.com/contact/"
 
 	// Honeypot fail or blacklisted
-	if (testHoneypot(referer, body, response)) {
+	if (testHoneypot(redirect, body, response)) {
 		return
 	}
 
 	// Invalid EMAIL
-	if (invalidEmail(referer, body.emailAddress, response)) {
+	if (invalidEmail(redirect, body.emailAddress, response)) {
 		return
 	}
 
 	// Missing EMAIL
-	if (missingEmail(referer, body.emailAddress, response)) {
+	if (missingEmail(redirect, body.emailAddress, response)) {
 		return
 	}
 
 	// Missing MESSAGE
-	if (missingMessage(referer, body.message, response)) {
+	if (missingMessage(redirect, body.message, response)) {
 		return
 	}
 
@@ -45,8 +36,8 @@ export default async function handler(
 	const resp = (await sendEmail(body)) as Response
 
 	resp.ok
-		? response.setHeader("Location", `${referer}success`).status(303).end()
-		: response.setHeader("Location", `${referer}failure`).status(303).end()
+		? response.setHeader("Location", `${redirect}success`).status(303).end()
+		: response.setHeader("Location", `${redirect}failure`).status(303).end()
 
 	return
 }

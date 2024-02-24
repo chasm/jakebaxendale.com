@@ -5,7 +5,8 @@ import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
-	title: "Failure!",
+	label: "Message fail",
+	title: "Failed to send message",
 }
 
 const { title } = metadata
@@ -14,27 +15,13 @@ const { title } = metadata
 <Layout {title}>
 	<Article {title}>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur
-			vel dui ac lacinia. Cras iaculis eget libero condimentum molestie. Aliquam
-			sollicitudin accumsan pellentesque. Curabitur quis nunc quis leo vehicula
-			facilisis sit amet vel elit. Mauris egestas mi sit amet dui congue
-			interdum. Quisque faucibus odio vitae justo rutrum convallis. Aliquam
-			massa mauris, hendrerit eget pharetra nec, condimentum nec urna. Cras eget
-			tellus accumsan, ornare massa sed, congue dolor. In hac habitasse platea
-			dictumst. In viverra risus quis tincidunt maximus. In hac habitasse platea
-			dictumst. Duis sit amet rhoncus nisl.
-		</p>
-		<p>
-			Curabitur interdum ultrices nibh, eu vestibulum odio lacinia sed. Morbi
-			vulputate facilisis posuere. Etiam elementum arcu et nibh vestibulum
-			sodales. Ut eleifend sit amet justo sed scelerisque. Pellentesque ac
-			efficitur lacus. Maecenas vulputate bibendum pulvinar. Mauris vulputate at
-			turpis accumsan convallis. Nulla aliquam tincidunt tellus vel commodo. Ut
-			lacinia mi purus, ut tristique augue laoreet sed. Donec egestas ultricies
-			ipsum sit amet vulputate. Nullam diam ligula, euismod vitae dictum vitae,
-			ultrices ac massa. Cras odio augue, maximus ac feugiat non, lobortis
-			ultrices sem. Nunc ut dui non ligula auctor convallis. Proin tortor nisl,
-			vestibulum nec ante id, eleifend sollicitudin nulla.
+			Unfortunately, our server failed to send your contact message. You can use
+			the <strong>back button</strong> to return to the form and try again. If it
+			still stubbornly refuses to work, then please <a
+				href="mailto:charles.munat@gmail.com?subject=%5BJakeBaxendale.com%5D%20Contact%20form%20failure"
+				>email the webmaster</a
+			>
+			and we will get right on it.
 		</p>
 	</Article>
 </Layout>
