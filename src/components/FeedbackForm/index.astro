@@ -1,0 +1,85 @@
+---
+import "./index.css"
+
+const HONEYPOT_PASSWORD = process.env.HONEYPOT_PASSWORD || ""
+const HONEYPOT_CONFIRMATION = process.env.HONEYPOT_CONFIRMATION || ""
+---
+
+<section>
+	<h2 class="sr-only">Give us feedback!</h2>
+	<form
+		name="feedbackForm"
+		action="/api/feedback"
+		id="feedback-form"
+		method="post"
+	>
+		<div>
+			<label for="feedback">Your feedback*</label>
+			<textarea
+				cols="48"
+				required
+				rows="8"
+				name="feedback"
+			></textarea>
+		</div>
+		<div>
+			<label for="email">Your email address (optional)</label>
+			<input
+				size="32"
+				id="email"
+				inputmode="email"
+				name="emailAddress"
+				type="email"
+			/>
+		</div>
+		<div>
+			<label for="name">Your name (optional)</label>
+			<input
+				size="32"
+				id="name"
+				inputmode="text"
+				name="name"
+				type="text"
+			/>
+		</div>
+		<div>
+			<input
+				name="_charset_"
+				type="hidden"
+			/>
+			<button type="submit"> Send your feedback </button>
+		</div>
+		<fieldset
+			aria-hidden="true"
+			class="funnypot"
+		>
+			<legend>Please ignore these two fields</legend>
+			<div>
+				<label for="password">Leave this field as is:<</label>
+				<input
+					tabindex="-1"
+					inputmode="text"
+					autocomplete="off"
+					id="password"
+					name="password"
+					spellcheck="false"
+					type="password"
+					value={HONEYPOT_PASSWORD}
+				/>
+			</div>
+			<div>
+				<label for="confirmation">Put nothing in this field as well:</label>
+				<input
+					tabindex="-1"
+					inputmode="text"
+					autocomplete="off"
+					id="confirmation"
+					name="confirmation"
+					spellcheck="false"
+					type="password"
+					value={HONEYPOT_CONFIRMATION}
+				/>
+			</div>
+		</fieldset>
+	</form>
+</section>

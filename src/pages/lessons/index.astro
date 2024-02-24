@@ -2,6 +2,7 @@
 import type { PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
+import Picture from "~components/Picture/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
@@ -13,6 +14,23 @@ const { title } = metadata
 
 <Layout {title}>
 	<Article {title}>
+		<p>
+			<a
+				aria-label="To larger image of Jake."
+				href="/images/optimized/jake-tall.jpeg"
+			>
+				<Picture
+					alt=""
+					class="float-left"
+					filename="jake-tall"
+					height={1152}
+					loading="lazy"
+					src="/images/optimized/768/jake-tall.jpeg"
+					types={["image/avif", "image/webp", "image/jpeg"]}
+					width={768}
+				/>
+			</a>
+		</p>
 		<p>
 			I am currently the <strong>musical director</strong> of the Rata School of
 			Music jazz band. This is a community program that offers the opportunity for

@@ -1,5 +1,8 @@
 ---
 import "./index.css"
+
+const HONEYPOT_PASSWORD = process.env.HONEYPOT_PASSWORD || ""
+const HONEYPOT_CONFIRMATION = process.env.HONEYPOT_CONFIRMATION || ""
 ---
 
 <section>
@@ -25,7 +28,7 @@ import "./index.css"
 				size="32"
 				id="email"
 				inputmode="email"
-				name="email"
+				name="emailAddress"
 				required
 				type="email"
 			/>
@@ -62,7 +65,7 @@ import "./index.css"
 					name="password"
 					spellcheck="false"
 					type="password"
-					value="qwizmo999"
+					value={HONEYPOT_PASSWORD}
 				/>
 			</div>
 			<div>
@@ -75,6 +78,7 @@ import "./index.css"
 					name="confirmation"
 					spellcheck="false"
 					type="password"
+					value={HONEYPOT_CONFIRMATION}
 				/>
 			</div>
 		</fieldset>

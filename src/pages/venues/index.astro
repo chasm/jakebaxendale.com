@@ -1,0 +1,182 @@
+---
+import type { Card, PageMeta } from "~types"
+
+import Article from "~components/Article/index.astro"
+import Cards from "~components/Cards/index.astro"
+import Layout from "~layouts/index.astro"
+import collapseWhitespace from "~utilities/collapseWhitespace"
+
+export const metadata: Partial<PageMeta> = {
+	title: "Venues",
+}
+
+const { title } = metadata
+
+export const cards: Array<Card> = [
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				The Rogue & Vagabond is a Wellington craft beer bar located in
+				Glover Park just off Cuba Street. The bar features live music
+				in a relaxed, dog-friendly venue.
+			</p>
+			<p>
+				Live local original music and a monthly rotation of local artists
+				plus a commission-free art space.
+			</p>`),
+		href: "https://www.rogueandvagabond.co.nz/beats/",
+		image: {
+			filename: "rogue-logo",
+			height: 768,
+			src: "/images/optimized/768/rogue-logo.jpeg",
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 768,
+		},
+		subtitle: "Thursday-Friday-Saturday-Sunday",
+		title: "The Rogue & Vagabond",
+	},
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				Meow is a venue next door to Wellington’s Little Beer Quarter (LBQ) and
+				a staple on the NZ touring circuit since 2008.
+			</p>
+			<p>
+				While providing live music, stand-up comedy, slam poetry readings, and more,
+				Meow also features a variety of craft beers and tasty food.
+			</p>`),
+		href: "https://www.meow.nz/venue",
+		image: {
+			filename: "meow-logo",
+			height: 703,
+			src: "/images/optimized/768/meow-logo.png",
+			types: ["image/avif", "image/webp", "image/png"],
+			width: 768,
+		},
+		subtitle: "Any day: check listings",
+		title: "MEOW",
+	},
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				Pizza, beer, and live music in Newtown, Wellington.
+			</p>
+			<p>
+				Craft beer, handlpull ales, “low-gravity bites”, freshly-baked
+				wraps, wine, and more. Quiz night on Mondays, Jam night on Tuesdays.
+			</p>`),
+		href: "https://www.undertheradar.co.nz/venue/3408/MOON.utr",
+		image: {
+			filename: "moon",
+			height: 768,
+			src: "/images/optimized/768/moon.jpeg",
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 768,
+		},
+		subtitle: "Any day: check listings",
+		title: "Moon",
+	},
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				Hidden away upstairs in the heart of Courtenay Place sits The Library.
+				Cocktails, wines, desserts, cheese, and savoury snacks
+				make this a great place to meet before or after a show.
+			</p>
+			<p>
+				And, of course, The Library itself features live music. Check the schedule.
+			</p>`),
+		href: "https://www.thelibrary.co.nz/",
+		image: {
+			filename: "the-library",
+			height: 768,
+			src: "/images/optimized/768/the-library.jpeg",
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 768,
+		},
+		subtitle: "Thursday-Friday-Sunday",
+		title: "The Library",
+	},
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				Since 2009 we've been doing what we think is important for a bar,
+				even if that means defying conventions.
+			</p>
+			<p>
+				That starts with selecting a diverse range of beer styles for our taps
+				while keeping big, corporate brewers out. As a result we've been named
+				the best bar in Wellington by the Society of Beer Advocates and the best
+				bar in New Zealand by ratebeer.com multiple times.
+			</p>
+			<p>
+				We put our atmospheric underground location to good use and host
+				superb music and comedy in our lounge.
+			</p>`),
+		href: "https://www.hashigozake.co.nz/",
+		image: {
+			filename: "hashigo-zake",
+			height: 263,
+			src: "/images/optimized/768/hashigo-zake.jpeg",
+			types: ["image/avif", "image/webp", "image/jpeg"],
+			width: 768,
+		},
+		subtitle: "Thursday-Friday-Saturday",
+		title: "Hashigo Zake",
+	},
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				The Vogelmorn Bowling Club began as an actual bowling club. Then, in 2014,
+				it was sold to a charitable trust for a mere $1000.
+			</p>
+			<p>
+				Since then it has become a community centre and a hub for all sorts of
+				activities: artists developing new work, co-working, theatre, dining
+				and drinking, and, of course, concerts.
+			</p>`),
+		href: "https://www.eventfinda.co.nz/venue/vogelmorn-bowling-club-wellington",
+		image: {
+			filename: "vogelmorn-bowling-club",
+			height: 598,
+			src: "/images/optimized/768/vogelmorn-bowling-club.png",
+			types: ["image/avif", "image/webp", "image/png"],
+			width: 768,
+		},
+		subtitle: "Any day: check listings",
+		title: "Vogelmorn",
+	},
+	{
+		epilogue: collapseWhitespace(`
+			<p>
+				Plonk was born from a love of wine, music, and food. Drop in for a drink,
+				rip into our menu, and absorb the sounds.
+			</p>
+			<p>
+				Plonk features live music, local and wordly wines, and chefs McDonald and
+				Pask riffing off French classics.
+			</p>`),
+		href: "https://www.plonkwinebar.co.nz/gigs",
+		image: {
+			filename: "plonk",
+			height: 768,
+			src: "/images/optimized/768/plonk.png",
+			types: ["image/avif", "image/webp", "image/png"],
+			width: 768,
+		},
+		subtitle: "Any day: check listings",
+		title: "Plonk Wine Bar",
+	},
+]
+---
+
+<Layout {title}>
+	<Article {title}>
+		<p>
+			Wellington is full of music venues. Here is a partial list. Follow the
+			links to find out what's happening near you. Days sometimes vary, so check
+			listings to be sure.
+		</p>
+	</Article>
+	<Cards {cards} />
+</Layout>

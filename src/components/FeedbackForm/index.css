@@ -1,0 +1,53 @@
+form#feedback-form {
+	display: grid;
+	grid-template-rows: min-content min-content min-content min-content;
+	margin-block: 3rem;
+	row-gap: 2rem;
+}
+
+form#feedback-form div {
+	align-content: start;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: min-content 1fr;
+}
+
+form#feedback-form label {
+	font-size: var(--step-1);
+	line-height: 2;
+}
+
+form#feedback-form input,
+form#feedback-form textarea {
+	background-color: var(--form-field-background-color);
+	border: var(--form-field-border);
+	padding: 0.5rem;
+}
+
+form#feedback-form input:focus,
+form#feedback-form textarea:focus {
+	background-color: var(--form-field-background-color-focus);
+	padding: 0.5rem;
+	outline: var(--form-field-outline);
+	outline-offset: 5px;
+}
+
+form#feedback-form button {
+	background-color: var(--form-button-background-color);
+	border: var(--form-button-border);
+	color: var(--form-button-foreground-color);
+	font-weight: 600;
+	max-width: fit-content;
+	letter-spacing: 1px;
+	padding: 0.5rem 1rem;
+	text-transform: uppercase;
+}
+
+form#feedback-form button:focus,
+form#feedback-form button:hover {
+	background-color: var(--form-button-background-color-hover);
+	border: var(--form-button-border-hover);
+	color: var(--form-button-foreground-color-hover);
+	outline: var(--form-button-outline-hover);
+	outline-offset: 5px;
+}

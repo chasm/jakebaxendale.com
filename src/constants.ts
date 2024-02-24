@@ -5,9 +5,10 @@ export const GLOBAL_NAV = [
 	{ href: "/community", label: "Community" },
 	{ href: "/discography", label: "Discography" },
 	{ href: "/lessons", label: "Lessons" },
-	{ href: "/portfolio", label: "Portfolio" },
+	// { href: "/portfolio", label: "Portfolio" },
 	{ href: "/projects", label: "Projects" },
 	{ href: "/prose", label: "Prose" },
+	{ href: "/venues", label: "Venus" },
 	{ href: "/contact", label: "Contact" },
 ]
 
