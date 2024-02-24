@@ -8,7 +8,7 @@ export const GLOBAL_NAV = [
 	// { href: "/portfolio", label: "Portfolio" },
 	{ href: "/projects", label: "Projects" },
 	{ href: "/prose", label: "Prose" },
-	{ href: "/venues", label: "Venus" },
+	{ href: "/venues", label: "Venues" },
 	{ href: "/contact", label: "Contact" },
 ]
 
