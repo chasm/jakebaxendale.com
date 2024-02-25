@@ -7,3 +7,9 @@ nav.global-nav {
 	justify-content: space-between;
 	padding: var(--space-xs) var(--page-gutter);
 }
+
+@media screen and (width <= 1240px) {
+	nav.global-nav:not(:has(.trail ul)) {
+		display: none;
+	}
+}
