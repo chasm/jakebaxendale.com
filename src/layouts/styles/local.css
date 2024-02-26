@@ -1,38 +1,39 @@
 :root {
 	/* Colors */
-	--color-whitish: 17deg, 87%, 95%;
-	--color-lightest: 17deg, 87%, 79%;
-	--color-lighter: 12deg, 84%, 77%;
-	--color-light: 8deg, 82%, 75%;
-	--color-dark: 3deg, 80%, 74%;
-	--color-darker: 0deg, 79%, 72%;
-	--color-darkest: 17deg, 87%, 10%;
-	--color-green: 180deg, 80%, 30%;
-	--body-background-color: hsl(var(--color-lightest));
-	--body-foreground-color: hsl(var(--color-darkest));
-	--blockquote-background-color: hsl(var(--color-lighter));
-	--blockquote-foreground-color: hsl(var(--color-darkest));
-	--footer-background-color: hsl(var(--color-lighter));
-	--footer-foreground-color: hsl(var(--color-darkest));
-	--footer-outline-color: hsl(var(--color-darkest));
-	--global-nav-background-color: hsl(var(--color-lighter));
-	--global-nav-foreground-color: hsl(var(--color-darkest));
-	--global-nav-outline-color: hsl(var(--color-darkest));
-	--header-background-color: hsl(var(--color-darker));
-	--header-foreground-color: hsl(var(--color-darkest));
-	--link-foreground-color: hsl(var(--color-darkest));
-	--link-outline-color: hsl(var(--color-darkest));
-	--logo-outline-color: hsl(var(--color-darkest));
-	--menu-toggle-background-color: hsl(var(--color-darker));
-	--menu-toggle-background-color-hover: hsl(var(--color-darkest));
-	--menu-toggle-foreground-color: hsl(var(--color-darkest));
-	--menu-toggle-foreground-color-hover: hsl(var(--color-darker));
-	--menu-toggle-outline-color-focus: hsl(var(--color-darkest));
+	--color-whitish: 95.83% 0.019 42.96;
+	--color-lightest: 82.96% 0.086 42.5;
+	--color-lighter: 79.95% 0.098 34.64;
+	--color-light: 77.15% 0.112 29.32;
+	--color-dark: 74.89% 0.123 23.64;
+	--color-darker: 72.32% 0.139 21.08;
+	--color-darkest: 22.08% 0.057 42.84;
+	--color-green: 57.39% 0.095 194.83;
+	--color-red: 43.69% 0.154 26.02;
+	--body-background-color: oklch(var(--color-lightest));
+	--body-foreground-color: oklch(var(--color-darkest));
+	--blockquote-background-color: oklch(var(--color-lighter));
+	--blockquote-foreground-color: oklch(var(--color-darkest));
+	--footer-background-color: oklch(var(--color-lighter));
+	--footer-foreground-color: oklch(var(--color-darkest));
+	--footer-outline-color: oklch(var(--color-darkest));
+	--global-nav-background-color: oklch(var(--color-lighter));
+	--global-nav-foreground-color: oklch(var(--color-darkest));
+	--global-nav-outline-color: oklch(var(--color-darkest));
+	--header-background-color: oklch(var(--color-darker));
+	--header-foreground-color: oklch(var(--color-darkest));
+	--link-foreground-color: oklch(var(--color-darkest));
+	--link-outline-color: oklch(var(--color-darkest));
+	--logo-outline-color: oklch(var(--color-darkest));
+	--menu-toggle-background-color: oklch(var(--color-darker));
+	--menu-toggle-background-color-hover: oklch(var(--color-darkest));
+	--menu-toggle-foreground-color: oklch(var(--color-darkest));
+	--menu-toggle-foreground-color-hover: oklch(var(--color-darker));
+	--menu-toggle-outline-color-focus: oklch(var(--color-darkest));
 	--skip-link-background-color: transparent;
-	--skip-link-foreground-color: hsl(var(--color-darkest));
-	--skip-link-foreground-color-focus: hsl(var(--color-darkest));
-	--skip-link-outline-color-focus: hsl(var(--color-darkest));
-	--top-nav-background-color: hsl(var(--color-lightest));
+	--skip-link-foreground-color: oklch(var(--color-darkest));
+	--skip-link-foreground-color-focus: oklch(var(--color-darkest));
+	--skip-link-outline-color-focus: oklch(var(--color-darkest));
+	--top-nav-background-color: oklch(var(--color-lightest));
 
 	/* Fonts */
 	--font-body: optima, candara, "Noto Sans", source-sans-pro, sans-serif;
@@ -61,24 +62,24 @@
 	/* Borders */
 
 	/* Cards */
-	--card-background-color-hover: hsl(var(--color-lighter));
-	--card-border: 1px solid hsl(var(--color-light));
-	--card-box-shadow: 7px 8px 10px hsl(var(--color-lighter));
-	--card-box-shadow-hover: 7px 8px 15px hsl(var(--color-dark));
-	--card-foreground-color: hsl(var(--color-darkest));
+	--card-background-color-hover: oklch(var(--color-lighter));
+	--card-border: 1px solid oklch(var(--color-light));
+	--card-box-shadow: 7px 8px 10px oklch(var(--color-lighter));
+	--card-box-shadow-hover: 7px 8px 15px oklch(var(--color-dark));
+	--card-foreground-color: oklch(var(--color-darkest));
 
 	/* Forms */
-	--form-button-background-color: #941e1f;
-	--form-button-background-color-hover: hsl(var(--color-lighter));
-	--form-button-border: 2px solid hsl(var(--color-darker));
-	--form-button-border-hover: 2px solid hsl(var(--color-darker));
-	--form-button-foreground-color: hsl(var(--color-whitish));
-	--form-button-foreground-color-hover: hsl(var(--color-darkest));
-	--form-button-outline-hover: 2px solid hsl(var(--color-darker));
-	--form-field-background-color: hsl(var(--color-lighter));
-	--form-field-background-color-focus: hsl(var(--color-whitish));
-	--form-field-border: 2px solid hsl(var(--color-light));
-	--form-field-outline: 2px solid hsl(var(--color-light));
+	--form-button-background-color: oklch(var(--color-red));
+	--form-button-background-color-hover: oklch(var(--color-lighter));
+	--form-button-border: 2px solid oklch(var(--color-darker));
+	--form-button-border-hover: 2px solid oklch(var(--color-darker));
+	--form-button-foreground-color: oklch(var(--color-whitish));
+	--form-button-foreground-color-hover: oklch(var(--color-darkest));
+	--form-button-outline-hover: 2px solid oklch(var(--color-darker));
+	--form-field-background-color: oklch(var(--color-lighter));
+	--form-field-background-color-focus: oklch(var(--color-whitish));
+	--form-field-border: 2px solid oklch(var(--color-light));
+	--form-field-outline: 2px solid oklch(var(--color-light));
 }
 
 body {

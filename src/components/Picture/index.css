@@ -1,5 +1,5 @@
 .white-bgnd {
-	background-color: hsl(var(--color-whitish));
+	background-color: oklch(var(--color-whitish));
 	height: fit-content;
 	padding: 0.5rem;
 	width: fit-content;
