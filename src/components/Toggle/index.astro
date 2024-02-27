@@ -23,9 +23,3 @@ const { hideClass = "remove" } = Astro.props
 		<span class={hideClass}>Menu toggle (ignore)<br /><br /></span>
 	</label>
 </div>
-
-<script type="module">
-	document.addEventListener("DOMContentLoaded", () => {
-		setTimeout(() => (document.body.style = "--animation-timing: 0.5s"), 2000)
-	})
-</script>
