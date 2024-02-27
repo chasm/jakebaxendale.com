@@ -30,6 +30,7 @@ ul.compositions > li ul li a {
 
 @media screen and (max-width: 48rem) {
 	ul.compositions > li ul {
+		align-items: flex-start;
 		flex-direction: column;
 	}
 }
