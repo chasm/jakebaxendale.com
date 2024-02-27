@@ -6,13 +6,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Feedback fail",
+	robots: "noindex",
 	title: "Failed to send feedback",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<p>
 			Unfortunately, our server failed to send your feedback. You can use the

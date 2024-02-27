@@ -7,13 +7,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Contact",
+	robots: "noindex",
 	title: "Contact Jake",
 }
 
-const { label, title } = metadata
+const { label, robots, title } = metadata
 ---
 
-<Layout title={label}>
+<Layout
+	{robots}
+	title={label}
+>
 	<Article {title}>
 		<p>Need to get in touch with Jake? Please use the form below.</p>
 	</Article>

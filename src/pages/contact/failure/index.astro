@@ -6,13 +6,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Message fail",
+	robots: "noindex",
 	title: "Failed to send message",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<p>
 			Unfortunately, our server failed to send your contact message. You can use

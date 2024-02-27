@@ -6,13 +6,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Missing email",
+	robots: "noindex",
 	title: "Missing email address",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<p>
 			Your contact form submission did not include an <strong

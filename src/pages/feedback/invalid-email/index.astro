@@ -6,13 +6,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Invalid email",
+	robots: "noindex",
 	title: "Invalid email address",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<p>
 			The <strong>email address</strong> you supplied with your feedback form submission

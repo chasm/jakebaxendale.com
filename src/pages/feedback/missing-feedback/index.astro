@@ -5,13 +5,17 @@ import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
+	robots: "noindex",
 	title: "Missing feedback",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<p>
 			Your feedback form submission did not include <strong>feedback.</strong>

@@ -5,13 +5,17 @@ import Article from "~components/Article/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
+	robots: "noindex",
 	title: "Success",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<p>
 			Your <strong>contact message</strong> was successfully sent to Jake! Thank
