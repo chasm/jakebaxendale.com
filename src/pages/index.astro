@@ -1,4 +1,6 @@
 ---
+import "./index.css"
+
 import type { PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
@@ -15,12 +17,11 @@ const { title } = metadata
 
 <Layout>
 	<Article {title}>
-		<ul>
+		<ul class="coming-concerts">
 			<li>
+				<h2><a href="/projects/gardening-music">Gardening Music</a></h2>
 				<p>
-					<a href="/projects/gardening-music">Gardening Music</a> at <strong
-						>7:30 PM on 7 March</strong
-					> at
+					<strong>7:30 PM on 7 March</strong> at
 					<a
 						href="https://www.bedlamandsqualor.co.nz/"
 						rel="external"

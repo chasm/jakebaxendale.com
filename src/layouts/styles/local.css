@@ -60,6 +60,7 @@
 	--page-width: 92vw;
 
 	/* Borders */
+	--coming-concerts-border-bottom: 2px solid oklch(var(--color-lighter));
 
 	/* Cards */
 	--card-background-color-hover: oklch(var(--color-lighter));
