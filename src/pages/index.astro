@@ -7,7 +7,7 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Home",
-	title: "Everything Jake",
+	title: "Concerts coming up!",
 }
 
 const { title } = metadata
@@ -15,64 +15,51 @@ const { title } = metadata
 
 <Layout>
 	<Article {title}>
-		<p>
-			Here you&rsquo;ll find everything Jake. Take a look around, and <a
-				href="/contact">drop us a line</a
-			> if you have any questions or comments.
-		</p>
-		<section>
-			<h2>Concerts coming up!</h2>
-			<ul>
-				<li>
-					<p>
-						<a href="/projects/gardening-music">Gardening Music</a> at <strong
-							>7:30 PM on 7 March</strong
-						> at
+		<ul>
+			<li>
+				<p>
+					<a href="/projects/gardening-music">Gardening Music</a> at <strong
+						>7:30 PM on 7 March</strong
+					> at
+					<a
+						href="https://www.bedlamandsqualor.co.nz/"
+						rel="external"
+						><strong>Bedlam &amp; Squalor,</strong></a
+					> located on Level 1 at <a
+						href="https://www.google.com/maps/place/Bedlam+%26+Squalor/@-41.2934027,174.7718894,17z/data=!3m1!5s0x6d38afd792216045:0xc8ebc1c3ffe20101!4m15!1m8!3m7!1s0x6d38afd818f86673:0xa635d19f7d69f1bc!2s18+Garrett+Street,+Te+Aro,+Wellington+6011!3b1!8m2!3d-41.2934027!4d174.7744643!16s%2Fg%2F11c2g078xp!3m5!1s0x6d38af2bb48821bd:0x5f1c924d6ceccc62!8m2!3d-41.2934042!4d174.7744589!16s%2Fg%2F11m21pg9bv?entry=ttu"
+						rel="external"
+						>18 Garett Street,</a
+					> Wellingon and presented by the
+					<a
+						href="https://www.wellingtonjazzcooperative.co.nz/"
+						rel="external"
+						>Wellington Jazz Cooperative</a
+					> (WJC).
+				</p>
+				<p>
+					<strong>
 						<a
-							href="https://www.bedlamandsqualor.co.nz/"
+							href="https://www.eventfinda.co.nz/2024/jake-baxendale-and-gardening-music/wellington"
 							rel="external"
-							><strong>Bedlam &amp; Squalor,</strong></a
-						> located on Level 1 at <a
-							href="https://www.google.com/maps/place/Bedlam+%26+Squalor/@-41.2934027,174.7718894,17z/data=!3m1!5s0x6d38afd792216045:0xc8ebc1c3ffe20101!4m15!1m8!3m7!1s0x6d38afd818f86673:0xa635d19f7d69f1bc!2s18+Garrett+Street,+Te+Aro,+Wellington+6011!3b1!8m2!3d-41.2934027!4d174.7744643!16s%2Fg%2F11c2g078xp!3m5!1s0x6d38af2bb48821bd:0x5f1c924d6ceccc62!8m2!3d-41.2934042!4d174.7744589!16s%2Fg%2F11m21pg9bv?entry=ttu"
-							rel="external"
-							>18 Garett Street,</a
-						> Wellingon and presented by the
-						<a
-							href="https://www.wellingtonjazzcooperative.co.nz/"
-							rel="external"
-							>Wellington Jazz Cooperative</a
-						> (WJC).
-					</p>
-					<p>
-						<strong>
-							<a
-								href="https://www.eventfinda.co.nz/2024/jake-baxendale-and-gardening-music/wellington"
-								rel="external"
-								>TICKETS for Gardening Music</a
-							> are on sale now.</strong
-						>
-					</p>
-					<p>
-						<a
-							aria-label="To Bedlam and Squalor."
-							href="https://www.bedlamandsqualor.co.nz/"
-							rel="external"
-						>
-							<Picture
-								alt="Bedlam and Squalor"
-								class="full-width"
-								filename="bedlam-and-squalor"
-								height={346}
-								loading="eager"
-								src="/images/optimized/768/bedlam-and-squalor.jpeg"
-								types={["image/avif", "image/webp", "image/jpeg"]}
-								width={768}
-							/>
-						</a>
-					</p>
-				</li>
-			</ul>
-		</section>
+							>TICKETS for Gardening Music</a
+						> are on sale now.</strong
+					>
+				</p>
+				<figure>
+					<Picture
+						alt="Jake in the garden. Image by Sam Pietras."
+						class="full-width"
+						filename="jake-by-sam-pietras"
+						height={546}
+						loading="eager"
+						src="/images/optimized/768/jake-by-sam-pietras.jpeg"
+						types={["image/avif", "image/webp", "image/jpeg"]}
+						width={768}
+					/>
+					<figcaption>Image by Sam Pietras.</figcaption>
+				</figure>
+			</li>
+		</ul>
 		<section>
 			<h2>In other media &hellip;</h2>
 			<p>

@@ -1,14 +1,13 @@
 ---
-import type { AstroInstance } from "astro"
-import type { PageMeta } from "~types"
+import type { Page, PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
 import Cards from "~components/Cards/index.astro"
 import Layout from "~layouts/index.astro"
 
-const pages = (await Astro.glob("../projects/**/*.astro")) as Array<
-	AstroInstance & { metadata: PageMeta }
->
+import { PROJECTS } from "~constants"
+
+const pages = (await Astro.glob("../projects/**/*.astro")) as Array<Page>
 
 export const metadata: Partial<PageMeta> = {
 	title: "Projects",
@@ -16,14 +15,17 @@ export const metadata: Partial<PageMeta> = {
 
 const { title } = metadata
 
-const cards = pages.map(
-	({ metadata: { blurb, image, title = "" } = {}, url: href }) => ({
+const cards = PROJECTS.map(({ href: pageURL }) => {
+	const { metadata: { blurb, image, title = "" } = {} as PageMeta, url: href } =
+		pages.find((page) => page.url === pageURL) || ({} as Page)
+
+	return {
 		blurb,
 		href,
 		image,
 		title,
-	}),
-)
+	}
+})
 ---
 
 <Layout {title}>
