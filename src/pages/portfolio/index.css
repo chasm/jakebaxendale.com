@@ -23,3 +23,13 @@ ul.compositions > li ul {
 ul.compositions > li ul li:first-child {
 	list-style-type: none;
 }
+
+ul.compositions > li ul li a {
+	white-space: nowrap;
+}
+
+@media screen and (max-width: 48rem) {
+	ul.compositions > li ul {
+		flex-direction: column;
+	}
+}
