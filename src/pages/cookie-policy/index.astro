@@ -6,13 +6,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Cookie policy",
+	robots: "noindex",
 	title: "Our cookie policy",
 }
 
-const { label, title } = metadata
+const { label, robots, title } = metadata
 ---
 
-<Layout title={label}>
+<Layout
+	{robots}
+	title={label}
+>
 	<Article {title}>
 		<p>
 			JakeBaxendale.com site does not currently measure analytics. We do the

@@ -36,6 +36,7 @@ export type PageMeta = {
 	blurb?: string | undefined
 	image?: Image | undefined
 	label?: string | undefined
+	robots?: string | undefined
 	subtitle?: string | undefined
 	title: string
 }

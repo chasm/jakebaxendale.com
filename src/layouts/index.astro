@@ -16,10 +16,11 @@ export type Props = {
 	description?: string | undefined
 	keywords?: Array<string> | undefined
 	publisher?: string | undefined
+	robots?: string | undefined
 	title?: string | undefined
 }
 
-const { author, description, keywords, publisher, title } = Astro.props
+const { author, description, keywords, publisher, robots, title } = Astro.props
 
 const pages = (await Astro.glob("../pages/**/*.astro")) as Array<
 	AstroInstance & { metadata: PageMeta }
@@ -34,6 +35,7 @@ const content = await Astro.slots.render("default")
 		{description}
 		{keywords}
 		{publisher}
+		{robots}
 		{title}
 	>
 		<slot name="head" />
