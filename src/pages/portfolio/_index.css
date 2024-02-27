@@ -29,7 +29,7 @@ ul.compositions > li ul li a {
 	white-space: nowrap;
 }
 
-@media screen and (max-width: 48rem) {
+@media screen and (width <= 48rem) {
 	ul.compositions > li ul {
 		align-items: flex-start;
 		flex-direction: column;

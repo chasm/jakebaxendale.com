@@ -1,5 +1,5 @@
 ---
-import "./index.css"
+import "./_index.css"
 
 import type { PageMeta } from "~types"
 
@@ -8,13 +8,17 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Portfolio",
+	robots: "noindex",
 	title: "Composition Portfolio",
 }
 
-const { title } = metadata
+const { robots, title } = metadata
 ---
 
-<Layout {title}>
+<Layout
+	{robots}
+	{title}
+>
 	<Article {title}>
 		<ul class="compositions">
 			<li>
