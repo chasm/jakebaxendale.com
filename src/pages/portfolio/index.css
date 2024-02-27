@@ -32,5 +32,6 @@ ul.compositions > li ul li a {
 	ul.compositions > li ul {
 		align-items: flex-start;
 		flex-direction: column;
+		gap: 0.25rem;
 	}
 }
