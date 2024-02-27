@@ -5,6 +5,7 @@ ul.compositions {
 
 ul.compositions > li {
 	font-size: var(--step-1);
+	margin-bottom: 0.5rem;
 }
 
 ul.compositions > li > em {
