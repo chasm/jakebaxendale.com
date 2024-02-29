@@ -1,14 +1,14 @@
 :root {
 	/* Colors */
-	--color-whitish: 95.83% 0.019 42.96;
-	--color-lightest: 82.96% 0.086 42.5;
-	--color-lighter: 79.95% 0.098 34.64;
-	--color-light: 77.15% 0.112 29.32;
-	--color-dark: 74.89% 0.123 23.64;
-	--color-darker: 72.32% 0.139 21.08;
-	--color-darkest: 22.08% 0.057 42.84;
-	--color-green: 57.39% 0.095 194.83;
-	--color-red: 43.69% 0.154 26.02;
+	--color-whitish: 95.83% 0.019 42.96; /* #fdede7; */
+	--color-lightest: 82.96% 0.086 42.5; /* #f8b59b */
+	--color-lighter: 79.95% 0.098 34.64; /* #f6a793 */
+	--color-light: 77.15% 0.112 29.32; /* #f4998b */
+	--color-dark: 74.89% 0.123 23.64; /* #f28d88 */
+	--color-darker: 72.32% 0.139 21.08; /* #f07f7f */
+	--color-darkest: 22.08% 0.057 42.84; /* #301003 */
+	--color-green: 57.39% 0.095 194.83; /* #108a8a */
+	--color-red: 43.69% 0.154 26.02; /* #941e1f */
 	--body-background-color: oklch(var(--color-lightest));
 	--body-foreground-color: oklch(var(--color-darkest));
 	--blockquote-background-color: oklch(var(--color-lighter));
