@@ -28,6 +28,10 @@ dd {
 	margin-block-end: 0;
 }
 
+dt {
+	margin-block: 2rem 0;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
@@ -66,6 +70,29 @@ h4 {
 /* A elements that don’t have a class get default styles */
 a:not([class]) {
 	text-decoration-skip-ink: auto;
+}
+
+a.button {
+	background-color: var(--form-button-background-color);
+	border: var(--form-button-border);
+	color: var(--form-button-foreground-color);
+	display: inline-block;
+	font-weight: 600;
+	max-width: fit-content;
+	letter-spacing: 1px;
+	margin-block: 0.5rem;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+a.button:focus,
+a.button:hover {
+	background-color: var(--form-button-background-color-hover);
+	border: var(--form-button-border-hover);
+	color: var(--form-button-foreground-color-hover);
+	outline: var(--form-button-outline-hover);
+	outline-offset: 5px;
 }
 
 /* Make images easier to work with */
