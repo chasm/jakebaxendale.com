@@ -16,7 +16,7 @@ const JAKE = {
 }
 
 function composeBody(body: Body, t = new Date()): string {
-	const { feedback, message, name } = body
+	const { emailAddress, feedback, message, name } = body
 	const msg = feedback || message || "Empty message"
 	const txt =
 		"<p>" +
@@ -29,6 +29,7 @@ function composeBody(body: Body, t = new Date()): string {
 	return [
 		`${txt}`,
 		...(name ? [`<p>Name: ${name}</p>`] : []),
+		...(emailAddress ? [`<p>Email: ${emailAddress}</p>`] : []),
 		`<p>Submitted at: ${t.toString()}</p>`,
 	].join("\n")
 }
