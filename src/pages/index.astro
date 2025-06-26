@@ -9,7 +9,7 @@ import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Home",
-	title: "Concerts coming up!",
+	title: "New album!",
 }
 
 const { title } = metadata
@@ -17,6 +17,30 @@ const { title } = metadata
 
 <Layout>
 	<Article {title}>
+		<p>
+			My new album <em>Gardening Music, Volume 1</em> is out July 6th, 2025! You
+			can
+			<a
+				href="https://jakebaxendale.bandcamp.com/album/gardening-music-volume-1"
+				rel="external"
+				>stream and pre-order it on bandcamp</a
+			> or
+			<a
+				href="https://distrokid.com/hyperfollow/jakebaxendale/gardening-music-volume-1"
+				rel="external"
+				>pre-save the album to your Spotify library</a
+			>, if you’re still using that AI sludgefest …
+		</p>
+		<p></p>
+		<iframe
+			style="border: 0; width: 350px; height: 470px;"
+			src="https://bandcamp.com/EmbeddedPlayer/album=439890640/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+			seamless
+		>
+			<a
+			href="https://jakebaxendale.bandcamp.com/album/gardening-music-volume-1">
+			Gardening Music, Volume 1 by Jake Baxendale </a>
+		</iframe>
 		<section>
 			<h2>In other media &hellip;</h2>
 			<p>

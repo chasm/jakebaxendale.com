@@ -7,7 +7,9 @@ import Layout from "~layouts/index.astro"
 
 import { PROJECTS } from "~constants"
 
-const pages = (await Astro.glob("../projects/**/*.astro")) as Array<Page>
+const pages = Object.values(
+	import.meta.glob("../projects/**/*.astro", { eager: true }),
+) as Array<Page>
 
 export const metadata: Partial<PageMeta> = {
 	title: "Projects",

@@ -22,9 +22,9 @@ export type Props = {
 
 const { author, description, keywords, publisher, robots, title } = Astro.props
 
-const pages = (await Astro.glob("../pages/**/*.astro")) as Array<
-	AstroInstance & { metadata: PageMeta }
->
+const pages = Object.values(
+	import.meta.glob("../pages/**/*.astro", { eager: true }),
+) as Array<AstroInstance & { metadata: PageMeta }>
 
 const content = await Astro.slots.render("default")
 ---
