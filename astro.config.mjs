@@ -1,7 +1,7 @@
 import mdx from "@astrojs/mdx"
-import { defineConfig } from "astro/config"
-
 import sitemap from "@astrojs/sitemap"
+
+import { defineConfig } from "astro/config"
 
 const ignore = [
 	"https://jakebaxendale.com/contact/",

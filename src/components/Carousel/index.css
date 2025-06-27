@@ -1,0 +1,195 @@
+.carousel-container {
+	margin: var(--space-m) 0;
+	position: relative;
+}
+
+.carousel {
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.carousel-track {
+	display: flex;
+	gap: 1rem;
+	list-style: none;
+	margin: 0;
+	overflow-x: auto;
+	padding: 0;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	scrollbar-width: thin;
+	/* Show scrollbar when no JS */
+}
+
+.carousel-track::-webkit-scrollbar {
+	height: 8px;
+	/* Show scrollbar when no JS */
+}
+
+.carousel-track::-webkit-scrollbar-track {
+	background: oklch(var(--color-lighter));
+}
+
+.carousel-track::-webkit-scrollbar-thumb {
+	background: oklch(var(--color-darker));
+	border-radius: 4px;
+}
+
+/* Hide scrollbar when JavaScript is enabled */
+.carousel-track.js-enabled {
+	scrollbar-width: none;
+}
+
+.carousel-track.js-enabled::-webkit-scrollbar {
+	display: none;
+}
+
+.carousel-slide {
+	flex: 0 0 auto;
+	scroll-snap-align: start;
+	width: 100%;
+	/* Full width - one image at a time */
+}
+
+.carousel-slide picture {
+	display: block;
+	height: 263px;
+	/* Fixed height container - optimized for landscape images at 395px width */
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+@media (width >=768px) {
+	.carousel-slide picture {
+		height: 573px;
+		/* Fixed height container - optimized for landscape images at 860px width */
+	}
+}
+
+.carousel-slide a {
+	cursor: pointer;
+	display: block;
+	text-decoration: none;
+	transition: opacity 0.2s ease;
+}
+
+.carousel-slide a:hover {
+	opacity: 0.9;
+}
+
+.carousel-slide a:focus {
+	outline: 2px solid var(--focus-color, #06c);
+	outline-offset: 2px;
+}
+
+.carousel-slide img {
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+	width: 100%;
+}
+
+/* Screen reader only class */
+.sr-only {
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Controls will be added by JavaScript */
+.carousel-controls {
+	align-items: center;
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+	margin-top: 1rem;
+}
+
+.carousel-nav-button {
+	align-items: center;
+	background: transparent;
+	border: 2px solid oklch(var(--color-darker));
+	border-radius: 6px;
+	color: oklch(var(--color-darkest));
+	cursor: pointer;
+	display: flex;
+	font-size: 0.9rem;
+	font-weight: 600;
+	height: auto;
+	justify-content: center;
+	line-height: 1;
+	min-width: auto;
+	padding: 0.5rem 0.75rem;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+}
+
+.carousel-nav-button:disabled {
+	border-color: oklch(var(--color-light));
+	color: oklch(var(--color-light));
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.carousel-nav-button:focus {
+	outline: 2px solid oklch(var(--color-darkest));
+	outline-offset: 2px;
+}
+
+.carousel-nav-button:hover:not(:disabled) {
+	background: oklch(var(--color-lighter));
+	border-color: oklch(var(--color-darkest));
+}
+
+.carousel-dots {
+	display: flex;
+	gap: 0.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Hide dots on mobile to prevent layout issues */
+@media (width < 768px) {
+	.carousel-dots {
+		display: none;
+	}
+}
+
+.carousel-dot {
+	background: oklch(var(--color-light));
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 16px;
+	transition: all 0.2s ease;
+	width: 16px;
+}
+
+.carousel-dot:hover {
+	background: oklch(var(--color-darker));
+	transform: scale(1.2);
+}
+
+.carousel-dot.active {
+	background: oklch(var(--color-darkest));
+}
+
+.carousel-info {
+	margin-top: 0.5rem;
+	text-align: center;
+}
+
+.carousel-scroll-hint {
+	color: oklch(var(--color-darkest));
+	font-size: 1.8rem;
+	font-style: italic;
+}

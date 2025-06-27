@@ -1,0 +1,92 @@
+---
+import "./index.css"
+
+import type { Image, MediaType } from "~types"
+
+export type CarouselImage = Image & {
+	alt: string
+}
+
+export type Props = {
+	images: Array<CarouselImage>
+	title?: string | undefined
+}
+
+const { images = [], title = "Image gallery" } = Astro.props
+
+function getSrcset(filename: string, heights: Array<number>, type: MediaType) {
+	const ext = type.split("/").at(-1)
+	return heights
+		.map(
+			(height, idx) =>
+				`/images/carousel/${height}/${filename}.${ext} ${idx + 1}x`,
+		)
+		.join(", ")
+}
+
+// Heights optimized for landscape images filling column width
+// Mobile: 395px wide → 263px height for 3:2 images
+// Desktop: 860px wide → 573px height for 3:2 images
+const mobileHeights = [263, 526]
+const desktopHeights = [573, 1146]
+---
+
+<section
+	class="carousel-container"
+	aria-label={title}
+>
+	<h3 class="sr-only">{title}</h3>
+	<figure class="carousel">
+		<ol class="carousel-track">
+			{
+				images.map(
+					({ filename, alt, width = 768, height = 768, types }, index) => (
+						<li class="carousel-slide">
+							<a
+								href={`/images/carousel/${filename}.jpeg`}
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label={`View full-size image: ${alt}`}
+								title="Link to full-sized image"
+							>
+								<picture>
+									{types.map((type: MediaType) => (
+										<>
+											<source
+												media="(width < 768px)"
+												srcset={getSrcset(filename, mobileHeights, type)}
+												type={type}
+											/>
+											<source
+												media="(width >= 768px)"
+												srcset={getSrcset(filename, desktopHeights, type)}
+												type={type}
+											/>
+										</>
+									))}
+									<img
+										src={`/images/carousel/${filename}.jpeg`}
+										alt={alt}
+										width={width}
+										height={height}
+										loading={index < 2 ? "eager" : "lazy"}
+										data-carousel-index={index}
+									/>
+								</picture>
+							</a>
+						</li>
+					),
+				)
+			}
+		</ol>
+		<figcaption class="carousel-info">
+			<span
+				class="carousel-counter sr-only"
+				aria-live="polite"
+			>
+				Image 1 of {images.length}
+			</span>
+			<span class="carousel-scroll-hint"> Scroll right for more images </span>
+		</figcaption>
+	</figure>
+</section>

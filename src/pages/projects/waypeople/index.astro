@@ -4,8 +4,8 @@ import type { PageMeta } from "~types"
 import collapseWhitespace from "~utilities/collapseWhitespace"
 import Article from "~components/Article/index.astro"
 import Cards from "~components/Cards/index.astro"
+import Carousel, { type CarouselImage } from "~components/Carousel/index.astro"
 import Layout from "~layouts/index.astro"
-import Picture from "~components/Picture/index.astro"
 
 import { cards } from "~pages/discography/index.astro"
 
@@ -26,6 +26,162 @@ export const metadata: Partial<PageMeta> = {
 	title: "Waypeople",
 }
 
+// Waypeople carousel images
+const carouselImages: CarouselImage[] = [
+	{
+		filename: "waypeople-01",
+		alt: "Waypeople performance image 1",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-01.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"] as const,
+	},
+	{
+		filename: "waypeople-02",
+		alt: "Waypeople performance image 2",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-02.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-03",
+		alt: "Waypeople performance image 3",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-03.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-04",
+		alt: "Waypeople performance image 4",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-04.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-05",
+		alt: "Waypeople performance image 5",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-05.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-06",
+		alt: "Waypeople performance image 6",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-06.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-07",
+		alt: "Waypeople performance image 7",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-07.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-08",
+		alt: "Waypeople performance image 8",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-08.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-09",
+		alt: "Waypeople performance image 9",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-09.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-10",
+		alt: "Waypeople performance image 10",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-10.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-11",
+		alt: "Waypeople performance image 11",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-11.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-12",
+		alt: "Waypeople performance image 12",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-12.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-13",
+		alt: "Waypeople performance image 13",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-13.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-14",
+		alt: "Waypeople performance image 14",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-14.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-15",
+		alt: "Waypeople performance image 15",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-15.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-16",
+		alt: "Waypeople performance image 16",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-16.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-17",
+		alt: "Waypeople performance image 17",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-17.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-18",
+		alt: "Waypeople performance image 18",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-18.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+	{
+		filename: "waypeople-19",
+		alt: "Waypeople performance image 19",
+		width: 768,
+		height: 512,
+		src: "/images/carousel/waypeople-19.jpeg",
+		types: ["image/avif", "image/webp", "image/jpeg"],
+	},
+]
+
 const { title } = metadata
 ---
 
@@ -40,7 +196,10 @@ const { title } = metadata
 			ten movements, illustrating the themes of the unseen, unheard, unnamable Tao,
 			“wu-wei” (not-doing) and true Power.
 		</p>
-
+		<Carousel
+			images={carouselImages}
+			title="Waypeople Performance Gallery"
+		/>
 		<ul>
 			<li>Music by <strong>Jake Baxendale</strong>.</li>
 			<li>Visual art by <strong>Nikita 雅涵 Tu-Bryant</strong>.</li>
@@ -91,3 +250,8 @@ const { title } = metadata
 		title="Discography"
 	/>
 </Layout>
+
+<script
+	src="/scripts/carousel.js"
+	is:inline
+></script>
