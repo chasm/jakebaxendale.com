@@ -149,6 +149,37 @@
 	border-color: oklch(var(--color-darkest));
 }
 
+.carousel-play-button {
+	align-items: center;
+	background: oklch(var(--color-red));
+	border: 2px solid oklch(var(--color-red));
+	border-radius: 6px;
+	color: oklch(var(--color-whitish));
+	cursor: pointer;
+	display: flex;
+	font-size: 0.8rem;
+	font-weight: 600;
+	height: auto;
+	justify-content: center;
+	line-height: 1;
+	margin-left: 0.5rem;
+	min-width: auto;
+	padding: 0.5rem 0.75rem;
+	text-transform: uppercase;
+	transition: all 0.2s ease;
+}
+
+.carousel-play-button:hover {
+	background: oklch(var(--color-darker));
+	border-color: oklch(var(--color-darker));
+	transform: translateY(-1px);
+}
+
+.carousel-play-button:focus {
+	outline: 2px solid oklch(var(--color-darkest));
+	outline-offset: 2px;
+}
+
 .carousel-dots {
 	display: flex;
 	gap: 0.5rem;
