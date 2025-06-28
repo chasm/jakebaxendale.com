@@ -167,6 +167,8 @@
 	padding: 0.5rem 0.75rem;
 	text-transform: uppercase;
 	transition: all 0.2s ease;
+	width: 4.25rem;
+	/* Fixed width to prevent layout shift between "Play" and "Pause" */
 }
 
 .carousel-play-button:hover {

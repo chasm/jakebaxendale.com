@@ -341,20 +341,31 @@ const createKeyboardHandler = (container) => (e) => {
 	switch (e.key) {
 		case "ArrowLeft":
 			e.preventDefault()
-			newState = goToPrevious(state)
+			const pausedStateLeft = pauseAutoplay(state)
+			newState = goToPrevious(pausedStateLeft)
+			updatePlayPauseButton(newState)
 			break
 		case "ArrowRight":
 			e.preventDefault()
-			newState = goToNext(state, true) // Allow looping for keyboard navigation
+			const pausedStateRight = pauseAutoplay(state)
+			newState = goToNext(pausedStateRight, true) // Allow looping for keyboard navigation
+			updatePlayPauseButton(newState)
 			break
 		case "Home":
 			e.preventDefault()
-			newState = goToSlide(state, 0)
+			const pausedStateHome = pauseAutoplay(state)
+			newState = goToSlide(pausedStateHome, 0)
+			updatePlayPauseButton(newState)
 			break
 		case "End":
 			e.preventDefault()
-			newState = goToSlide(state, state.slides.length - 1)
+			const pausedStateEnd = pauseAutoplay(state)
+			newState = goToSlide(pausedStateEnd, state.slides.length - 1)
+			updatePlayPauseButton(newState)
 			break
+		default:
+			// No navigation happened, don't change anything
+			return
 	}
 
 	carouselStates.set(container, newState)
@@ -364,17 +375,21 @@ const createKeyboardHandler = (container) => (e) => {
 const bindEvents = (state) => {
 	const container = state.container
 
-	// Navigation buttons (pause briefly for user action, but don't change user preference)
+	// Navigation buttons - pause autoplay when user manually navigates
 	state.prevButton.addEventListener("click", () => {
 		const currentState = carouselStates.get(container)
-		const newState = goToPrevious(currentState)
+		const pausedState = pauseAutoplay(currentState)
+		const newState = goToPrevious(pausedState)
 		carouselStates.set(container, newState)
+		updatePlayPauseButton(newState)
 	})
 
 	state.nextButton.addEventListener("click", () => {
 		const currentState = carouselStates.get(container)
-		const newState = goToNext(currentState)
+		const pausedState = pauseAutoplay(currentState)
+		const newState = goToNext(pausedState)
 		carouselStates.set(container, newState)
+		updatePlayPauseButton(newState)
 	})
 
 	// Play/Pause button
@@ -386,19 +401,23 @@ const bindEvents = (state) => {
 		updatePlayPauseButton(newState)
 	})
 
-	// Dot navigation with keyboard support for full-size image viewing
+	// Dot navigation - pause autoplay when user manually selects an image
 	state.dots.forEach((dot, index) => {
 		dot.addEventListener("click", () => {
 			const currentState = carouselStates.get(container)
-			const newState = goToSlide(currentState, index)
+			const pausedState = pauseAutoplay(currentState)
+			const newState = goToSlide(pausedState, index)
 			carouselStates.set(container, newState)
+			updatePlayPauseButton(newState)
 		})
 
-		// Sync image view when dot receives focus
+		// Sync image view when dot receives focus (also pause autoplay)
 		dot.addEventListener("focus", () => {
 			const currentState = carouselStates.get(container)
-			const newState = goToSlide(currentState, index)
+			const pausedState = pauseAutoplay(currentState)
+			const newState = goToSlide(pausedState, index)
 			carouselStates.set(container, newState)
+			updatePlayPauseButton(newState)
 		})
 
 		// Keyboard support for viewing full-size image
