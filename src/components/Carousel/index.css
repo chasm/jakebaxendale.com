@@ -19,11 +19,13 @@
 	scroll-behavior: smooth;
 	scroll-snap-type: x mandatory;
 	scrollbar-width: thin;
+
 	/* Show scrollbar when no JS */
 }
 
 .carousel-track::-webkit-scrollbar {
 	height: 8px;
+
 	/* Show scrollbar when no JS */
 }
 
@@ -49,12 +51,14 @@
 	flex: 0 0 auto;
 	scroll-snap-align: start;
 	width: 100%;
+
 	/* Full width - one image at a time */
 }
 
 .carousel-slide picture {
 	display: block;
 	height: 263px;
+
 	/* Fixed height container - optimized for landscape images at 395px width */
 	overflow: hidden;
 	position: relative;
@@ -64,6 +68,7 @@
 @media (width >=768px) {
 	.carousel-slide picture {
 		height: 573px;
+
 		/* Fixed height container - optimized for landscape images at 860px width */
 	}
 }
@@ -93,7 +98,7 @@
 
 /* Screen reader only class */
 .sr-only {
-	clip: rect(0, 0, 0, 0);
+	clip-path: inset(50%);
 	border: 0;
 	height: 1px;
 	margin: -1px;
@@ -168,6 +173,7 @@
 	text-transform: uppercase;
 	transition: all 0.2s ease;
 	width: 4.25rem;
+
 	/* Fixed width to prevent layout shift between "Play" and "Pause" */
 }
 

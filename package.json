@@ -30,26 +30,23 @@
 		"preview": "astro preview",
 		"push": "git add -A && pnpm bump && git push",
 		"start": "astro dev",
-		"test": "pnpm test:int"
+		"test": "playwright test",
+		"test:ui": "playwright test --ui",
+		"test:a11y": "playwright test tests/accessibility"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "^4.3.0",
-		"@astrojs/sitemap": "^3.4.1",
-		"@astrojs/vercel": "^8.2.0",
-		"@js-temporal/polyfill": "^0.5.1",
-		"@types/qrcode": "^1.5.5",
-		"@vercel/node": "^5.3.0",
-		"astro": "^5.10.1",
-		"prettier": "^3.6.1",
+		"@astrojs/mdx": "^4.3.13",
+		"@astrojs/sitemap": "^3.7.0",
+		"@axe-core/playwright": "^4.11.1",
+		"@playwright/test": "^1.58.2",
+		"@vercel/node": "^5.6.9",
+		"astro": "^5.18.0",
+		"prettier": "^3.8.1",
 		"prettier-plugin-astro": "^0.14.1",
-		"qrcode": "^1.5.4",
-		"rollup": "^4.44.1",
-		"stylelint": "^16.21.0",
-		"stylelint-config-standard": "^38.0.0",
-		"typescript": "^5.8.3",
-		"vercel": "^44.2.5",
-		"vite": "^7.0.0",
-		"vite-plugin-compress": "^2.1.1",
-		"vitest": "^3.2.4"
+		"stylelint": "^17.4.0",
+		"stylelint-config-standard": "^40.0.0",
+		"typescript": "^5.9.3",
+		"vercel": "^50.25.4",
+		"vite": "^7.3.1"
 	}
 }

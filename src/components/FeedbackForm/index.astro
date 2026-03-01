@@ -1,8 +1,5 @@
 ---
 import "./index.css"
-
-const HONEYPOT_PASSWORD = process.env.HONEYPOT_PASSWORD || ""
-const HONEYPOT_CONFIRMATION = process.env.HONEYPOT_CONFIRMATION || ""
 ---
 
 <section>
@@ -19,6 +16,7 @@ const HONEYPOT_CONFIRMATION = process.env.HONEYPOT_CONFIRMATION || ""
 				cols="48"
 				required
 				rows="8"
+				id="feedback"
 				name="feedback"
 			></textarea>
 		</div>
@@ -64,7 +62,6 @@ const HONEYPOT_CONFIRMATION = process.env.HONEYPOT_CONFIRMATION || ""
 					name="password"
 					spellcheck="false"
 					type="password"
-					value={HONEYPOT_PASSWORD}
 				/>
 			</div>
 			<div>
@@ -77,7 +74,6 @@ const HONEYPOT_CONFIRMATION = process.env.HONEYPOT_CONFIRMATION || ""
 					name="confirmation"
 					spellcheck="false"
 					type="password"
-					value={HONEYPOT_CONFIRMATION}
 				/>
 			</div>
 		</fieldset>

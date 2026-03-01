@@ -1,17 +1,23 @@
-ul.coming-concerts {
-	list-style-type: none;
-	padding-inline: 0;
+table.tour-dates {
+	width: 100%;
+	border-collapse: collapse;
+	margin-block: 1rem;
 }
 
-ul.coming-concerts li {
-	border-bottom: var(--coming-concerts-border-bottom);
-	padding-block: 1rem;
+table.tour-dates th,
+table.tour-dates td {
+	padding: 0.5rem 0.75rem;
+	text-align: left;
 }
 
-ul.coming-concerts li h2 {
-	font-size: var(--step-2);
+table.tour-dates thead th {
+	border-bottom: 2px solid currentColor;
 }
 
-ul.coming-concerts li h2 a {
-	text-decoration: none;
+table.tour-dates tbody tr {
+	border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+}
+
+table.tour-dates tbody tr:last-child {
+	border-bottom: none;
 }

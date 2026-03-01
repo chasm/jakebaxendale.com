@@ -79,7 +79,9 @@ const createControls = (slideCount, slides) => {
 		const link = slides[index]?.querySelector("a")
 		const imageUrl = link?.href || ""
 		const dot = createDot(index, imageUrl)
-		dotsContainer.appendChild(dot)
+		const li = createElement("li")
+		li.appendChild(dot)
+		dotsContainer.appendChild(li)
 		return dot
 	})
 
@@ -149,7 +151,7 @@ const insertControls = (state) => {
 	}
 
 	if (state.track) {
-		state.track.setAttribute("tabindex", "-1")
+		state.track.setAttribute("tabindex", "0")
 	}
 
 	// Show counter and hide scroll hint

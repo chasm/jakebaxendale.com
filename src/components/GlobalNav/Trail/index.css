@@ -29,7 +29,7 @@
 
 .trail span.this-page {
 	outline: none;
-	outline-offset: none;
+	outline-offset: 0;
 	display: inline;
 	margin: 0;
 	padding: 0;

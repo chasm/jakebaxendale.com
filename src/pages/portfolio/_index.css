@@ -9,7 +9,7 @@ ul.compositions > li {
 }
 
 ul.compositions > li > em {
-	font-variant: italic;
+	font-style: italic;
 	font-weight: bold;
 }
 
