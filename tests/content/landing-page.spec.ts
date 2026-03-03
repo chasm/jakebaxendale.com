@@ -80,11 +80,6 @@ test.describe("Landing page — tour dates table", () => {
 			ticketUrl: "https://nz.patronbase.com/_GlobeTheatre/Productions/WAYP/Performances",
 		},
 		{
-			date: "Sunday April 26th",
-			location: "Christchurch",
-			ticketUrl: null,
-		},
-		{
 			date: "Friday April 24th",
 			location: "Oamaru",
 			ticketUrl: "https://events.humanitix.com/waypeople-album-release-tour-oamaru",
