@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "@playwright/test"
 
 const routes = [
 	"/",
@@ -33,26 +33,26 @@ const routes = [
 	"/prose/",
 	"/terms-of-use/",
 	"/venues/",
-];
+]
 
 test.describe("Smoke tests — all pages load", () => {
 	for (const route of routes) {
 		test(`${route} returns 200 with no console errors`, async ({ page }) => {
-			const consoleErrors: string[] = [];
+			const consoleErrors: string[] = []
 
 			page.on("console", (msg) => {
 				if (msg.type() === "error") {
-					const text = msg.text();
+					const text = msg.text()
 					// CSP violations from third-party embeds are expected
-					if (text.includes("Content Security Policy")) return;
-					consoleErrors.push(text);
+					if (text.includes("Content Security Policy")) return
+					consoleErrors.push(text)
 				}
-			});
+			})
 
-			const response = await page.goto(route);
+			const response = await page.goto(route)
 
-			expect(response?.status()).toBe(200);
-			expect(consoleErrors).toEqual([]);
-		});
+			expect(response?.status()).toBe(200)
+			expect(consoleErrors).toEqual([])
+		})
 	}
-});
+})

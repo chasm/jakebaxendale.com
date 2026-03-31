@@ -1,3 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-	setTimeout(() => (document.body.style = "--animation-timing: 0.5s"), 2000)
+	setTimeout(
+		() => document.body.style.setProperty("--animation-timing", "0.5s"),
+		2000,
+	)
 })

@@ -22,11 +22,10 @@ const createCarouselState = (container) => ({
 	prevButton: null,
 	nextButton: null,
 	playPauseButton: null,
-	dots: []
+	dots: [],
 })
 
-const isValidCarousel = (state) =>
-	state.track && state.slides.length > 0
+const isValidCarousel = (state) => state.track && state.slides.length > 0
 
 // Element creation functions
 const createElement = (tag, attributes = {}, textContent = "") => {
@@ -43,35 +42,51 @@ const createElement = (tag, attributes = {}, textContent = "") => {
 }
 
 const createNavButton = (className, ariaLabel, text) =>
-	createElement("button", {
-		type: "button",
-		className,
-		"aria-label": ariaLabel
-	}, text)
+	createElement(
+		"button",
+		{
+			"type": "button",
+			className,
+			"aria-label": ariaLabel,
+		},
+		text,
+	)
 
 const createDot = (index, imageUrl) =>
 	createElement("button", {
-		type: "button",
-		className: "carousel-dot",
+		"type": "button",
+		"className": "carousel-dot",
 		"aria-label": `Go to image ${index + 1}`,
 		"title": `Image ${index + 1} - Press Enter to view full size`,
 		"data-index": index,
-		"data-image-url": imageUrl
+		"data-image-url": imageUrl,
 	})
 
 const createControls = (slideCount, slides) => {
 	const controls = createElement("nav", {
-		className: "carousel-controls",
-		"aria-label": "Gallery navigation"
+		"className": "carousel-controls",
+		"aria-label": "Gallery navigation",
 	})
 
-	const prevButton = createNavButton("carousel-nav-button", "Previous image", "Prev")
-	const nextButton = createNavButton("carousel-nav-button", "Next image", "Next")
-	const playPauseButton = createNavButton("carousel-play-button", "Pause slideshow", "Pause")
+	const prevButton = createNavButton(
+		"carousel-nav-button",
+		"Previous image",
+		"Prev",
+	)
+	const nextButton = createNavButton(
+		"carousel-nav-button",
+		"Next image",
+		"Next",
+	)
+	const playPauseButton = createNavButton(
+		"carousel-play-button",
+		"Pause slideshow",
+		"Pause",
+	)
 
 	const dotsContainer = createElement("ol", {
-		className: "carousel-dots",
-		"aria-label": "Go to image"
+		"className": "carousel-dots",
+		"aria-label": "Go to image",
 	})
 
 	const dots = Array.from({ length: slideCount }, (_, index) => {
@@ -95,7 +110,8 @@ const createControls = (slideCount, slides) => {
 
 // State update functions
 const updateStateWithControls = (state) => {
-	const { controls, prevButton, nextButton, playPauseButton, dots } = createControls(state.slides.length, state.slides)
+	const { controls, prevButton, nextButton, playPauseButton, dots } =
+		createControls(state.slides.length, state.slides)
 
 	return {
 		...state,
@@ -103,12 +119,13 @@ const updateStateWithControls = (state) => {
 		prevButton,
 		nextButton,
 		playPauseButton,
-		dots
+		dots,
 	}
 }
 
 const updateCurrentIndex = (state) => {
-	const slideWidth = state.slides[0].offsetWidth + 16 // Include gap
+	const gap = parseFloat(getComputedStyle(state.track).columnGap) || 0
+	const slideWidth = state.slides[0].offsetWidth + gap
 	const newIndex = Math.round(state.track.scrollLeft / slideWidth)
 	const clampedIndex = Math.max(0, Math.min(newIndex, state.slides.length - 1))
 
@@ -117,13 +134,13 @@ const updateCurrentIndex = (state) => {
 
 const updateScrollingState = (state, isScrolling) => ({
 	...state,
-	isScrolling
+	isScrolling,
 })
 
 const updateAutoplayState = (state, isPlaying, autoplayTimer = null) => ({
 	...state,
 	isPlaying,
-	autoplayTimer
+	autoplayTimer,
 })
 
 // DOM manipulation functions (side effects)
@@ -135,7 +152,7 @@ const insertControls = (state) => {
 	state.container.appendChild(state.controls)
 
 	// Hide image links from tab order when JS is enabled
-	state.slides.forEach(slide => {
+	state.slides.forEach((slide) => {
 		const link = slide.querySelector("a")
 		if (link) {
 			link.setAttribute("tabindex", "-1")
@@ -209,11 +226,12 @@ const goToSlide = (state, index) => {
 	if (index < 0 || index >= state.slides.length) return state
 
 	const newState = { ...state, isScrolling: true, currentIndex: index }
-	const slideWidth = state.slides[0].offsetWidth + 16
+	const gap = parseFloat(getComputedStyle(state.track).columnGap) || 0
+	const slideWidth = state.slides[0].offsetWidth + gap
 
 	state.track.scrollTo({
 		left: index * slideWidth,
-		behavior: "smooth"
+		behavior: "smooth",
 	})
 
 	setTimeout(() => {
@@ -234,7 +252,8 @@ const goToPrevious = (state) => goToSlide(state, state.currentIndex - 1)
 const goToNext = (state, allowLoop = false) => {
 	if (allowLoop) {
 		// For autoplay - loop back to first image after last one
-		const nextIndex = state.currentIndex + 1 >= state.slides.length ? 0 : state.currentIndex + 1
+		const nextIndex =
+			state.currentIndex + 1 >= state.slides.length ? 0 : state.currentIndex + 1
 		return goToSlide(state, nextIndex)
 	} else {
 		// For manual navigation - don't loop

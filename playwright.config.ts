@@ -1,4 +1,4 @@
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from "@playwright/test"
 
 export default defineConfig({
 	testDir: "./tests",
@@ -22,4 +22,4 @@ export default defineConfig({
 		url: "http://localhost:4321",
 		reuseExistingServer: !process.env.CI,
 	},
-});
+})

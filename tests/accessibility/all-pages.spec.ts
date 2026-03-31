@@ -1,4 +1,4 @@
-import { test, expect } from "../fixtures/axe";
+import { test, expect } from "../fixtures/axe"
 
 const routes = [
 	"/",
@@ -33,7 +33,7 @@ const routes = [
 	"/prose/",
 	"/terms-of-use/",
 	"/venues/",
-];
+]
 
 test.describe("Accessibility — WCAG 2.1 AA audit", () => {
 	for (const route of routes) {
@@ -41,11 +41,11 @@ test.describe("Accessibility — WCAG 2.1 AA audit", () => {
 			page,
 			makeAxeBuilder,
 		}) => {
-			await page.goto(route);
+			await page.goto(route)
 
-			const results = await makeAxeBuilder().analyze();
+			const results = await makeAxeBuilder().analyze()
 
-			expect(results.violations).toEqual([]);
-		});
+			expect(results.violations).toEqual([])
+		})
 	}
-});
+})
