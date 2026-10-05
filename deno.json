@@ -4,13 +4,14 @@
 		"@std/http/file-server": "jsr:@std/http@1.1.4/file-server"
 	},
 	"tasks": {
+		"build:deploy": "deno run -A npm:astro@7.3.5 build && deno run --allow-read=dist --allow-write=dist scripts/clean-build.mjs",
 		"serve": "deno run --allow-net --allow-read=dist,vercel.json --allow-env server/main.ts",
 		"check:server": "deno check server/main.ts server/main_test.ts",
 		"test:server": "deno test --allow-read=dist,vercel.json --allow-env server/main_test.ts"
 	},
 	"deploy": {
-		"install": "pnpm install --frozen-lockfile",
-		"build": "pnpm build",
+		"install": "deno run -A --node-modules-dir=none npm:pnpm@10.32.1 install --frozen-lockfile",
+		"build": "deno task build:deploy",
 		"runtime": {
 			"type": "dynamic",
 			"entrypoint": "server/main.ts",

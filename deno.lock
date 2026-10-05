@@ -11,7 +11,8 @@
     "jsr:@std/media-types@^1.1.0": "1.1.0",
     "jsr:@std/net@^1.0.7": "1.0.7",
     "jsr:@std/path@^1.1.6": "1.1.6",
-    "jsr:@std/streams@^1.2.0": "1.2.0"
+    "jsr:@std/streams@^1.2.0": "1.2.0",
+    "npm:pnpm@10.32.1": "10.32.1"
   },
   "jsr": {
     "@std/cli@1.0.32": {
@@ -60,6 +61,12 @@
     },
     "@std/streams@1.2.0": {
       "integrity": "256b934254778f2bf45f5713b934209ff29e9b4b7fd4ec095219966813758c5f"
+    }
+  },
+  "npm": {
+    "pnpm@10.32.1": {
+      "integrity": "sha512-pwaTjw6JrBRWtlY+q07fHR+vM2jRGR/FxZeQ6W3JGORFarLmfWE94QQ9LoyB+HMD5rQNT/7KnfFe8a1Wc0jyvg==",
+      "bin": true
     }
   },
   "workspace": {

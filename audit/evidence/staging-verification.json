@@ -1,8 +1,8 @@
 {
   "date": "2026-10-05",
   "browser_suite": {
-    "startTime": "2026-10-05T01:42:15.276Z",
-    "duration": 36293.747,
+    "startTime": "2026-10-05T02:47:49.055Z",
+    "duration": 43833.795,
     "expected": 159,
     "skipped": 0,
     "unexpected": 0,
@@ -19,11 +19,18 @@
     "deno_types": "passed",
     "astro_typescript_stylelint": "passed",
     "formatting": "passed",
-    "built_references": "32 documents; zero issues"
+    "built_references": "32 documents; zero issues",
+    "deployment_build": "passed using deno task build:deploy"
   },
   "staging_policy": {
     "indexing": "noindex on every response",
     "email": "disabled unless test recipient configured; no Jake/BCC on test delivery",
     "production": "explicit SITE_MODE and canonical hostname required"
+  },
+  "portable_install": {
+    "pnpm": "10.32.1",
+    "runner": "Deno",
+    "frozen_lockfile": "passed",
+    "application_dependency_versions": "unchanged; removed only pnpm 12 bootstrap document"
   }
 }

@@ -86,13 +86,15 @@ This preview uses the existing committed GitHub source, so the local audit fixes
 
 ### Deno runtime prepared after that baseline
 
-`deno.json` now specifies a locked pnpm install, the Astro build, and the dynamic `server/main.ts` entrypoint. The server serves the static output through Deno's standard HTTP library and adapts Web Requests/Responses to the shared form validation and MailerSend delivery logic. It bounds request bodies, rejects duplicate URL-encoded fields, keeps form redirects on the request host, applies the security headers, supports HEAD and media ranges, prevents directory listings, and sets Twitch's parent to the current hostname.
+`deno.json` now explicitly runs pinned JavaScript-based pnpm 10.32.1 through Deno for the locked install, runs the Astro build/cleanup through Deno, and specifies the dynamic `server/main.ts` entrypoint. The server serves the static output through Deno's standard HTTP library and adapts Web Requests/Responses to the shared form validation and MailerSend delivery logic. It bounds request bodies, rejects duplicate URL-encoded fields, keeps form redirects on the request host, applies the security headers, supports HEAD and media ranges, prevents directory listings, and sets Twitch's parent to the current hostname.
 
 Every Deno hostname remains staging: HTML is not cached, all responses have `X-Robots-Tag: noindex, nofollow`, and mail is disabled unless a test recipient is explicitly configured. Test delivery omits Jake and the developer BCC and prefixes the subject with `[TEST]`. Enabling production requires both `SITE_MODE=production` and the canonical custom hostname. No secrets are committed.
 
 Seven native Deno tests cover these behaviors with delivery mocked. The browser suite now runs against the Deno server and includes real form transport to the disabled-mail failure page. Host smoke tests stub third-party iframe documents while checking first-party asset responses and all host console errors; player availability is reviewed separately. A Twitch probe produced provider-side 429 and permissions-policy errors, so playback still needs manual review.
 
 The updated suite passed **159 browser/API tests and seven native Deno tests**, with no failures or flaky results. Both Node and Deno static builds, server types, Astro/TypeScript/CSS checks, formatting, and built references passed. [Staging verification](evidence/staging-verification.json).
+
+The first hosted update failed at the platform pnpm install step. An isolated reproduction showed that pnpm 10 cannot read pnpm 12's multi-document lockfile. The lockfile was converted to one application document without changing any application dependency version, and a pinned pnpm 10 install passed under Deno.
 
 Use the stable app URL, https://jakebaxendalecom.jbmusic.deno.net/, to follow deployments of `main`; the original revision URL remains a snapshot. Both URLs are test hosts until custom-domain cutover.
 

@@ -18,7 +18,7 @@ export default defineConfig({
 		},
 	],
 	webServer: {
-		command: "pnpm build && deno task serve",
+		command: "deno task build:deploy && deno task serve",
 		env: {
 			PORT: "14321",
 			SITE_MODE: "staging",

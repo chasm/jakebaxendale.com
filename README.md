@@ -4,7 +4,7 @@ Jake Baxendale's website: 32 static Astro pages and separate contact and feedbac
 
 ## Development
 
-Use Node 24 (minimum 22.12) and pnpm 12.9.1, pinned in `package.json`.
+Use Node 24 (minimum 22.12) and pnpm 10.32.1, pinned in `package.json`. The JavaScript-based pnpm 10 installer and single-document lockfile are compatible with Deno's builder.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -46,7 +46,7 @@ deno run -A --node-modules-dir=manual npm:astro@7.3.5 build
 node scripts/clean-build.mjs
 ```
 
-Deno Deploy reads the Git-tracked build/runtime configuration in `deno.json`. It builds static Astro pages and starts `server/main.ts` to serve them and both form endpoints. The server reuses the existing validation and delivery logic and explicitly applies the security headers from `vercel.json`. Run it locally after building:
+Deno Deploy reads the Git-tracked build/runtime configuration in `deno.json`. Its install command explicitly runs pinned pnpm 10 through Deno, avoiding the platform's package-manager launcher. `deno task build:deploy` runs the Astro build and cleanup through Deno. It then starts `server/main.ts` to serve static pages and both form endpoints. The server reuses the existing validation and delivery logic and explicitly applies the security headers from `vercel.json`. Run it locally after building:
 
 ```sh
 deno task serve
