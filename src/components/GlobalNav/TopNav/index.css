@@ -63,7 +63,7 @@
 		align-items: flex-start;
 		animation: var(--animation-timing, 0) ease-in-out slide-out;
 		background-color: var(--top-nav-background-color);
-		display: flex;
+		display: none;
 		flex-direction: column;
 		justify-content: flex-start;
 		height: 100vh;
@@ -75,6 +75,7 @@
 		right: 0;
 		top: -120vh;
 		z-index: 1000000;
+		visibility: hidden;
 	}
 
 	.top-nav > ul {
@@ -85,7 +86,13 @@
 		place-content: center;
 	}
 
+	body:has(#menu-toggle:checked) {
+		overflow: hidden;
+	}
+
 	body:has(#menu-toggle:checked) .top-nav {
+		display: flex;
+		visibility: visible;
 		animation: slide-in 0.5s ease-in-out;
 		top: 0;
 		opacity: 1;

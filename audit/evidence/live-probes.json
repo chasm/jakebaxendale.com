@@ -1,0 +1,186 @@
+{
+  "responses": [
+    {
+      "url": "http://jakebaxendale.com/",
+      "status": 200,
+      "final_url": "https://jakebaxendale.com/",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'; child-src 'none'; img-src https://jakebaxendale.com 'self'; frame-src youtube.com www.youtube.com player.twitch.tv bandcamp.com;",
+        "Content-Type": "text/html; charset=utf-8",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      }
+    },
+    {
+      "url": "https://www.jakebaxendale.com/",
+      "status": 200,
+      "final_url": "https://jakebaxendale.com/",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'; child-src 'none'; img-src https://jakebaxendale.com 'self'; frame-src youtube.com www.youtube.com player.twitch.tv bandcamp.com;",
+        "Content-Type": "text/html; charset=utf-8",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      }
+    },
+    {
+      "url": "https://jakebaxendale.com/robots.txt",
+      "status": 200,
+      "final_url": "https://jakebaxendale.com/robots.txt",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'; child-src 'none'; img-src https://jakebaxendale.com 'self'; frame-src youtube.com www.youtube.com player.twitch.tv bandcamp.com;",
+        "Content-Type": "text/plain; charset=utf-8",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      }
+    },
+    {
+      "url": "https://jakebaxendale.com/sitemap-index.xml",
+      "status": 200,
+      "final_url": "https://jakebaxendale.com/sitemap-index.xml",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'; child-src 'none'; img-src https://jakebaxendale.com 'self'; frame-src youtube.com www.youtube.com player.twitch.tv bandcamp.com;",
+        "Content-Type": "application/xml",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      }
+    },
+    {
+      "url": "https://jakebaxendale.com/sitemap-0.xml",
+      "status": 200,
+      "final_url": "https://jakebaxendale.com/sitemap-0.xml",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'; child-src 'none'; img-src https://jakebaxendale.com 'self'; frame-src youtube.com www.youtube.com player.twitch.tv bandcamp.com;",
+        "Content-Type": "application/xml",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      }
+    },
+    {
+      "url": "https://jakebaxendale.com/audit-missing-page-20261005",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "headers": {}
+    },
+    {
+      "url": "https://jakebaxendale.com/api/contact",
+      "status": 500,
+      "error": "HTTP Error 500: Internal Server Error",
+      "headers": {}
+    },
+    {
+      "url": "https://jakebaxendale.com/api/feedback",
+      "status": 500,
+      "error": "HTTP Error 500: Internal Server Error",
+      "headers": {}
+    },
+    {
+      "url": "https://jakebaxendale.com/images/.DS_Store",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "headers": {}
+    },
+    {
+      "url": "https://jakebaxendale.com/images/optimized/1152/jake-by-sam-pietras-square.jpeg",
+      "status": 200,
+      "final_url": "https://jakebaxendale.com/images/optimized/1152/jake-by-sam-pietras-square.jpeg",
+      "headers": {
+        "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self'; child-src 'none'; img-src https://jakebaxendale.com 'self'; frame-src youtube.com www.youtube.com player.twitch.tv bandcamp.com;",
+        "Content-Type": "image/jpeg",
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+      }
+    },
+    {
+      "url": "https://ratastudios.co.nz/?p=2691",
+      "status": 200,
+      "final_url": "https://ratastudios.co.nz/music-courses/rata-studios-big-band/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "url": "https://www.rogueandvagabond.co.nz/",
+      "status": 200,
+      "final_url": "https://rogueandvagabond.co.nz/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "url": "https://blackstringband.bandcamp.com/",
+      "status": 200,
+      "final_url": "https://blackstringband.bandcamp.com/",
+      "headers": {
+        "content-security-policy": "base-uri 'none'; object-src 'none'; report-uri https://bandcamp.com/api/cspreport/1/violation; script-src http: https: 'nonce-QaRrB5kPcQIBIns4E+P0Fg==' 'report-sample' 'strict-dynamic'",
+        "content-type": "text/html; charset=UTF-8",
+        "Strict-Transport-Security": "max-age=63072000"
+      }
+    },
+    {
+      "url": "https://events.humanitix.com/waypeople-album-release-tour-christchurch",
+      "status": 200,
+      "final_url": "https://events.humanitix.com/waypeople-album-release-tour-christchurch",
+      "headers": {
+        "Content-Type": "text/html",
+        "content-security-policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com http://www.google-analytics.com https://*.googletagmanager.com http://*.googletagmanager.com https://*.facebook.net https://analytics.tiktok.com https://tradablebits.com https://*.clarity.ms https://*.youtube.com https://cdn.jsdelivr.net https://s.thanks.is https://thanks.is https://googleads.g.doubleclick.net https://*.airwallex.com https://*.paypal.com https://*.paypalobjects.com https://pay.google.com https://*.braintreegateway.com https://songbirdstag.cardinalcommerce.com https://songbird.cardinalcommerce.com https://static.client.cardinaltrusted.com https://cas.static.client.cardinaltrusted.com https://*.afterpay.com static.client.cardinaltrusted.com https://*.pinpayments.com https://js.stripe.com https://applepay.cdn-apple.com https://challenges.cloudflare.com https://s.pinimg.com https://sc-static.net https://*.snapchat.com https://*.pinterest.com https://maps.googleapis.com 'sha256-b+mf6EIMFYxuAIdk6/2IF09zTUsJrlW6qZaw4opG6QU=' https://us-cdn-gpp.mcsvc.samsung.com https://cdn.mxpnl.com https://api.mixpanel.com https://api-js.mixpanel.com https://sdk.seeka.services 'nonce-drAHDoLQmA5E2U1f8VAI3A=='"
+      }
+    },
+    {
+      "url": "https://events.humanitix.com/waypeople-album-release-tour-hamilton",
+      "status": 200,
+      "final_url": "https://events.humanitix.com/waypeople-album-release-tour-hamilton",
+      "headers": {
+        "Content-Type": "text/html",
+        "content-security-policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com http://www.google-analytics.com https://*.googletagmanager.com http://*.googletagmanager.com https://*.facebook.net https://analytics.tiktok.com https://tradablebits.com https://*.clarity.ms https://*.youtube.com https://cdn.jsdelivr.net https://s.thanks.is https://thanks.is https://googleads.g.doubleclick.net https://*.airwallex.com https://*.paypal.com https://*.paypalobjects.com https://pay.google.com https://*.braintreegateway.com https://songbirdstag.cardinalcommerce.com https://songbird.cardinalcommerce.com https://static.client.cardinaltrusted.com https://cas.static.client.cardinaltrusted.com https://*.afterpay.com static.client.cardinaltrusted.com https://*.pinpayments.com https://js.stripe.com https://applepay.cdn-apple.com https://challenges.cloudflare.com https://s.pinimg.com https://sc-static.net https://*.snapchat.com https://*.pinterest.com https://maps.googleapis.com 'sha256-b+mf6EIMFYxuAIdk6/2IF09zTUsJrlW6qZaw4opG6QU=' https://us-cdn-gpp.mcsvc.samsung.com https://cdn.mxpnl.com https://api.mixpanel.com https://api-js.mixpanel.com https://sdk.seeka.services 'nonce-UcIeDnvwaq5EyrVJJzZ+mw=='"
+      }
+    },
+    {
+      "url": "https://events.humanitix.com/waypeople-album-release-tour-napier",
+      "status": 200,
+      "final_url": "https://events.humanitix.com/waypeople-album-release-tour-napier",
+      "headers": {
+        "Content-Type": "text/html",
+        "content-security-policy": "script-src 'self' 'unsafe-eval' https://www.google-analytics.com http://www.google-analytics.com https://*.googletagmanager.com http://*.googletagmanager.com https://*.facebook.net https://analytics.tiktok.com https://tradablebits.com https://*.clarity.ms https://*.youtube.com https://cdn.jsdelivr.net https://s.thanks.is https://thanks.is https://googleads.g.doubleclick.net https://*.airwallex.com https://*.paypal.com https://*.paypalobjects.com https://pay.google.com https://*.braintreegateway.com https://songbirdstag.cardinalcommerce.com https://songbird.cardinalcommerce.com https://static.client.cardinaltrusted.com https://cas.static.client.cardinaltrusted.com https://*.afterpay.com static.client.cardinaltrusted.com https://*.pinpayments.com https://js.stripe.com https://applepay.cdn-apple.com https://challenges.cloudflare.com https://s.pinimg.com https://sc-static.net https://*.snapchat.com https://*.pinterest.com https://maps.googleapis.com 'sha256-b+mf6EIMFYxuAIdk6/2IF09zTUsJrlW6qZaw4opG6QU=' https://us-cdn-gpp.mcsvc.samsung.com https://cdn.mxpnl.com https://api.mixpanel.com https://api-js.mixpanel.com https://sdk.seeka.services 'nonce-axMnKXquljY2ZLpFfJ2Mhw=='"
+      }
+    },
+    {
+      "url": "https://cavecircles.bandcamp.com/album/tuone-found-in-translation",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "headers": {}
+    },
+    {
+      "url": "https://sori.nyc/blackstring",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "headers": {}
+    },
+    {
+      "url": "https://www.rogueandvagabond.co.nz/beats/",
+      "status": 404,
+      "error": "HTTP Error 404: Not Found",
+      "headers": {}
+    }
+  ],
+  "dns": {
+    "jakebaxendale.com NS": "jakebaxendale.com.\t86400\tIN\tNS\tns1.vercel-dns.com.\njakebaxendale.com.\t86400\tIN\tNS\tns2.vercel-dns.com.",
+    "jakebaxendale.com A": "jakebaxendale.com.\t1172\tIN\tA\t66.33.60.34\njakebaxendale.com.\t1172\tIN\tA\t66.33.60.66",
+    "jakebaxendale.com AAAA": "",
+    "www.jakebaxendale.com A": "www.jakebaxendale.com.\t1800\tIN\tA\t76.76.21.123\nwww.jakebaxendale.com.\t1800\tIN\tA\t76.76.21.164",
+    "www.jakebaxendale.com AAAA": "",
+    "jakebaxendale.com MX": "jakebaxendale.com.\t3600\tIN\tMX\t10 mx1.improvmx.com.\njakebaxendale.com.\t3600\tIN\tMX\t20 mx2.improvmx.com.",
+    "jakebaxendale.com TXT": "jakebaxendale.com.\t60\tIN\tTXT\t\"v=spf1 include:_spf.mailersend.net include:spf.improvmx.com ~all\"",
+    "_dmarc.jakebaxendale.com TXT": "",
+    "jakebaxendale.com CAA": "jakebaxendale.com.\t60\tIN\tCAA\t0 issue \"sectigo.com\"\njakebaxendale.com.\t60\tIN\tCAA\t0 issue \"letsencrypt.org\"\njakebaxendale.com.\t60\tIN\tCAA\t0 issue \"pki.goog\""
+  },
+  "ranges": [
+    {
+      "url": "https://jakebaxendale.com/scores/against-war-full-score.pdf",
+      "status": 206,
+      "content_range": "bytes 0-99/114889",
+      "content_type": "application/pdf",
+      "bytes_read": 100
+    },
+    {
+      "url": "https://jakebaxendale.com/streams/against-war-live-at-meow.mp3",
+      "status": 206,
+      "content_range": "bytes 0-99/15080721",
+      "content_type": "audio/mpeg",
+      "bytes_read": 100
+    }
+  ]
+}

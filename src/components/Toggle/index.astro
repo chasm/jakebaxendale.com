@@ -1,25 +1,22 @@
 ---
 import "./index.css"
-
-const { hideClass = "remove" } = Astro.props
 ---
 
 <div>
 	<input
-		aria-label="Menu toggle"
+		aria-label="Navigation menu"
+		aria-controls="site-menu"
 		id="menu-toggle"
 		name="toggle"
-		tabindex="-1"
 		type="checkbox"
 	/>
 	<label
 		class="menu-toggle"
 		for="menu-toggle"
-		tabindex="0"
+		aria-hidden="true"
 	>
 		<span></span>
 		<span></span>
 		<span></span>
-		<span class={hideClass}>Menu toggle (ignore)<br /><br /></span>
 	</label>
 </div>

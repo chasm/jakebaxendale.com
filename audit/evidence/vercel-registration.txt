@@ -1,0 +1,23 @@
+(node:13975) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Vercel CLI 37.4.0
+Fetching Domain jakebaxendale.com under codewrights
+> Domain jakebaxendale.com found under codewrights [4s]
+General
+
+Name			jakebaxendale.com
+Registrar			Vercel
+Expiration Date		08 February 2027 11:22:21 [in 126d]
+Creator			chasmatic
+Created At			04 November 2023 15:40:41 [1066d ago]
+Edge Network		yes
+Renewal Price		-
+Nameservers
+
+Intended Nameservers    Current Nameservers         
+    ns1.vercel-dns.com      ns1.vercel-dns.com     ✔    
+    ns2.vercel-dns.com      ns2.vercel-dns.com     ✔    
+Projects
+Project                    Domains                                     
+    jakebaxendale-com          jakebaxendale.com, www.jakebaxendale.com    
+   

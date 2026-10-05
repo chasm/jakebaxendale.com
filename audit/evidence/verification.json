@@ -1,0 +1,37 @@
+{
+  "audited_on": "2026-10-05",
+  "scope": "local repaired application; no production deployment",
+  "browser_suite": {
+    "startTime": "2026-10-05T00:08:18.512Z",
+    "duration": 77769.892,
+    "expected": 157,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "checks": {
+    "astro": "passed; 80 files, zero errors, warnings or hints",
+    "typescript": "passed",
+    "stylelint": "passed",
+    "prettier": "passed",
+    "git_diff_check": "passed",
+    "node_build": "passed; 32 pages",
+    "deno_build": "passed; Deno 2.9.7, Astro 7.3.5",
+    "axe": "32 routes at desktop and 320px; host documents, iframe titles; cross-origin documents excluded",
+    "email": "six mocked tests; no live email sent"
+  },
+  "dependency_vulnerabilities": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 1,
+    "critical": 0
+  },
+  "runtime_versions": {
+    "node_requirement": ">=22.12",
+    "recommended_node": "24",
+    "pnpm": "12.9.1",
+    "astro": "7.3.5",
+    "deno_tested": "2.9.7"
+  }
+}

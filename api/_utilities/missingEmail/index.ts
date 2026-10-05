@@ -1,9 +1,9 @@
-import type { VercelResponse } from "@vercel/node"
+import type { ApiResponse } from "../types.ts"
 
 export default function missingEmail(
 	redirect: string,
 	emailAddress = "",
-	response: VercelResponse,
+	response: ApiResponse,
 ): boolean {
 	if (emailAddress.trim()) {
 		return false

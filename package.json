@@ -7,20 +7,20 @@
 	"author": "Charles Munat <charles.munat@gmail.com>",
 	"type": "module",
 	"engines": {
-		"node": ">=20.0.0",
-		"pnpm": ">=9.0.0"
+		"node": ">=22.12.0",
+		"pnpm": ">=12.9.1"
 	},
 	"scripts": {
-		"api": "vercel dev --listen 3010",
+		"api": "pnpm dlx vercel@62.2.0 dev --listen 3010",
 		"astro": "astro",
-		"build": "astro build",
+		"build": "astro build && node scripts/clean-build.mjs",
 		"bump": "pnpm version patch --force",
 		"bump:major": "pnpm version major --force",
 		"bump:minor": "pnpm version minor --force",
 		"check:exports": "pnpx find-unused-exports",
 		"check:packages": "pnpx npm-check -u",
-		"dep": "pnpm fmt && pnpm lint && pnpm lint:fix && pnpm check:packages && infisical run -- pnpm build && rm -rf .cache .history dist",
-		"dep:prod": "pnpm dep:dev && vercel deploy",
+		"dep": "pnpm check && pnpm build",
+		"dep:prod": "pnpm dep && pnpm dlx vercel@62.2.0 deploy --prod",
 		"dev": "astro dev",
 		"fmt": "pnpm prettier . --write",
 		"lint": "pnpx oxlint@latest",
@@ -32,21 +32,23 @@
 		"start": "astro dev",
 		"test": "playwright test",
 		"test:ui": "playwright test --ui",
-		"test:a11y": "playwright test tests/accessibility"
+		"test:a11y": "playwright test tests/accessibility",
+		"check": "astro check && tsc --noEmit && pnpm lint:css",
+		"fmt:check": "prettier src api tests scripts server *.ts *.mjs *.json pnpm-workspace.yaml --check",
+		"test:api": "playwright test tests/api"
 	},
 	"devDependencies": {
-		"@astrojs/mdx": "^4.3.13",
-		"@astrojs/sitemap": "^3.7.0",
-		"@axe-core/playwright": "^4.11.1",
-		"@playwright/test": "^1.58.2",
-		"@vercel/node": "^5.6.9",
-		"astro": "^5.18.0",
-		"prettier": "^3.8.1",
+		"@astrojs/check": "0.9.10",
+		"@astrojs/sitemap": "^3.7.4",
+		"@axe-core/playwright": "^4.13.0",
+		"@playwright/test": "^1.63.0",
+		"@types/node": "^22.20.5",
+		"astro": "7.3.5",
+		"prettier": "^3.9.9",
 		"prettier-plugin-astro": "^0.14.1",
-		"stylelint": "^17.4.0",
+		"stylelint": "^17.16.0",
 		"stylelint-config-standard": "^40.0.0",
-		"typescript": "^5.9.3",
-		"vercel": "^50.25.4",
-		"vite": "^7.3.1"
-	}
+		"typescript": "^5.9.3"
+	},
+	"packageManager": "pnpm@12.9.1"
 }

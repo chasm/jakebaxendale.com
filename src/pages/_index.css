@@ -11,11 +11,11 @@ table.tour-dates td {
 }
 
 table.tour-dates thead th {
-	border-bottom: 2px solid currentColor;
+	border-bottom: 2px solid currentcolor;
 }
 
 table.tour-dates tbody tr {
-	border-bottom: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+	border-bottom: 1px solid color-mix(in srgb, currentcolor 20%, transparent);
 }
 
 table.tour-dates tbody tr:last-child {

@@ -1,11 +1,11 @@
-import type { VercelResponse } from "@vercel/node"
+import type { ApiResponse } from "../types.ts"
 
-const emailMatcher = /^[^ @]+@[^ @]+$/
+const emailMatcher = /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/
 
 export default function invalidEmail(
 	redirect: string,
 	emailAddress = "",
-	response: VercelResponse,
+	response: ApiResponse,
 ): boolean {
 	if (emailAddress && !emailMatcher.test(emailAddress?.trim())) {
 		response.setHeader("Location", `${redirect}invalid-email`).status(303).end()

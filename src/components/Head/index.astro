@@ -114,9 +114,31 @@ const pageTitle = title ? `${title} :: ${SITE_TITLE}` : SITE_TITLE
 		property="og:site_name"
 		content="JakeBaxendale.com"
 	/>
+	<meta
+		property="og:title"
+		content={pageTitle}
+	/>
+	<meta
+		property="og:url"
+		content={pageCanonicalUrl}
+	/>
+	<meta
+		property="og:type"
+		content="website"
+	/>
+	<link
+		rel="icon"
+		href="/favicon.svg"
+		type="image/svg+xml"
+	/>
 	<script
 		type="module"
 		src="/scripts/timing.js"
 	></script>
 	<slot />
+	<script
+		is:inline
+		src="/scripts/menu.js"
+		defer
+	></script>
 </head>

@@ -1,50 +1,41 @@
 import { test, expect } from "@playwright/test"
 
-const routes = [
-	"/",
-	"/bio/",
-	"/community/",
-	"/contact/",
-	"/contact/failure/",
-	"/contact/invalid-email/",
-	"/contact/missing-email/",
-	"/contact/missing-message/",
-	"/contact/success/",
-	"/cookie-policy/",
-	"/discography/",
-	"/feedback/",
-	"/feedback/failure/",
-	"/feedback/invalid-email/",
-	"/feedback/missing-feedback/",
-	"/feedback/success/",
-	"/lessons/",
-	"/portfolio/",
-	"/privacy-policy/",
-	"/projects/",
-	"/projects/antipodes/",
-	"/projects/bazurka/",
-	"/projects/gardening-music/",
-	"/projects/jb3/",
-	"/projects/richter-city-rebels/",
-	"/projects/sanctuary/",
-	"/projects/striking-moments/",
-	"/projects/the-jac/",
-	"/projects/waypeople/",
-	"/prose/",
-	"/terms-of-use/",
-	"/venues/",
-]
+import { routes } from "../routes"
 
 test.describe("Smoke tests — all pages load", () => {
 	for (const route of routes) {
-		test(`${route} returns 200 with no console errors`, async ({ page }) => {
+		test(`${route} returns 200 with no console errors`, async ({
+			page,
+			baseURL,
+		}) => {
 			const consoleErrors: string[] = []
+			const origin = new URL(baseURL!).origin
+			// Provider playback is reviewed separately; isolate the host from vendor failures.
+			await page.route("**/*", (route) => {
+				const request = route.request()
+				if (
+					request.resourceType() === "document" &&
+					new URL(request.url()).origin !== origin
+				) {
+					return route.fulfill({
+						contentType: "text/html",
+						body: "<!doctype html><title>External player</title>",
+					})
+				}
+				return route.continue()
+			})
+			page.on("response", (response) => {
+				if (
+					new URL(response.url()).origin === origin &&
+					response.status() >= 400
+				) {
+					consoleErrors.push(`HTTP ${response.status()}: ${response.url()}`)
+				}
+			})
 
 			page.on("console", (msg) => {
 				if (msg.type() === "error") {
 					const text = msg.text()
-					// CSP violations from third-party embeds are expected
-					if (text.includes("Content Security Policy")) return
 					consoleErrors.push(text)
 				}
 			})

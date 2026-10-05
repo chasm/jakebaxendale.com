@@ -1,0 +1,921 @@
+{
+  "checked_on": "2026-10-05",
+  "base": "https://jakebaxendalecom-c2ej7pznvqwt.jbmusic.deno.net",
+  "scope": "read-only HTTP and markup checks; no email submissions, browser accessibility suite, or DNS changes",
+  "page_count": 32,
+  "pages_http_200": 32,
+  "homepage_head_status": 405,
+  "observations": [
+    "Baseline GitHub build; local audit fixes remain uncommitted",
+    "Contact and feedback API URLs return 404",
+    "Missing 1152 and 1536 Striking Moments JPEG variants return 404",
+    "Homepage permits indexing; robots.txt allows crawling",
+    "Homepage lacks the configured Vercel CSP, nosniff, frame denial and referrer policy headers",
+    "PDF and MP3 byte-range requests return 206",
+    "Contact trailing-slash redirect stays on preview hostname",
+    "Twitch iframe parent remains the production hostname"
+  ],
+  "responses": [
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "15249",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3b91-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1020",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "9414f4361213985a1324130129c89b9c",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": [
+        "iframe has no title: https://bandcamp.com/EmbeddedPlayer/album=1683910850/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/bio/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "26812",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"68bc-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1023",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "9d1a1d52dff2fcd312b4d08a92fb35fb",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/community/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "16528",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"4090-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1023",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "39ebea818222f89fc888231a598ef82d",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/contact/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "12253",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2fdd-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1022",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "e23d046bd446a940fedaff851cc57364",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/contact/failure/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11415",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2c97-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1024",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "696cbd07d1d47eafe963cf536e4bb422",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/contact/invalid-email/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11531",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2d0b-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1024",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "d2dfacfde9377eb6f1f857b54903c924",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/contact/missing-email/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11503",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2cef-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1025",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "e9fde428b541e3700ce3bec626aeeb02",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/contact/missing-message/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11481",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2cd9-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1025",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "8bec5d9e04a6db3873fad8333f258f74",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/contact/success/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11128",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2b78-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1026",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "d8ca280ddc1433b37f591733182c76cf",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/cookie-policy/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11474",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2cd2-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1026",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "f5cde2e3d4259782a727b887ea04325e",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/discography/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "35783",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"8bc7-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1026",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "06e049447c6f79f1f95da215e65e1fed",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/feedback/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "12508",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"30dc-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1027",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "dbfc81d59f19faab16ec01076fc53026",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/feedback/failure/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11411",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2c93-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1027",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "23aba0c0d1d1b0b6204932af9e59c44e",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/feedback/invalid-email/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11563",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2d2b-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1028",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "e803067d478cca6697eeb94969972b05",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/feedback/missing-feedback/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11488",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2ce0-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1028",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "ef5c6e91b5eda7e1cba94e2d75058c41",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/feedback/success/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "11136",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2b80-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1029",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "a2c36147276c99f857a38ba19c8b1b40",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/lessons/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13562",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"34fa-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1029",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "a6df025d1d3fb5f2f63230a657c7efa1",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/portfolio/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "12664",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3178-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1030",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "4f9d94db5c7e3d980ca2aa8a71803261",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/privacy-policy/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "14444",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"386c-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1030",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "7ced0cc73f819dfcf911a225369b37fa",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "26057",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"65c9-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1031",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "eeafe799b52b615a038f131e346ba135",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/antipodes/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "14860",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3a0c-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1031",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "cbdead95cca81b1138cf95d9ef046ede",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/bazurka/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13466",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"349a-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1032",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "337a7370ea07885de6cc45d709cfbb5f",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/gardening-music/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13260",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"33cc-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1032",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "304854715fde2b790e8504168548a00b",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": [
+        "iframe has no title: https://bandcamp.com/EmbeddedPlayer/album=439890640/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/projects/jb3/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13322",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"340a-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1033",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "5e17a0e58c6e45e2df5cf0c592c29681",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/richter-city-rebels/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "16261",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3f85-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1033",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "dc1918e2b380264d91a88ee09a1b590b",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/sanctuary/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "14212",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3784-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1033",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "4426f9b03677b44ed93f0b16c70d4eeb",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/striking-moments/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "12992",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"32c0-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1034",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "b055ca672fec4469b776ea200a46191d",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": [
+        "iframe has no title: https://player.twitch.tv/?video=1633879743&parent=www.example.com&parent=jakebaxendale.com"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/projects/the-jac/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "17199",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"432f-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1034",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "35a0edf28ff60af7575dfcb24a1a909a",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/projects/waypeople/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "36988",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"907c-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1035",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "707f9f08b77e90bcd812fbd68a5180af",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/prose/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13333",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3415-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1035",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "e017ca55da17a0c163a5352acd7dcacf",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/terms-of-use/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13437",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"347d-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1036",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "af063e2c44ea3a94e100975e23c35faa",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/venues/",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "22289",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"5711-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1036",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "4ad6cb4b385a2071ec925c9ac5dece67",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "markup_issues": []
+    },
+    {
+      "method": "GET",
+      "path": "/robots.txt",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "77",
+        "content-type": "text/plain; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"4d-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1036",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "a5aad9c70d6151e938f7546430f22fec",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/sitemap-index.xml",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "231",
+        "content-type": "application/xml",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"e7-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1037",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "57357c25b2124bd567206c592281aa3e",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/audit-missing-page-20261005",
+      "status": 404,
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:22:06 GMT",
+        "content-length": "9",
+        "age": "0",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "7e405e1840aad3aaae8821d6f7871f9b",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net",
+        "server": "deployd"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/contact",
+      "status": 404,
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:22:06 GMT",
+        "content-length": "9",
+        "age": "1",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "5da023a44509b871ce4b9227beb6ce1d",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net",
+        "server": "deployd"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/feedback",
+      "status": 404,
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:22:06 GMT",
+        "content-length": "9",
+        "age": "1",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "09ef4a8fed1f26ba7f6a610504d4a1c9",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net",
+        "server": "deployd"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/images/optimized/1152/striking-moments.jpeg",
+      "status": 404,
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:22:07 GMT",
+        "content-length": "9",
+        "age": "0",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "ae09d4b8a90c85eb2d5685c3cb3e48a5",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net",
+        "server": "deployd"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/images/optimized/1536/striking-moments.jpeg",
+      "status": 404,
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "content-type": "text/plain;charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:22:07 GMT",
+        "content-length": "9",
+        "age": "1",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "bcaa6296d63a75237bbe3aa76d55555e",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net",
+        "server": "deployd"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/contact",
+      "status": 301,
+      "headers": {
+        "cache-control": "s-maxage=31536000",
+        "location": "https://jakebaxendalecom-c2ej7pznvqwt.jbmusic.deno.net/contact/",
+        "date": "Mon, 05 Oct 2026 01:22:07 GMT",
+        "age": "1",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "6943fc570f3ae86c9c40e0b02831a460",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net",
+        "server": "deployd"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/scores/against-war-full-score.pdf",
+      "status": 206,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "100",
+        "content-range": "bytes 0-99/114889",
+        "content-type": "application/pdf",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"1c0c9-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1101",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "42e683dace4a128e2e0b758952f1a2b2",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "bytes_saved": 100
+    },
+    {
+      "method": "GET",
+      "path": "/streams/against-war-live-at-meow.mp3",
+      "status": 206,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "100",
+        "content-range": "bytes 0-99/15080721",
+        "content-type": "audio/mpeg",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"e61d11-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1103",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "503a20e8a10cd006701550dd466b8615",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "bytes_saved": 100
+    },
+    {
+      "method": "GET",
+      "path": "/scripts/carousel.js",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "13922",
+        "content-type": "text/javascript; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"3662-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1105",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "004e4faee0b931e3f02dbb4f6c3f9454",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "bytes_saved": 13922
+    },
+    {
+      "method": "GET",
+      "path": "/_astro/index.D-oHqnOM.css",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "12274",
+        "content-type": "text/css; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"2ff2-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1223",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "6a9e28ca1c5ade75933825dcca3a94fd",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "bytes_saved": 12274
+    },
+    {
+      "method": "GET",
+      "path": "/images/facebook.svg",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "455",
+        "content-type": "image/svg+xml",
+        "date": "Mon, 05 Oct 2026 01:04:48 GMT",
+        "etag": "W/\"1c7-zVG5msHKAfkvQGuE1/1sOKP+j9j\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:48 GMT",
+        "server": "deployd",
+        "age": "1226",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "710accaa34d9cafe36b52ef4f2baae99",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "bytes_saved": 455
+    },
+    {
+      "method": "GET",
+      "path": "/scripts/timing.js",
+      "status": 200,
+      "headers": {
+        "accept-ranges": "bytes",
+        "cache-control": "s-maxage=31536000",
+        "content-length": "152",
+        "content-type": "text/javascript; charset=UTF-8",
+        "date": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "etag": "W/\"98-kbORZ+g4Agk5on3MBFNKo1Frqbd\"",
+        "last-modified": "Mon, 05 Oct 2026 01:04:49 GMT",
+        "server": "deployd",
+        "age": "1224",
+        "cache-status": "deno; fwd=uri-miss; stored",
+        "x-deno-trace-id": "5c74f017da30aeb7e83f35124191fd50",
+        "via": "HTTP/2 ord.vultr.prod.deno-cluster.net"
+      },
+      "bytes_saved": 152
+    }
+  ]
+}

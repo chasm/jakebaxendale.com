@@ -76,11 +76,11 @@
 	--form-button-border-hover: 2px solid oklch(var(--color-darker));
 	--form-button-foreground-color: oklch(var(--color-whitish));
 	--form-button-foreground-color-hover: oklch(var(--color-darkest));
-	--form-button-outline-hover: 2px solid oklch(var(--color-darker));
+	--form-button-outline-hover: 2px solid oklch(var(--color-darkest));
 	--form-field-background-color: oklch(var(--color-lighter));
 	--form-field-background-color-focus: oklch(var(--color-whitish));
-	--form-field-border: 2px solid oklch(var(--color-light));
-	--form-field-outline: 2px solid oklch(var(--color-light));
+	--form-field-border: 2px solid oklch(var(--color-darkest));
+	--form-field-outline: 2px solid oklch(var(--color-darkest));
 }
 
 body {

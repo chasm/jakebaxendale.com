@@ -17,6 +17,7 @@ const { pathname } = Astro.url
 <section
 	aria-labelledby="site-content-h2"
 	class="top-nav"
+	id="site-menu"
 >
 	<h2
 		class="sr-only"
@@ -31,6 +32,7 @@ const { pathname } = Astro.url
 					<li>
 						<span
 							class="this-page"
+							aria-current="page"
 							title="This page."
 						>
 							{label}

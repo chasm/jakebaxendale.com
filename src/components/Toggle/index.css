@@ -22,7 +22,8 @@
 }
 
 .menu-toggle:focus,
-.menu-toggle:hover {
+.menu-toggle:hover,
+input#menu-toggle:focus-visible + .menu-toggle {
 	background-color: var(--menu-toggle-background-color-hover);
 	color: var(--menu-toggle-foreground-color-hover);
 	outline-offset: 5px;
@@ -43,8 +44,15 @@
 }
 
 input#menu-toggle {
-	top: -1000px;
-	position: absolute;
+	display: none;
+	opacity: 0;
+	pointer-events: none;
+	position: fixed;
+	top: 0.9rem;
+	right: 2vw;
+	height: 3rem;
+	width: 3.25rem;
+	z-index: 10000000001;
 }
 
 input#menu-toggle:checked + label span {
@@ -64,8 +72,12 @@ input#menu-toggle:checked + label span + span + span {
 	transition: all 0.5s ease-in-out;
 }
 
-@media screen and (width <= 1200px) {
+@media screen and (width <= 1240px) {
 	.menu-toggle {
 		display: flex;
+	}
+
+	input#menu-toggle {
+		display: block;
 	}
 }

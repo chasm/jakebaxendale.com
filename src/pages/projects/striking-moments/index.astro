@@ -40,7 +40,8 @@ const { title } = metadata
 		</p>
 		<figure>
 			<iframe
-				src="https://player.twitch.tv/?video=1633879743&parent=www.example.com&parent=jakebaxendale.com"
+				title="Striking Moments at Pyramid Club, Wellington Jazz Festival"
+				src={`https://player.twitch.tv/?video=1633879743&parent=${Astro.url.hostname}`}
 				allowfullscreen="true"
 				height="378"
 				width="620"

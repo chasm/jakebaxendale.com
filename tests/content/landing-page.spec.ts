@@ -39,7 +39,7 @@ test.describe("Landing page — Waypeople album announcement", () => {
 		page,
 	}) => {
 		const iframe = page.locator("iframe[src*='bandcamp.com/EmbeddedPlayer']")
-		const html = await iframe.innerHTML()
+		const html = (await iframe.innerHTML()).replace(/\s+/g, " ")
 		expect(html).toContain("Waypeople by Jake Baxendale")
 		expect(html).toContain("https://jakebaxendale.bandcamp.com/album/waypeople")
 	})
@@ -61,19 +61,20 @@ test.describe("Landing page — tour dates table", () => {
 		{
 			date: "Wednesday April 8th",
 			location: "Auckland",
-			ticketUrl: null,
+			ticketUrl:
+				"https://www.eventfinda.co.nz/2026/cjc-jake-baxendale-waypeople-wellington/auckland/kingsland/tickets",
 		},
 		{
 			date: "Thursday April 9th",
 			location: "Hamilton",
 			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-hamilton/tickets",
+				"https://events.humanitix.com/waypeople-album-release-tour-hamilton",
 		},
 		{
 			date: "Friday April 10th",
 			location: "Napier",
 			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-napier/tickets",
+				"https://events.humanitix.com/waypeople-album-release-tour-napier",
 		},
 		{
 			date: "Saturday April 11th",
@@ -96,13 +97,14 @@ test.describe("Landing page — tour dates table", () => {
 		{
 			date: "Saturday April 25th",
 			location: "Dunedin",
-			ticketUrl: null,
+			ticketUrl:
+				"https://www.dunedinjazz.club/event-details-registration/jake-baxendale-waypeople",
 		},
 		{
 			date: "Sunday April 26th",
 			location: "Christchurch",
 			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-christchurch/tickets",
+				"https://events.humanitix.com/waypeople-album-release-tour-christchurch",
 		},
 	]
 
@@ -133,7 +135,7 @@ test.describe("Landing page — tour dates table", () => {
 		for (let i = 0; i < tourDates.length; i++) {
 			const row = rows.nth(i)
 			const cells = row.locator("td")
-			const { date, location, ticketUrl } = tourDates[i]
+			const { date, location, ticketUrl } = tourDates[i]!
 
 			await expect(cells.nth(0)).toHaveText(date)
 			await expect(cells.nth(1)).toHaveText(location)

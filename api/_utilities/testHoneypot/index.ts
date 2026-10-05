@@ -1,14 +1,14 @@
-import type { VercelResponse } from "@vercel/node"
+import process from "node:process"
+import type { ApiResponse } from "../types.ts"
 
-import type { Body } from "../types"
-
-const EMAIL_BLACKLIST = process.env.EMAIL_BLACKLIST || ""
+import type { Body } from "../types.ts"
 
 export default function testHoneypot(
 	redirect: string,
 	body: Partial<Body>,
-	response: VercelResponse,
+	response: ApiResponse,
 ): boolean {
+	const EMAIL_BLACKLIST = process.env.EMAIL_BLACKLIST || ""
 	const [account, domain] =
 		body.emailAddress?.trim().toLocaleLowerCase().split("@") || []
 	const flatEmail = `${account?.replace(/\./g, "")}@${domain}`

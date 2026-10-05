@@ -1,4 +1,3 @@
-import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
 
 import { defineConfig } from "astro/config"
@@ -25,11 +24,8 @@ const ignore = [
 export default defineConfig({
 	site: "https://jakebaxendale.com/",
 	integrations: [
-		mdx(),
 		sitemap({
-			canonicalURL: "https://jakebaxendale.com/",
 			filter: (page) => !ignore.includes(page),
-			lastmod: new Date(),
 		}),
 	],
 })

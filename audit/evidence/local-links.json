@@ -1,0 +1,11 @@
+{
+  "base": "local dist",
+  "pages": 32,
+  "internal_targets": 772,
+  "external_targets": 118,
+  "issues": [],
+  "page_responses": [],
+  "http_responses": [],
+  "public_files": 1145,
+  "public_bytes": 331016799
+}

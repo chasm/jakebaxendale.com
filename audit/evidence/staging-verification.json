@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-05",
+  "browser_suite": {
+    "startTime": "2026-10-05T01:42:15.276Z",
+    "duration": 36293.747,
+    "expected": 159,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "native_deno_tests": {
+    "passed": 7,
+    "failed": 0,
+    "delivery": "mocked; no live email"
+  },
+  "checks": {
+    "node_build": "passed; 32 pages",
+    "deno_build": "passed; 32 pages",
+    "deno_types": "passed",
+    "astro_typescript_stylelint": "passed",
+    "formatting": "passed",
+    "built_references": "32 documents; zero issues"
+  },
+  "staging_policy": {
+    "indexing": "noindex on every response",
+    "email": "disabled unless test recipient configured; no Jake/BCC on test delivery",
+    "production": "explicit SITE_MODE and canonical hostname required"
+  }
+}

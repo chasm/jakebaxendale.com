@@ -1,6 +1,5 @@
-import type { Body } from "../types"
-
-const MAILERSEND_API_KEY = process.env.MAILERSEND_API_KEY
+import process from "node:process"
+import type { Body, EmailDelivery } from "../types.ts"
 
 const CHAS = {
 	name: "Charles F. Munat",
@@ -20,7 +19,7 @@ function composeBody(body: Body, t = new Date()): string {
 	const msg = feedback || message || "Empty message"
 	const txt =
 		"<p>" +
-		msg
+		escapeHtml(msg)
 			.split(/\n[\W]*\n/g)
 			.map((line: string) => line.replace(/\n/g, "<br>"))
 			.join("</p><p>") +
@@ -28,10 +27,23 @@ function composeBody(body: Body, t = new Date()): string {
 
 	return [
 		`${txt}`,
-		...(name ? [`<p>Name: ${name}</p>`] : []),
-		...(emailAddress ? [`<p>Email: ${emailAddress}</p>`] : []),
+		...(name ? [`<p>Name: ${escapeHtml(name)}</p>`] : []),
+		...(emailAddress ? [`<p>Email: ${escapeHtml(emailAddress)}</p>`] : []),
 		`<p>Submitted at: ${t.toString()}</p>`,
 	].join("\n")
+}
+
+function escapeHtml(value: string): string {
+	return value.replace(/[&<>"']/g, (character) => {
+		const entities: Record<string, string> = {
+			"&": "&amp;",
+			"<": "&lt;",
+			">": "&gt;",
+			'"': "&quot;",
+			"'": "&#39;",
+		}
+		return entities[character] ?? character
+	})
 }
 
 function getMessageType({ feedback, message }: Body): string {
@@ -46,17 +58,19 @@ function getMessageType({ feedback, message }: Body): string {
 	return "Unknown"
 }
 
-export default async function sendEmail(body: Body) {
+export default async function sendEmail(
+	body: Body,
+	delivery?: EmailDelivery | null,
+): Promise<Response> {
+	// A Deno staging request must explicitly supply a test recipient to send.
+	if (delivery === null) return new Response(null, { status: 503 })
+	const MAILERSEND_API_KEY = process.env.MAILERSEND_API_KEY
+	if (!MAILERSEND_API_KEY) return new Response(null, { status: 503 })
 	const { emailAddress, name } = body
 
 	const reply_to = emailAddress
 		? {
-				reply_to: [
-					{
-						name,
-						email: emailAddress,
-					},
-				],
+				reply_to: { ...(name ? { name } : {}), email: emailAddress },
 			}
 		: {}
 
@@ -65,11 +79,19 @@ export default async function sendEmail(body: Body) {
 	const email = {
 		body: JSON.stringify({
 			from: SITE,
-			to: [JAKE],
-			bcc: [CHAS],
+			to: delivery ? [{ email: delivery.recipient }] : [JAKE],
+			...(delivery ? {} : { bcc: [CHAS] }),
 			...reply_to,
-			subject: `${getMessageType(body)} from JakeBaxendale.com!`,
+			subject: `${delivery ? "[TEST] " : ""}${getMessageType(body)} from JakeBaxendale.com!`,
 			html,
+			text: [body.feedback || body.message, name, emailAddress]
+				.filter(Boolean)
+				.join("\n\n"),
+			settings: {
+				track_clicks: false,
+				track_opens: false,
+				track_content: false,
+			},
 		}),
 		headers: {
 			"Accept": "application/json",
@@ -77,11 +99,12 @@ export default async function sendEmail(body: Body) {
 			"Authorization": `Bearer ${MAILERSEND_API_KEY}`,
 		},
 		method: "POST",
+		signal: AbortSignal.timeout(10000),
 	}
 
 	try {
 		return await fetch("https://api.mailersend.com/v1/email", email)
-	} catch (error) {
-		return error
+	} catch {
+		return new Response(null, { status: 502 })
 	}
 }

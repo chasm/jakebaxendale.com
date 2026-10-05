@@ -82,6 +82,7 @@ test.describe("Carousel", () => {
 	})
 
 	test("counter has aria-live polite", async ({ page }) => {
+		await page.locator('button[aria-label="Pause slideshow"]').click()
 		const counter = page.locator(".carousel-counter")
 		await expect(counter).toHaveAttribute("aria-live", "polite")
 	})

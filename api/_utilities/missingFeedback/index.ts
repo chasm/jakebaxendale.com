@@ -1,9 +1,9 @@
-import type { VercelResponse } from "@vercel/node"
+import type { ApiResponse } from "../types.ts"
 
 export default function missingFeedback(
 	redirect: string,
 	feedback = "",
-	response: VercelResponse,
+	response: ApiResponse,
 ): boolean {
 	if (feedback.trim()) {
 		return false

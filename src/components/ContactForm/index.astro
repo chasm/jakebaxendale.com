@@ -16,6 +16,7 @@ import "./index.css"
 				cols="48"
 				required
 				rows="8"
+				maxlength="10000"
 				id="message"
 				name="message"
 			></textarea>
@@ -24,6 +25,8 @@ import "./index.css"
 			<label for="email">Your email address*</label>
 			<input
 				size="32"
+				autocomplete="email"
+				maxlength="254"
 				id="email"
 				inputmode="email"
 				name="emailAddress"
@@ -35,6 +38,8 @@ import "./index.css"
 			<label for="name">Your name (optional)</label>
 			<input
 				size="32"
+				autocomplete="name"
+				maxlength="200"
 				id="name"
 				inputmode="text"
 				name="name"

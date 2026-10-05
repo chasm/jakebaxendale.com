@@ -44,7 +44,10 @@ const content = await Astro.slots.render("default")
 	<body>
 		<Header />
 		<GlobalNav {pages} />
-		<main id="main">
+		<main
+			id="main"
+			tabindex="-1"
+		>
 			<Fragment set:html={content} />
 		</main>
 		<Footer />

@@ -15,6 +15,11 @@ a.card:hover {
 	box-shadow: var(--card-box-shadow-hover);
 }
 
+a.card:focus-visible {
+	outline: 2px solid oklch(var(--color-darkest));
+	outline-offset: 4px;
+}
+
 a.card p {
 	color: var(--card-foreground-color);
 	margin: 0;

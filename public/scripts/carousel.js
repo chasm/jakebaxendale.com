@@ -15,7 +15,7 @@ const createCarouselState = (container) => ({
 	currentIndex: 0,
 	isScrolling: false,
 	autoplayInterval: 5000, // 5 seconds
-	isPlaying: true,
+	isPlaying: !window.matchMedia("(prefers-reduced-motion: reduce)").matches,
 	autoplayTimer: null,
 	scrollTimeout: null,
 	controls: null,
@@ -57,7 +57,7 @@ const createDot = (index, imageUrl) =>
 		"type": "button",
 		"className": "carousel-dot",
 		"aria-label": `Go to image ${index + 1}`,
-		"title": `Image ${index + 1} - Press Enter to view full size`,
+		"title": `Show image ${index + 1}`,
 		"data-index": index,
 		"data-image-url": imageUrl,
 	})
@@ -194,12 +194,21 @@ const updateButtons = (state) => {
 }
 
 const updateDots = (state) => {
+	state.slides.forEach((slide, index) => {
+		const active = index === state.currentIndex
+		slide.inert = !active
+		const link = slide.querySelector("a")
+		if (link) link.tabIndex = active ? 0 : -1
+	})
 	state.dots.forEach((dot, index) => {
 		dot.classList.toggle("active", index === state.currentIndex)
+		if (index === state.currentIndex) dot.setAttribute("aria-current", "true")
+		else dot.removeAttribute("aria-current")
 	})
 }
 
 const updatePlayPauseButton = (state) => {
+	state.counter?.setAttribute("aria-live", state.isPlaying ? "off" : "polite")
 	if (state.isPlaying) {
 		state.playPauseButton.textContent = "Pause"
 		state.playPauseButton.setAttribute("aria-label", "Pause slideshow")
@@ -231,11 +240,11 @@ const goToSlide = (state, index) => {
 
 	state.track.scrollTo({
 		left: index * slideWidth,
-		behavior: "smooth",
+		behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
 	})
 
 	setTimeout(() => {
-		const finalState = updateScrollingState(newState, false)
+		const finalState = updateScrollingState(carouselStates.get(state.container) ?? newState, false)
 		updateCounter(finalState)
 		updateButtons(finalState)
 		updateDots(finalState)
@@ -259,11 +268,6 @@ const goToNext = (state, allowLoop = false) => {
 		// For manual navigation - don't loop
 		return goToSlide(state, state.currentIndex + 1)
 	}
-}
-
-const snapToNearestSlide = (state) => {
-	const updatedState = updateCurrentIndex(state)
-	return goToSlide(updatedState, updatedState.currentIndex)
 }
 
 // Autoplay functions
@@ -326,35 +330,8 @@ const createScrollHandler = (container) => () => {
 	carouselStates.set(container, { ...state, scrollTimeout })
 }
 
-const createTouchHandlers = (container) => {
-	let startX = 0
-	let scrollLeft = 0
-
-	const touchStart = (e) => {
-		startX = e.touches[0].pageX
-		const state = carouselStates.get(container)
-		scrollLeft = state.track.scrollLeft
-	}
-
-	const touchMove = (e) => {
-		e.preventDefault()
-		const state = carouselStates.get(container)
-		const x = e.touches[0].pageX
-		const walk = (x - startX) * 2
-		state.track.scrollLeft = scrollLeft - walk
-	}
-
-	const touchEnd = () => {
-		const state = carouselStates.get(container)
-		const newState = snapToNearestSlide(state)
-		carouselStates.set(container, newState)
-	}
-
-	return { touchStart, touchMove, touchEnd }
-}
-
 const createKeyboardHandler = (container) => (e) => {
-	if (!e.target.closest(".carousel-controls")) return
+	if (!e.target.closest(".carousel-controls") && !e.target.matches(".carousel-track")) return
 
 	const state = carouselStates.get(container)
 	let newState = state
@@ -395,6 +372,19 @@ const createKeyboardHandler = (container) => (e) => {
 // Event binding function
 const bindEvents = (state) => {
 	const container = state.container
+	container.addEventListener("focusin", (event) => {
+		// Let the play/pause button perform its requested action on click.
+		if (event.target === state.playPauseButton) return
+		const pausedState = pauseAutoplay(carouselStates.get(container))
+		carouselStates.set(container, pausedState)
+		updatePlayPauseButton(pausedState)
+	})
+	window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change", (event) => {
+		if (!event.matches) return
+		const pausedState = pauseAutoplay(carouselStates.get(container))
+		carouselStates.set(container, pausedState)
+		updatePlayPauseButton(pausedState)
+	})
 
 	// Navigation buttons - pause autoplay when user manually navigates
 	state.prevButton.addEventListener("click", () => {
@@ -441,16 +431,7 @@ const bindEvents = (state) => {
 			updatePlayPauseButton(newState)
 		})
 
-		// Keyboard support for viewing full-size image
-		dot.addEventListener("keydown", (e) => {
-			if (e.key === "Enter" || e.key === " ") {
-				e.preventDefault()
-				const imageUrl = dot.dataset.imageUrl
-				if (imageUrl) {
-					window.location.href = imageUrl
-				}
-			}
-		})
+
 	})
 
 	// Keyboard navigation
@@ -459,11 +440,12 @@ const bindEvents = (state) => {
 	// Scroll handling
 	state.track.addEventListener("scroll", createScrollHandler(container))
 
-	// Touch support
-	const { touchStart, touchMove, touchEnd } = createTouchHandlers(container)
-	state.track.addEventListener("touchstart", touchStart)
-	state.track.addEventListener("touchmove", touchMove)
-	state.track.addEventListener("touchend", touchEnd)
+	// Native touch scrolling keeps vertical page scrolling available.
+	state.track.addEventListener("touchstart", () => {
+		const pausedState = pauseAutoplay(carouselStates.get(container))
+		carouselStates.set(container, pausedState)
+		updatePlayPauseButton(pausedState)
+	}, { passive: true })
 }
 
 // === MAIN INITIALIZATION ===
@@ -482,7 +464,7 @@ const initializeCarousel = (container) => {
 	insertControls(stateWithControls)
 
 	// Start autoplay first to get the correct initial state
-	const stateWithAutoplay = startAutoplay(stateWithControls)
+	const stateWithAutoplay = stateWithControls.isPlaying ? startAutoplay(stateWithControls) : stateWithControls
 
 	// Initialize UI state with the autoplay state
 	updateCounter(stateWithAutoplay)

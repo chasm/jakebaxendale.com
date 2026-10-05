@@ -1,15 +1,18 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node"
+import type { ApiRequest, ApiResponse } from "../_utilities/types.ts"
 
-import invalidEmail from "../_utilities/invalidEmail/index.js"
-import missingFeedback from "../_utilities/missingFeedback/index.js"
-import sendEmail from "../_utilities/sendEmail/index.js"
-import testHoneypot from "../_utilities/testHoneypot/index.js"
+import invalidEmail from "../_utilities/invalidEmail/index.ts"
+import missingFeedback from "../_utilities/missingFeedback/index.ts"
+import sendEmail from "../_utilities/sendEmail/index.ts"
+import testHoneypot from "../_utilities/testHoneypot/index.ts"
+import validateBody from "../_utilities/validateBody/index.ts"
 
 export default async function handler(
-	{ body }: VercelRequest,
-	response: VercelResponse,
+	request: ApiRequest,
+	response: ApiResponse,
 ) {
-	const redirect = "https://jakebaxendale.com/feedback/"
+	const redirect = "/feedback/"
+	const body = validateBody(request, response)
+	if (!body) return
 
 	// Honeypot fail or blacklisted
 	if (testHoneypot(redirect, body, response)) {
@@ -22,12 +25,12 @@ export default async function handler(
 	}
 
 	// Missing FEEDBACK
-	if (missingFeedback(redirect, body.feedback, response)) {
+	if (missingFeedback(redirect, body.feedback ?? "", response)) {
 		return
 	}
 
 	// Send email
-	const resp = (await sendEmail(body)) as Response
+	const resp = await sendEmail({ ...body, message: null }, request.delivery)
 
 	resp.ok
 		? response.setHeader("Location", `${redirect}success`).status(303).end()
