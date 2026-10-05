@@ -19,7 +19,7 @@ test.describe("Landing page — Waypeople album announcement", () => {
 		await expect(
 			page.locator("em", { hasText: "Waypeople" }).first(),
 		).toBeVisible()
-		await expect(page.locator("text=out from March 13th")).toBeVisible()
+		await expect(page.locator("text=is out now")).toBeVisible()
 	})
 
 	test("Bandcamp link points to Waypeople album", async ({ page }) => {
