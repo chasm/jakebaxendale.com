@@ -30,5 +30,4 @@ export const routes = [
 	"/projects/waypeople/",
 	"/prose/",
 	"/terms-of-use/",
-	"/venues/",
 ]

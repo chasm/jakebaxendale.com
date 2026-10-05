@@ -1,6 +1,6 @@
 # jakebaxendale.com
 
-Jake Baxendale's website: 32 static Astro pages and separate contact and feedback endpoints currently hosted on Vercel.
+Jake Baxendale's website: 31 static Astro pages and separate contact and feedback endpoints currently hosted on Vercel.
 
 ## Development
 
@@ -24,13 +24,13 @@ deno task test:server
 python3 scripts/audit-links.py --output audit/evidence/local-links.json
 ```
 
-The suite builds production pages and starts the Deno server on port 14321. It checks all 32 routes at desktop and 320-pixel widths, keyboard navigation, reduced motion, and forms. API and Deno server tests mock MailerSend and never send email. Install Deno to run these checks.
+The suite builds production pages and starts the Deno server on port 14321. It checks all 31 routes at desktop and 320-pixel widths, keyboard navigation, reduced motion, and forms. API and Deno server tests mock MailerSend and never send email. Install Deno to run these checks.
 
 `pnpm test:a11y` runs accessibility checks; `pnpm test:api` runs mocked endpoint tests. Install the browser once with `pnpm exec playwright install chromium`. Third-party player documents are outside the host-page regression scan; iframe titles remain checked. Scores and captions need separate review.
 
 ## Archived content
 
-The venues page remains available at `/venues/` for existing links. It is removed from global navigation and the sitemap, and its robots metadata is `noindex, follow` while Jake postpones updates.
+The complete venues page source is preserved in `archive/pages/venues/index.astro`, outside Astro's public pages directory. `/venues` and `/venues/` return 404; there is no replacement public archive URL. Navigation and the sitemap omit it. To restore it, move the folder back to `src/pages/venues` and review the content, navigation entry, and `noindex` metadata.
 
 ## Build and hosting
 
