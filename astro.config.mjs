@@ -22,6 +22,8 @@ const ignore = [
 
 // https://astro.build/config
 export default defineConfig({
+	// Preserve HTML word spacing across formatted inline elements (Astro 7 defaults to JSX rules).
+	compressHTML: true,
 	site: "https://jakebaxendale.com/",
 	integrations: [
 		sitemap({

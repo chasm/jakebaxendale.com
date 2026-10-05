@@ -24,9 +24,11 @@ deno task test:server
 python3 scripts/audit-links.py --output audit/evidence/local-links.json
 ```
 
-The suite builds production pages and starts the Deno server on port 14321. It checks all 31 routes at desktop and 320-pixel widths, keyboard navigation, reduced motion, and forms. API and Deno server tests mock MailerSend and never send email. Install Deno to run these checks.
+The suite builds production pages and starts the Deno server on port 14321. It compares authored prose with browser-rendered text on every route to catch missing spaces around inline elements. It checks all 31 routes at desktop and 320-pixel widths, keyboard navigation, reduced motion, and forms. API and Deno server tests mock MailerSend and never send email. Install Deno to run these checks.
 
 `pnpm test:a11y` runs accessibility checks; `pnpm test:api` runs mocked endpoint tests. Install the browser once with `pnpm exec playwright install chromium`. Third-party player documents are outside the host-page regression scan; iframe titles remain checked. Scores and captions need separate review.
+
+Astro 7 changed the default to JSX whitespace rules. Keep `compressHTML: true` in `astro.config.mjs` to preserve HTML word spacing across formatted inline elements.
 
 ## Archived content
 

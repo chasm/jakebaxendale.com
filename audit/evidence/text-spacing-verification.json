@@ -1,0 +1,23 @@
+{
+	"date": "2026-10-05",
+	"public_pages": 31,
+	"cause": "Astro 7 changed compressHTML default from true to jsx during the audit upgrade",
+	"fix": "Explicit compressHTML: true restores HTML-aware whitespace preservation",
+	"static_comparison": {
+		"blocks_checked": 165,
+		"mismatches_before": 39,
+		"mismatches_after": 0
+	},
+	"browser_spacing_checks": 31,
+	"negative_control": "The biography spacing test failed when compressHTML: jsx was temporarily restored",
+	"browser_suite": {
+		"startTime": "2026-10-05T03:51:23.620Z",
+		"duration": 48151.890999999996,
+		"expected": 184,
+		"skipped": 0,
+		"unexpected": 0,
+		"flaky": 0
+	},
+	"type_checks": "Astro: 82 files, no errors/warnings/hints; TypeScript: passed",
+	"separate_source_fix": "Added a missing space after no audition required. on Lessons"
+}

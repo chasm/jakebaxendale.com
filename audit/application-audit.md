@@ -15,52 +15,52 @@ The authenticated Vercel CLI confirms that **the domain is registered and manage
 
 The authenticated DNS listing includes these email records alongside Vercel's default website ALIAS and CAA records:
 
-| Name | Type | Value or purpose |
-| --- | --- | --- |
-| Apex | MX | `10 mx1.improvmx.com.` and `20 mx2.improvmx.com.` |
-| Apex | TXT | `v=spf1 include:_spf.mailersend.net include:spf.improvmx.com ~all` |
-| `mta` | CNAME | `mailersend.net.` |
-| `mlsend._domainkey` | TXT | MailerSend DKIM public key |
+| Name                | Type  | Value or purpose                                                   |
+| ------------------- | ----- | ------------------------------------------------------------------ |
+| Apex                | MX    | `10 mx1.improvmx.com.` and `20 mx2.improvmx.com.`                  |
+| Apex                | TXT   | `v=spf1 include:_spf.mailersend.net include:spf.improvmx.com ~all` |
+| `mta`               | CNAME | `mailersend.net.`                                                  |
+| `mlsend._domainkey` | TXT   | MailerSend DKIM public key                                         |
 
 Preserve all four configurations to protect inbound forwarding and outbound email authentication. Full values are saved in [dns-zone.txt](evidence/dns-zone.txt). No DMARC TXT record was found; review forwarding and alignment before selecting a policy. Registration evidence is in [registration.json](evidence/registration.json) and [vercel-registration.txt](evidence/vercel-registration.txt).
 
 ## Confirmed defects repaired locally
 
-| Area | Finding and repair |
-| --- | --- |
-| Email delivery | The original MailerSend payload used an array for `reply_to`; its API expects one object. Corrected the schema and optional-name handling. [MailerSend API](https://developers.mailersend.com/api/v1/email). |
-| Form validation | Added POST-only handling, string validation, field limits, normalized input, no-store responses, and controlled failure handling for missing secrets and network errors. Prevented the other form's message field from overriding the intended submission. |
-| Email safety | Escaped user text in HTML email, added plain text, set a delivery timeout, and disabled provider tracking. |
-| Mobile menu | Fixed keyboard activation, focusable hidden links, and the missing toggle between 1201 and 1240 pixels. The native checkbox supports Space and Enter; Escape closes it; background content becomes inert while open. |
-| Focus and contrast | Mobile skip links were hidden when focused. They are visible now, and targets receive focus. Strengthened field borders, focus outlines, gallery controls, and card focus indicators. |
-| Gallery | Respects reduced motion, pauses during navigation and touch interaction, keeps full-size images keyboard accessible, supports arrow keys from the track, and provides 24-pixel dots with current-state semantics. Fixed native button activation and stale state updates. |
-| Embeds and reflow | Added three missing iframe titles, constrained Bandcamp players to the page width, and darkened their link color. Hidden navigation no longer creates horizontal overflow. |
-| Assets | Added two missing Striking Moments JPEG variants from existing matching JPEGs. Built links, assets, and fragment targets now resolve locally. |
-| External references | Repaired three Humanitix ticket links, Rātā Big Band/music links, Rogue and Vagabond links, and Black String's link using verified destinations. Corrected Gardening Music's contradictory discography year. |
-| Metadata | Added favicon and Open Graph title, URL, and type; marked the current navigation item; added column scopes; removed misleading build-time sitemap modification dates. |
-| Privacy statements | Disclosed the existing developer email copy and potential mailbox retention, and added Bandcamp and third-party player disclosures. The host remains named as Vercel until cutover. |
+| Area                        | Finding and repair                                                                                                                                                                                                                                                                      |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Email delivery              | The original MailerSend payload used an array for `reply_to`; its API expects one object. Corrected the schema and optional-name handling. [MailerSend API](https://developers.mailersend.com/api/v1/email).                                                                            |
+| Form validation             | Added POST-only handling, string validation, field limits, normalized input, no-store responses, and controlled failure handling for missing secrets and network errors. Prevented the other form's message field from overriding the intended submission.                              |
+| Email safety                | Escaped user text in HTML email, added plain text, set a delivery timeout, and disabled provider tracking.                                                                                                                                                                              |
+| Mobile menu                 | Fixed keyboard activation, focusable hidden links, and the missing toggle between 1201 and 1240 pixels. The native checkbox supports Space and Enter; Escape closes it; background content becomes inert while open.                                                                    |
+| Focus and contrast          | Mobile skip links were hidden when focused. They are visible now, and targets receive focus. Strengthened field borders, focus outlines, gallery controls, and card focus indicators.                                                                                                   |
+| Gallery                     | Respects reduced motion, pauses during navigation and touch interaction, keeps full-size images keyboard accessible, supports arrow keys from the track, and provides 24-pixel dots with current-state semantics. Fixed native button activation and stale state updates.               |
+| Embeds and reflow           | Added three missing iframe titles, constrained Bandcamp players to the page width, and darkened their link color. Hidden navigation no longer creates horizontal overflow.                                                                                                              |
+| Assets                      | Added two missing Striking Moments JPEG variants from existing matching JPEGs. Built links, assets, and fragment targets now resolve locally.                                                                                                                                           |
+| External references         | Repaired three Humanitix ticket links, Rātā Big Band/music links, Rogue and Vagabond links, and Black String's link using verified destinations. Corrected Gardening Music's contradictory discography year.                                                                            |
+| Metadata                    | Added favicon and Open Graph title, URL, and type; marked the current navigation item; added column scopes; removed misleading build-time sitemap modification dates.                                                                                                                   |
+| Privacy statements          | Disclosed the existing developer email copy and potential mailbox retention, and added Bandcamp and third-party player disclosures. The host remains named as Vercel until cutover.                                                                                                     |
 | Dependencies and repository | Upgraded Astro to 7.3.5 and other dependencies, aligned Node requirements, added template checking, fixed type/CSS errors, and removed unused MDX, redundant Vite, and the Vercel CLI/type dependency tree. Generated caches are ignored and untracked; builds strip `.DS_Store` files. |
-| Tests and operations | Fixed two stale assertions, added endpoint and interaction regressions, checked iframe titles instead of excluding their elements, repaired the broken deploy script, and tested freshly built production pages on an isolated port. |
+| Tests and operations        | Fixed two stale assertions, added endpoint and interaction regressions, checked iframe titles instead of excluding their elements, repaired the broken deploy script, and tested freshly built production pages on an isolated port.                                                    |
 
 The local Vercel headers retain CSP, HSTS, frame denial, and MIME protection, with added `base-uri`, `object-src`, `form-action`, `frame-ancestors`, and referrer policy. Obsolete X-XSS-Protection was removed.
 
 ## Validation results
 
-| Check | Result |
-| --- | --- |
-| Node production build | 32 pages built successfully |
-| Deno production build | Successful with Deno 2.9.7 |
-| Astro, TypeScript, and CSS | Passed with no diagnostics |
-| Formatting and whitespace | Passed |
-| Browser suite | **157 passed**, no skips or flaky results |
-| Host accessibility | All 32 routes passed selected WCAG 2.2 AA axe rules at desktop and 320-pixel widths |
-| Reflow | All 32 routes passed the check for page-level horizontal overflow |
-| Endpoints | Six mocked tests cover payloads, anonymous feedback, validation, honeypots, blacklist, and delivery failures |
-| Built references | 32 documents; no missing local links, assets, or fragments |
-| Published pages | All 32 returned HTTP 200 |
-| Public crawl | 886 unique URLs checked, including 116 external URLs |
-| Public media | Sample PDF and MP3 range requests returned 206 with correct MIME types |
-| Public endpoint GET requests | Both currently return 500; local handlers now return 405 with `Allow: POST` |
+| Check                        | Result                                                                                                       |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Node production build        | 32 pages built successfully                                                                                  |
+| Deno production build        | Successful with Deno 2.9.7                                                                                   |
+| Astro, TypeScript, and CSS   | Passed with no diagnostics                                                                                   |
+| Formatting and whitespace    | Passed                                                                                                       |
+| Browser suite                | **157 passed**, no skips or flaky results                                                                    |
+| Host accessibility           | All 32 routes passed selected WCAG 2.2 AA axe rules at desktop and 320-pixel widths                          |
+| Reflow                       | All 32 routes passed the check for page-level horizontal overflow                                            |
+| Endpoints                    | Six mocked tests cover payloads, anonymous feedback, validation, honeypots, blacklist, and delivery failures |
+| Built references             | 32 documents; no missing local links, assets, or fragments                                                   |
+| Published pages              | All 32 returned HTTP 200                                                                                     |
+| Public crawl                 | 886 unique URLs checked, including 116 external URLs                                                         |
+| Public media                 | Sample PDF and MP3 range requests returned 206 with correct MIME types                                       |
+| Public endpoint GET requests | Both currently return 500; local handlers now return 405 with `Allow: POST`                                  |
 
 Saved results: [verification summary](evidence/verification.json), [dependency audit](evidence/dependency-audit.json), and [built reference check](evidence/local-links.json).
 
@@ -114,3 +114,13 @@ Use current Deno Deploy at `console.deno.com`, rather than Deploy Classic. Integ
 Vercel Hobby permits non-commercial personal use. Paid lessons and album/ticket promotion make this site appear commercial; that is an inference from the content, rather than an account determination. Moving hosting addresses that concern without requiring registrar transfer. [Vercel Hobby](https://vercel.com/docs/plans/hobby).
 
 Deno's published Free allowances include 1 million monthly requests, 20 GiB egress, and five custom domains. Compare actual usage, particularly media downloads, before selecting a plan; repository size is not monthly bandwidth. Pro is listed at US$20/month. [Deno pricing](https://deno.com/deploy/pricing).
+
+## Whitespace regression correction — 5 October 2026
+
+The initial audit upgraded Astro 5 to Astro 7 without explicitly preserving the previous whitespace behavior. Astro 7 defaults to JSX whitespace rules, which remove line breaks beside inline elements. This joined words around links and emphasis on several pages; the existing page-loading and accessibility tests did not detect it. Comparing the unchanged biography on Vercel confirmed this was a regression in the new build.
+
+The site now explicitly uses `compressHTML: true`, preserving the previous HTML-aware behavior as recommended in the [Astro 7 migration guide](https://docs.astro.build/en/guides/upgrade-to/v7/#new-default-whitespace-handling-compresshtml-jsx). A comparison of all 31 currently public pages checked 165 static text blocks: 39 differed before the configuration fix and none differed after it. One separate missing source space after “no audition required.” on Lessons was also corrected.
+
+The browser suite now compares authored static prose, captions and lists with browser-rendered text on every route, including card prose. Player fallback documents and dynamic expressions remain covered by their separate checks. A deliberate temporary reintroduction of the faulty compiler setting made the biography regression test fail; restoring the setting made all 31 spacing tests pass. Venues source is preserved in `archive/pages/venues/index.astro` and is no longer a public route.
+
+Final validation passed **184 browser tests**, with no failures, skips or flaky results, plus Astro/TypeScript and formatting checks. [Whitespace verification](evidence/text-spacing-verification.json).
