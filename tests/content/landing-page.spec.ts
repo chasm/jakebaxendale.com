@@ -5,10 +5,10 @@ test.describe("Landing page — Waypeople album announcement", () => {
 		await page.goto("/")
 	})
 
-	test("page heading includes album and tour", async ({ page }) => {
+	test("page heading promotes the new album", async ({ page }) => {
 		await expect(
 			page.getByRole("heading", {
-				name: "New Album + New Zealand Tour",
+				name: "New Album",
 				level: 1,
 			}),
 		).toBeVisible()
@@ -44,110 +44,12 @@ test.describe("Landing page — Waypeople album announcement", () => {
 		expect(html).toContain("https://jakebaxendale.bandcamp.com/album/waypeople")
 	})
 
-	test("tour intro text mentions touring Aotearoa", async ({ page }) => {
-		await expect(
-			page.locator("text=touring nearly the length and breadth of Aotearoa"),
-		).toBeVisible()
-	})
-})
-
-test.describe("Landing page — tour dates table", () => {
-	const tourDates = [
-		{
-			date: "Friday April 3rd",
-			location: "Tauranga",
-			ticketUrl: "https://www.eventfinda.co.nz/2026/waypeople/tauranga",
-		},
-		{
-			date: "Wednesday April 8th",
-			location: "Auckland",
-			ticketUrl:
-				"https://www.eventfinda.co.nz/2026/cjc-jake-baxendale-waypeople-wellington/auckland/kingsland/tickets",
-		},
-		{
-			date: "Thursday April 9th",
-			location: "Hamilton",
-			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-hamilton",
-		},
-		{
-			date: "Friday April 10th",
-			location: "Napier",
-			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-napier",
-		},
-		{
-			date: "Saturday April 11th",
-			location: "Wellington",
-			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-wellington",
-		},
-		{
-			date: "Sunday April 12th",
-			location: "Palmerston North",
-			ticketUrl:
-				"https://nz.patronbase.com/_GlobeTheatre/Productions/WAYP/Performances",
-		},
-		{
-			date: "Friday April 24th",
-			location: "Oamaru",
-			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-oamaru",
-		},
-		{
-			date: "Saturday April 25th",
-			location: "Dunedin",
-			ticketUrl:
-				"https://www.dunedinjazz.club/event-details-registration/jake-baxendale-waypeople",
-		},
-		{
-			date: "Sunday April 26th",
-			location: "Christchurch",
-			ticketUrl:
-				"https://events.humanitix.com/waypeople-album-release-tour-christchurch",
-		},
-	]
-
-	test.beforeEach(async ({ page }) => {
-		await page.goto("/")
-	})
-
-	test("tour section heading is present", async ({ page }) => {
-		await expect(
-			page.locator("h2", { hasText: "New Zealand Tour" }),
-		).toBeVisible()
-	})
-
-	test("table has Date, Location, and Tickets columns", async ({ page }) => {
-		const headers = page.locator("table.tour-dates thead th")
-		await expect(headers).toHaveCount(3)
-		await expect(headers.nth(0)).toHaveText("Date")
-		await expect(headers.nth(1)).toHaveText("Location")
-		await expect(headers.nth(2)).toHaveText("Tickets")
-	})
-
-	test("every tour date row has correct date, location, and ticket info", async ({
-		page,
-	}) => {
-		const rows = page.locator("table.tour-dates tbody tr")
-		await expect(rows).toHaveCount(tourDates.length)
-
-		for (let i = 0; i < tourDates.length; i++) {
-			const row = rows.nth(i)
-			const cells = row.locator("td")
-			const { date, location, ticketUrl } = tourDates[i]!
-
-			await expect(cells.nth(0)).toHaveText(date)
-			await expect(cells.nth(1)).toHaveText(location)
-
-			if (ticketUrl) {
-				const link = cells.nth(2).locator("a")
-				await expect(link).toHaveAttribute("href", ticketUrl)
-				await expect(link).toHaveText("Buy tickets")
-			} else {
-				await expect(cells.nth(2)).toHaveText("Coming soon")
-			}
-		}
+	test("past tour information has been removed", async ({ page }) => {
+		await expect(page.locator("main")).not.toContainText(
+			/New Zealand Tour|NZ tour|Buy tickets|touring nearly/,
+		)
+		await expect(page.locator("table.tour-dates")).toHaveCount(0)
+		await expect(page).toHaveTitle(/^New Album ::/)
 	})
 })
 

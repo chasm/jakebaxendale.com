@@ -28,6 +28,10 @@ The suite builds production pages and starts the Deno server on port 14321. It c
 
 `pnpm test:a11y` runs accessibility checks; `pnpm test:api` runs mocked endpoint tests. Install the browser once with `pnpm exec playwright install chromium`. Third-party player documents are outside the host-page regression scan; iframe titles remain checked. Scores and captions need separate review.
 
+## Archived content
+
+The venues page remains available at `/venues/` for existing links. It is removed from global navigation and the sitemap, and its robots metadata is `noindex, follow` while Jake postpones updates.
+
 ## Build and hosting
 
 ```sh

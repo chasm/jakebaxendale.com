@@ -1,21 +1,18 @@
 ---
-import "./_index.css"
-
 import type { PageMeta } from "~types"
 
 import Article from "~components/Article/index.astro"
-// import Picture from "~components/Picture/index.astro"
 import Layout from "~layouts/index.astro"
 
 export const metadata: Partial<PageMeta> = {
 	label: "Home",
-	title: "New Album + New Zealand Tour",
+	title: "New Album",
 }
 
 const { title } = metadata
 ---
 
-<Layout>
+<Layout {title}>
 	<Article {title}>
 		<p>
 			My new album <em>Waypeople</em> is out from March 13th. Featuring a remarkable
@@ -45,123 +42,6 @@ const { title } = metadata
 			<a href="https://jakebaxendale.bandcamp.com/album/waypeople"> Waypeople by
 			Jake Baxendale </a>
 		</iframe>
-		<section>
-			<h2>New Zealand Tour</h2>
-			<p>
-				We&rsquo;re touring nearly the length and breadth of Aotearoa. Check out
-				the dates and find a show near you!
-			</p>
-			<table class="tour-dates">
-				<thead>
-					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Location</th>
-						<th scope="col">Tickets</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Friday April 3rd</td>
-						<td>Tauranga</td>
-						<td
-							><a
-								href="https://www.eventfinda.co.nz/2026/waypeople/tauranga"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Wednesday April 8th</td>
-						<td>Auckland</td>
-						<td
-							><a
-								href="https://www.eventfinda.co.nz/2026/cjc-jake-baxendale-waypeople-wellington/auckland/kingsland/tickets"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Thursday April 9th</td>
-						<td>Hamilton</td>
-						<td
-							><a
-								href="https://events.humanitix.com/waypeople-album-release-tour-hamilton"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Friday April 10th</td>
-						<td>Napier</td>
-						<td
-							><a
-								href="https://events.humanitix.com/waypeople-album-release-tour-napier"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Saturday April 11th</td>
-						<td>Wellington</td>
-						<td
-							><a
-								href="https://events.humanitix.com/waypeople-album-release-tour-wellington"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Sunday April 12th</td>
-						<td>Palmerston North</td>
-						<td
-							><a
-								href="https://nz.patronbase.com/_GlobeTheatre/Productions/WAYP/Performances"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Friday April 24th</td>
-						<td>Oamaru</td>
-						<td
-							><a
-								href="https://events.humanitix.com/waypeople-album-release-tour-oamaru"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Saturday April 25th</td>
-						<td>Dunedin</td>
-						<td
-							><a
-								href="https://www.dunedinjazz.club/event-details-registration/jake-baxendale-waypeople"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-					<tr>
-						<td>Sunday April 26th</td>
-						<td>Christchurch</td>
-						<td
-							><a
-								href="https://events.humanitix.com/waypeople-album-release-tour-christchurch"
-								rel="external"
-								>Buy tickets</a
-							></td
-						>
-					</tr>
-				</tbody>
-			</table>
-		</section>
 		<section>
 			<h2>In other media &hellip;</h2>
 			<p>

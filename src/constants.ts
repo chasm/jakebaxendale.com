@@ -10,7 +10,6 @@ export const GLOBAL_NAV: Array<Link> = [
 	// { href: "/portfolio", label: "Portfolio" },
 	{ href: "/projects", label: "Projects" },
 	{ href: "/prose", label: "Prose" },
-	{ href: "/venues", label: "Venues" },
 	{ href: "/contact", label: "Contact" },
 ]
 

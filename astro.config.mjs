@@ -18,6 +18,7 @@ const ignore = [
 	"https://jakebaxendale.com/portfolio/",
 	"https://jakebaxendale.com/privacy-policy/",
 	"https://jakebaxendale.com/terms-of-use/",
+	"https://jakebaxendale.com/venues/",
 ]
 
 // https://astro.build/config
