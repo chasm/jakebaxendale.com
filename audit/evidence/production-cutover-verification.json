@@ -1,0 +1,24 @@
+{
+	"date": "2026-10-08",
+	"host": "https://jakebaxendale.com/",
+	"hosting": "Deno Deploy, confirmed by live HTTP response headers",
+	"nameservers": ["ns1.vercel-dns.com", "ns2.vercel-dns.com"],
+	"email_dns": "ImprovMX MX, combined SPF, MailerSend DKIM and mta CNAME unchanged from saved zone",
+	"pages": 31,
+	"internal_targets": 685,
+	"issues": [],
+	"http_redirect": 301,
+	"www_redirect": 308,
+	"production_homepage": "robots=all; no staging X-Robots-Tag; production cache control",
+	"review_url": "noindex, nofollow; no-store",
+	"empty_contact_post": {
+		"status": 303,
+		"location": "/contact/missing-email"
+	},
+	"empty_feedback_post": {
+		"status": 303,
+		"location": "/feedback/missing-feedback"
+	},
+	"email_delivery": "No actual email sent during this verification; inbox delivery not checked",
+	"privacy_policy_check": "Passed Chromium authored-text spacing check"
+}
