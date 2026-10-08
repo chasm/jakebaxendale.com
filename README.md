@@ -1,6 +1,6 @@
 # jakebaxendale.com
 
-Jake Baxendale's website: 31 static Astro pages and separate contact and feedback endpoints currently hosted on Vercel.
+Jake Baxendale's website: 31 static Astro pages and separate contact and feedback endpoints hosted on Deno Deploy. Domain registration and DNS remain with Vercel.
 
 ## Development
 
@@ -62,6 +62,6 @@ Staging is the default: every response has `X-Robots-Tag: noindex, nofollow`, HT
 
 At DNS cutover, set `SITE_MODE=production` in the Production runtime context and keep `MAILERSEND_API_KEY` configured there. Production delivery and indexing are enabled only on `jakebaxendale.com` and `www.jakebaxendale.com`; all Deno URLs remain staging even with that setting. Remove the test recipient from Production. The server preserves HTTPS/apex redirects, file ranges, MIME types, missing-page responses, same-host form redirects, and the current request hostname for Twitch embeds.
 
-Keep Vercel's Git integration disconnected during migration so pushes to `main` update Deno while the current Vercel deployment stays live. Do not run `pnpm dep:prod` during this period. The domain registration and email DNS records remain unchanged.
+Pushes to `main` deploy to Deno. Keep Vercel's Git integration disconnected and do not run `pnpm dep:prod`; its old deployment is retained temporarily for rollback. Preserve the Vercel domain registration, DNS zone and email records when retiring the old hosting project.
 
 See [the application audit](audit/application-audit.md) for findings, evidence, domain registration details, and the migration plan.

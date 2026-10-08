@@ -124,3 +124,12 @@ The site now explicitly uses `compressHTML: true`, preserving the previous HTML-
 The browser suite now compares authored static prose, captions and lists with browser-rendered text on every route, including card prose. Player fallback documents and dynamic expressions remain covered by their separate checks. A deliberate temporary reintroduction of the faulty compiler setting made the biography regression test fail; restoring the setting made all 31 spacing tests pass. Venues source is preserved in `archive/pages/venues/index.astro` and is no longer a public route.
 
 Final validation passed **184 browser tests**, with no failures, skips or flaky results, plus Astro/TypeScript and formatting checks. [Whitespace verification](evidence/text-spacing-verification.json).
+
+
+## Production cutover — 8 October 2026
+
+Public checks confirm that `https://jakebaxendale.com/` is now served by Deno Deploy, with the updated homepage and production caching. The homepage has no staging `X-Robots-Tag` and has `robots=all`. HTTP redirects to HTTPS with 301; HTTPS `www` redirects to the apex with 308. The stable `.deno.net` review URL still has `noindex, nofollow` and `no-store`.
+
+Nameservers remain `ns1.vercel-dns.com` and `ns2.vercel-dns.com`. ImprovMX MX records, the combined MailerSend/ImprovMX SPF, MailerSend DKIM and `mta` CNAME are unchanged from the saved zone. Empty contact and feedback POSTs return 303 to the expected validation pages without sending email. Actual inbox delivery and the registrar's renewal settings were not checked during this verification.
+
+The privacy policy now names Deno Deploy as the website host, and its browser text-spacing check passed. Preserve the Vercel domain registration and DNS zone when retiring the old hosting project.
